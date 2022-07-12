@@ -1,0 +1,9 @@
+--------------- Clean Started: 07/12/2022 03:12:01 Project: ElectronicClock, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\main.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\tsk_control.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\tsk_io.o"
+Deleting file ".\ElectronicClock.cycdx"
+Deleting file ".\ElectronicClock.svd"
+Deleting file ".\ElectronicClock.rpt"
+Deleting file ".\ElectronicClock_timing.html"
+--------------- Clean Succeeded: 07/12/2022 03:12:01 ---------------
