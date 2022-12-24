@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rte>
+ <configset>
+  <config name="version" value="Erika 2"/>
+  <config name="path_out" value="{PROJECT_PATH}\out"/>
+  <config name="templateDir" value="{GEN_PATH}\..\templates"/>
+  <config name="userCodeStart" value="/\* USER CODE START {TAG} \*/"/>
+  <config name="userCodeEnd" value="/\* USER CODE END {TAG} \*/"/>
+  <config name="guivers" value="0.1.2"/>
+ </configset>
+ <naming>
+  <config name="signalpoolPrefix" value="sp_"/>
+  <config name="signalpoolPostfix" value=""/>
+  <config name="taskPrefix" value="tsk_"/>
+  <config name="taskPostfix" value=""/>
+  <config name="signalclassPrefix" value="sc_"/>
+  <config name="signalclassPostfix" value=""/>
+  <config name="signalobjectPrefix" value="so_"/>
+  <config name="signalobjectPostfix" value=""/>
+  <config name="swcPrefix" value="swc_"/>
+  <config name="swcPostfix" value=""/>
+  <config name="runnablePrefix" value=""/>
+  <config name="runnablePostfix" value="_run"/>
+  <config name="eventPrefix" value="ev_"/>
+  <config name="eventPostfix" value=""/>
+  <config name="resourcePrefix" value="res_"/>
+  <config name="resourcePostfix" value=""/>
+  <config name="addrPrefix" value="ADR_"/>
+  <config name="addrStartPostfix" value="_START"/>
+  <config name="addrEndPostfix" value="_END"/>
+ </naming>
+ <signalpools>
+  <signalpool description="The common global signal pool, all signals will be stored here" endaddr="ADR_SP_COMMON_END" name="sp_common" shortname="common" startaddr="ADR_SP_COMMON_START"/>
+ </signalpools>
+ <tasks>
+  <task description="This task will contain all IO operations, e.g. remote, engine,..." events="" mode="Event" name="tsk_io" shortname="io" signalpoolsRO="sp_common" signalpoolsRW="sp_common" tickEvent="ev_tick_1ms" timertickperiod="1"/>
+  <task description="Task control will call the application code (control algorithm, ADAS fuctions,..)" events="" mode="Cyclic and Event" name="tsk_control" shortname="control" signalpoolsRO="sp_common" signalpoolsRW="sp_common" tickEvent="ev_tick_1ms" timertickperiod="1"/>
+ </tasks>
+ <signalclasses>
+  <signalclass description="Event of clock" name="sc_events" shortname="events"/>
+ </signalclasses>
+ <signalobjects>
+  <signalobject description="Event" indriver="0" name="so_event" onDataError="0" onDataUpdate="ev_event_onData" outdriver="0" resource="None" shortname="event" signalclass="sc_events" signalpool="sp_common"/>
+ </signalobjects>
+ <swcs>
+  <swc description="SWC containting all the clock runnables" name="swc_clock" shortname="clock"/>
+ </swcs>
+ <runnables>
+  <runnable component cycletime="0" description="Central runnable calling the set driving function based on the carstate signal" events="ev_joystick_onData" name="control_run" shortname="control" signalIN="" signalOUT="" task="tsk_control"/>
+  <runnable component="swc_engine" cycletime="100" description="Engine controller runnable" events="" name="ENGINE_setspeed_run" shortname="setspeed" signalIN="so_targetspeed|so_currentspeed" signalOUT="so_controlspeed" task="tsk_io"/>
+  <runnable component="swc_remote" cycletime="0" description="Receives outgoing event and creates and XBee protocol" events="ev_eventout_onData" name="REMOTE_transmit_run" shortname="transmit" signalIN="so_eventOut" signalOUT="so_protocolTx" task="tsk_io"/>
+  <runnable component="swc_remote" cycletime="0" description="Receive an incoming protocol and translates the content into joystick or event signal" events="ev_xbee_rx" name="REMOTE_receive_run" shortname="receive" signalIN="so_protocolRx" signalOUT="so_joystick|so_eventIn" task="tsk_io"/>
+  <runnable component="swc_control" cycletime="0" description="Runnable receiving and processing central events, e.g. related to the connection state of the remote." events="ev_eventin_onData" name="CONTROL_processCarstate_run" shortname="processCarstate" signalIN="so_carState|so_eventIn|so_eventOut" signalOUT="so_carState|so_eventOut" task="tsk_control"/>
+  <runnable component="swc_remote" cycletime="100" description="Error handler for Remote. Triggers on invalid data and wrong age. Will call central error handler as escalation." events="ev_protocolrx_onError" name="REMOTE_error_run" shortname="error" signalIN="so_protocolRx|so_protocolTx" signalOUT="" task="tsk_io"/>
+ </runnables>
+ <events>
+  <event description="A Event" name="ev_joystick_onData" shortname="joystick_onData"/>
+  <event description="Tick Event event and cyclic task" name="ev_tick_1ms" shortname="tick_1ms"/>
+  <event description="A Event" name="ev_eventin_onData" shortname="eventin_onData"/>
+  <event description="A Event" name="ev_eventout_onData" shortname="eventout_onData"/>
+  <event description="Event fired by ISR once a complete XBee protocol is received" name="ev_xbee_rx" shortname="xbee_rx"/>
+  <event description="A Event" name="ev_protocolrx_onError" shortname="protocolrx_onError"/>
+  <event description="A Event" name="ev_event_onData" shortname="event_onData"/>
+ </events>
+ <resources/>
+</rte>
