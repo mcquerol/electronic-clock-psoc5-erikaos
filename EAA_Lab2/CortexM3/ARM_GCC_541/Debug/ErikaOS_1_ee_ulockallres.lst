@@ -1,0 +1,1505 @@
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccHAS57H.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"ErikaOS_1_ee_ulockallres.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.EE_oo_release_all_resources,"ax",%progbits
+  20              		.align	2
+  21              		.global	EE_oo_release_all_resources
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	EE_oo_release_all_resources, %function
+  25              	EE_oo_release_all_resources:
+  26              	.LFB70:
+  27              		.file 1 "Generated_Source\\PSoC5\\ErikaOS_1_ee_ulockallres.c"
+   1:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c **** /* ###*B*###
+   2:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****  * ERIKA Enterprise - a tiny RTOS for small microcontrollers
+   3:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****  *
+   4:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****  * Copyright (C) 2002-2008  Evidence Srl
+   5:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****  *
+   6:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****  * This file is part of ERIKA Enterprise.
+   7:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****  *
+   8:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****  * ERIKA Enterprise is free software; you can redistribute it
+   9:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****  * and/or modify it under the terms of the GNU General Public License
+  10:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****  * version 2 as published by the Free Software Foundation, 
+  11:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****  * (with a special exception described below).
+  12:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****  *
+  13:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****  * Linking this code statically or dynamically with other modules is
+  14:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****  * making a combined work based on this code.  Thus, the terms and
+  15:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****  * conditions of the GNU General Public License cover the whole
+  16:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****  * combination.
+  17:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****  *
+  18:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****  * As a special exception, the copyright holders of this library give you
+  19:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****  * permission to link this code with independent modules to produce an
+  20:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****  * executable, regardless of the license terms of these independent
+  21:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****  * modules, and to copy and distribute the resulting executable under
+  22:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****  * terms of your choice, provided that you also meet, for each linked
+  23:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****  * independent module, the terms and conditions of the license of that
+  24:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****  * module.  An independent module is a module which is not derived from
+  25:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****  * or based on this library.  If you modify this code, you may extend
+  26:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****  * this exception to your version of the code, but you are not
+  27:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****  * obligated to do so.  If you do not wish to do so, delete this
+  28:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****  * exception statement from your version.
+  29:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****  *
+  30:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****  * ERIKA Enterprise is distributed in the hope that it will be
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccHAS57H.s 			page 2
+
+
+  31:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****  * useful, but WITHOUT ANY WARRANTY; without even the implied warranty
+  32:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****  * of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  33:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****  * GNU General Public License version 2 for more details.
+  34:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****  *
+  35:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****  * You should have received a copy of the GNU General Public License
+  36:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****  * version 2 along with ERIKA Enterprise; if not, write to the
+  37:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  38:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****  * Boston, MA 02110-1301 USA.
+  39:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****  * ###*E*### */
+  40:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c **** 
+  41:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c **** /*
+  42:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****  * Author: 2011 Errico Guidieri
+  43:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****  */
+  44:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c **** 
+  45:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c **** /*
+  46:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****  * PSoC Port and API Generation
+  47:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****  * Carlos Fernando Meier Martinez
+  48:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****  * Hochschule Darmstadt, Germany. 2017.
+  49:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****  */
+  50:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c **** 
+  51:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c **** #include "ErikaOS_1_ee_internal.inc"
+  52:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c **** #if (defined(__OO_BCC1__) || defined(__OO_BCC2__) || defined(__OO_ECC1__) || defined(__OO_ECC2__)) 
+  53:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c **** 
+  54:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c **** /*
+  55:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****   Method to Release All Resources locked by a Thread,
+  56:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****   used to fulfill AS requirement OS070
+  57:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c **** */
+  58:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c **** 
+  59:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c **** #if ( (defined(__OO_EXTENDED_STATUS__)) || (defined(__OO_ISR2_RESOURCES__)) ) \
+  60:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****   && (!defined(__PRIVATE_RELEASEALLRESOURCE__))
+  61:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c **** 
+  62:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c **** #if 0
+  63:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c **** #ifdef __MSRP__
+  64:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c **** #warning "MSRP multiprocessor kernel protocol is not completly supported!"
+  65:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c **** static void EE_oo_unlock_others(EE_UREG ResID)
+  66:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c **** {
+  67:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****   /* TODO Understand what I need to do for global resources
+  68:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****    * PSEUDO code:
+  69:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****    *  if(EE_oo_isGlobal(ResID))
+  70:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****    *    EE_hal_spin_out((EE_TYPESPIN)ResID);
+  71:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****    * but i cannot rely on EE_GLOBAL_MUTEX flag!
+  72:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****    * EG:
+  73:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****    * Global resources are going to disappear!
+  74:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****    */
+  75:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c **** }
+  76:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c **** #else
+  77:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c **** #define EE_oo_unlock_others(ResID)  ((void)0)
+  78:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c **** #endif
+  79:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c **** #endif 
+  80:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c **** 
+  81:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c **** EE_UREG EE_oo_release_all_resources( EE_TID tid ) {
+  28              		.loc 1 81 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+  33              	.LVL0:
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccHAS57H.s 			page 3
+
+
+  34 0000 10B4     		push	{r4}
+  35              		.cfi_def_cfa_offset 4
+  36              		.cfi_offset 4, -4
+  37              	.LVL1:
+  82:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****   /* ALLERT! this method have to be called only inside a critical section
+  83:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****      (e.g. interrupt disabled) */
+  84:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****   register EE_UREG curRes, ResID = EE_UREG_MINUS1;
+  85:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c **** 
+  86:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****   curRes = EE_th_resource_last[tid];
+  38              		.loc 1 86 0
+  39 0002 104B     		ldr	r3, .L6
+  40 0004 53F82030 		ldr	r3, [r3, r0, lsl #2]
+  41              	.LVL2:
+  84:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c **** 
+  42              		.loc 1 84 0
+  43 0008 4FF0FF31 		mov	r1, #-1
+  87:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****   while ( curRes != EE_UREG_MINUS1 ) {
+  44              		.loc 1 87 0
+  45 000c 0BE0     		b	.L2
+  46              	.LVL3:
+  47              	.L3:
+  88:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****     ResID = curRes;
+  89:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****     /* remove the last entry from the data structure */
+  90:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****     EE_th_resource_last[tid] =
+  91:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****       EE_resource_stack[ResID];
+  48              		.loc 1 91 0
+  49 000e 0E4A     		ldr	r2, .L6+4
+  50 0010 52F82320 		ldr	r2, [r2, r3, lsl #2]
+  90:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****       EE_resource_stack[ResID];
+  51              		.loc 1 90 0
+  52 0014 0B49     		ldr	r1, .L6
+  53 0016 41F82020 		str	r2, [r1, r0, lsl #2]
+  92:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c **** #ifdef __OO_EXTENDED_STATUS__
+  93:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****     /* free the resource */
+  94:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****     EE_resource_locked[ResID] = EE_FALSE;
+  54              		.loc 1 94 0
+  55 001a 0024     		movs	r4, #0
+  56 001c 0B49     		ldr	r1, .L6+8
+  57 001e 41F82340 		str	r4, [r1, r3, lsl #2]
+  58              	.LVL4:
+  88:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****     /* remove the last entry from the data structure */
+  59              		.loc 1 88 0
+  60 0022 1946     		mov	r1, r3
+  95:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c **** #endif /* __OO_EXTENDED_STATUS__ */
+  96:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****     /* TODO choose the fate of global resources */
+  97:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c **** #if 0
+  98:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****     EE_oo_unlock_others(ResID);
+  99:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c **** #endif
+ 100:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c **** 
+ 101:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****     curRes = EE_th_resource_last[tid];
+  61              		.loc 1 101 0
+  62 0024 1346     		mov	r3, r2
+  63              	.LVL5:
+  64              	.L2:
+  87:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****     ResID = curRes;
+  65              		.loc 1 87 0
+  66 0026 B3F1FF3F 		cmp	r3, #-1
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccHAS57H.s 			page 4
+
+
+  67 002a F0D1     		bne	.L3
+ 102:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****   }
+ 103:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c **** 
+ 104:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****   /* Check if at least one resource have been freed */
+ 105:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****   if ( ResID != EE_UREG_MINUS1 ) {
+  68              		.loc 1 105 0
+  69 002c B1F1FF3F 		cmp	r1, #-1
+  70 0030 04D0     		beq	.L4
+ 106:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****     /* Restore the sys-ceiling with the old value from the bottom of the
+ 107:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****        resource stack */
+ 108:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****     EE_sys_ceiling = EE_resource_oldceiling[ResID];
+  71              		.loc 1 108 0
+  72 0032 074B     		ldr	r3, .L6+12
+  73              	.LVL6:
+  74 0034 53F82120 		ldr	r2, [r3, r1, lsl #2]
+  75 0038 064B     		ldr	r3, .L6+16
+  76 003a 1A60     		str	r2, [r3]
+  77              	.L4:
+ 109:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c **** 
+ 110:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c **** #ifdef __OO_ISR2_RESOURCES__
+ 111:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****     /* Restore the isr2 prio with the old value from the bottom of the
+ 112:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****        resource stack */
+ 113:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****     EE_hal_set_int_prio(EE_isr2_oldpriority[ResID]);
+ 114:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c **** #endif /* __OO_ISR2_RESOURCES__ */
+ 115:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c **** 
+ 116:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c **** #ifdef __OO_ORTI_PRIORITY__
+ 117:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****     /* Restore the ORTI priority with the old value from the bottom of the
+ 118:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****        resource stack */
+ 119:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****     EE_ORTI_th_priority[tid] = EE_ORTI_resource_oldpriority[ResID];
+ 120:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c **** #endif /* __OO_ORTI_PRIORITY__ */
+ 121:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****   }
+ 122:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c ****   return ResID;
+ 123:Generated_Source\PSoC5/ErikaOS_1_ee_ulockallres.c **** }
+  78              		.loc 1 123 0
+  79 003c 0846     		mov	r0, r1
+  80              	.LVL7:
+  81 003e 10BC     		pop	{r4}
+  82              		.cfi_restore 4
+  83              		.cfi_def_cfa_offset 0
+  84 0040 7047     		bx	lr
+  85              	.L7:
+  86 0042 00BF     		.align	2
+  87              	.L6:
+  88 0044 00000000 		.word	EE_th_resource_last
+  89 0048 00000000 		.word	EE_resource_stack
+  90 004c 00000000 		.word	EE_resource_locked
+  91 0050 00000000 		.word	EE_resource_oldceiling
+  92 0054 00000000 		.word	EE_sys_ceiling
+  93              		.cfi_endproc
+  94              	.LFE70:
+  95              		.size	EE_oo_release_all_resources, .-EE_oo_release_all_resources
+  96              		.text
+  97              	.Letext0:
+  98              		.file 2 "Generated_Source\\PSoC5\\ErikaOS_1_common_ee_types.inc"
+  99              		.file 3 "Generated_Source\\PSoC5\\ErikaOS_1_cortex_mx_ee_cpu.inc"
+ 100              		.file 4 "Generated_Source\\PSoC5\\ErikaOS_1_ee_oo_common.inc"
+ 101              		.file 5 "Generated_Source\\PSoC5\\ErikaOS_1_common_ee_primitives.inc"
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccHAS57H.s 			page 5
+
+
+ 102              		.file 6 "Generated_Source\\PSoC5\\ErikaOS_1_cortex_mx_ee_context.inc"
+ 103              		.file 7 "Generated_Source\\PSoC5\\ErikaOS_1_ee_oo_intfunc.inc"
+ 104              		.file 8 "Generated_Source\\PSoC5\\ErikaOS_1_ee_oo_internal.inc"
+ 105              		.section	.debug_info,"",%progbits
+ 106              	.Ldebug_info0:
+ 107 0000 5A040000 		.4byte	0x45a
+ 108 0004 0400     		.2byte	0x4
+ 109 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 110 000a 04       		.byte	0x4
+ 111 000b 01       		.uleb128 0x1
+ 112 000c 54040000 		.4byte	.LASF68
+ 113 0010 0C       		.byte	0xc
+ 114 0011 3E010000 		.4byte	.LASF69
+ 115 0015 EA000000 		.4byte	.LASF70
+ 116 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 117 001d 00000000 		.4byte	0
+ 118 0021 00000000 		.4byte	.Ldebug_line0
+ 119 0025 02       		.uleb128 0x2
+ 120 0026 01       		.byte	0x1
+ 121 0027 06       		.byte	0x6
+ 122 0028 BC020000 		.4byte	.LASF0
+ 123 002c 02       		.uleb128 0x2
+ 124 002d 01       		.byte	0x1
+ 125 002e 08       		.byte	0x8
+ 126 002f 95020000 		.4byte	.LASF1
+ 127 0033 02       		.uleb128 0x2
+ 128 0034 02       		.byte	0x2
+ 129 0035 05       		.byte	0x5
+ 130 0036 4C000000 		.4byte	.LASF2
+ 131 003a 02       		.uleb128 0x2
+ 132 003b 02       		.byte	0x2
+ 133 003c 07       		.byte	0x7
+ 134 003d 55030000 		.4byte	.LASF3
+ 135 0041 02       		.uleb128 0x2
+ 136 0042 04       		.byte	0x4
+ 137 0043 05       		.byte	0x5
+ 138 0044 D7010000 		.4byte	.LASF4
+ 139 0048 02       		.uleb128 0x2
+ 140 0049 04       		.byte	0x4
+ 141 004a 07       		.byte	0x7
+ 142 004b D0030000 		.4byte	.LASF5
+ 143 004f 02       		.uleb128 0x2
+ 144 0050 08       		.byte	0x8
+ 145 0051 05       		.byte	0x5
+ 146 0052 A0010000 		.4byte	.LASF6
+ 147 0056 02       		.uleb128 0x2
+ 148 0057 08       		.byte	0x8
+ 149 0058 07       		.byte	0x7
+ 150 0059 C8020000 		.4byte	.LASF7
+ 151 005d 03       		.uleb128 0x3
+ 152 005e 04       		.byte	0x4
+ 153 005f 05       		.byte	0x5
+ 154 0060 696E7400 		.ascii	"int\000"
+ 155 0064 02       		.uleb128 0x2
+ 156 0065 04       		.byte	0x4
+ 157 0066 07       		.byte	0x7
+ 158 0067 DF020000 		.4byte	.LASF8
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccHAS57H.s 			page 6
+
+
+ 159 006b 02       		.uleb128 0x2
+ 160 006c 08       		.byte	0x8
+ 161 006d 04       		.byte	0x4
+ 162 006e 74020000 		.4byte	.LASF9
+ 163 0072 04       		.uleb128 0x4
+ 164 0073 AE010000 		.4byte	.LASF10
+ 165 0077 02       		.byte	0x2
+ 166 0078 3F       		.byte	0x3f
+ 167 0079 25000000 		.4byte	0x25
+ 168 007d 04       		.uleb128 0x4
+ 169 007e A4030000 		.4byte	.LASF11
+ 170 0082 02       		.byte	0x2
+ 171 0083 52       		.byte	0x52
+ 172 0084 3A000000 		.4byte	0x3a
+ 173 0088 04       		.uleb128 0x4
+ 174 0089 30030000 		.4byte	.LASF12
+ 175 008d 02       		.byte	0x2
+ 176 008e 53       		.byte	0x53
+ 177 008f 5D000000 		.4byte	0x5d
+ 178 0093 04       		.uleb128 0x4
+ 179 0094 A0000000 		.4byte	.LASF13
+ 180 0098 02       		.byte	0x2
+ 181 0099 54       		.byte	0x54
+ 182 009a 64000000 		.4byte	0x64
+ 183 009e 04       		.uleb128 0x4
+ 184 009f 13000000 		.4byte	.LASF14
+ 185 00a3 03       		.byte	0x3
+ 186 00a4 4D       		.byte	0x4d
+ 187 00a5 93000000 		.4byte	0x93
+ 188 00a9 04       		.uleb128 0x4
+ 189 00aa 82000000 		.4byte	.LASF15
+ 190 00ae 03       		.byte	0x3
+ 191 00af 4F       		.byte	0x4f
+ 192 00b0 93000000 		.4byte	0x93
+ 193 00b4 04       		.uleb128 0x4
+ 194 00b5 E2030000 		.4byte	.LASF16
+ 195 00b9 03       		.byte	0x3
+ 196 00ba 54       		.byte	0x54
+ 197 00bb 9E000000 		.4byte	0x9e
+ 198 00bf 04       		.uleb128 0x4
+ 199 00c0 BB000000 		.4byte	.LASF17
+ 200 00c4 03       		.byte	0x3
+ 201 00c5 78       		.byte	0x78
+ 202 00c6 88000000 		.4byte	0x88
+ 203 00ca 05       		.uleb128 0x5
+ 204 00cb B6010000 		.4byte	.LASF18
+ 205 00cf 04       		.byte	0x4
+ 206 00d0 1101     		.2byte	0x111
+ 207 00d2 7D000000 		.4byte	0x7d
+ 208 00d6 05       		.uleb128 0x5
+ 209 00d7 4A020000 		.4byte	.LASF19
+ 210 00db 04       		.byte	0x4
+ 211 00dc 3502     		.2byte	0x235
+ 212 00de 9E000000 		.4byte	0x9e
+ 213 00e2 05       		.uleb128 0x5
+ 214 00e3 62020000 		.4byte	.LASF20
+ 215 00e7 04       		.byte	0x4
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccHAS57H.s 			page 7
+
+
+ 216 00e8 5D02     		.2byte	0x25d
+ 217 00ea 9E000000 		.4byte	0x9e
+ 218 00ee 05       		.uleb128 0x5
+ 219 00ef 1C040000 		.4byte	.LASF21
+ 220 00f3 04       		.byte	0x4
+ 221 00f4 6C02     		.2byte	0x26c
+ 222 00f6 9E000000 		.4byte	0x9e
+ 223 00fa 06       		.uleb128 0x6
+ 224 00fb 0C       		.byte	0xc
+ 225 00fc 04       		.byte	0x4
+ 226 00fd 7202     		.2byte	0x272
+ 227 00ff 2B010000 		.4byte	0x12b
+ 228 0103 07       		.uleb128 0x7
+ 229 0104 E0010000 		.4byte	.LASF22
+ 230 0108 04       		.byte	0x4
+ 231 0109 7302     		.2byte	0x273
+ 232 010b D6000000 		.4byte	0xd6
+ 233 010f 00       		.byte	0
+ 234 0110 07       		.uleb128 0x7
+ 235 0111 1B000000 		.4byte	.LASF23
+ 236 0115 04       		.byte	0x4
+ 237 0116 7402     		.2byte	0x274
+ 238 0118 D6000000 		.4byte	0xd6
+ 239 011c 04       		.byte	0x4
+ 240 011d 07       		.uleb128 0x7
+ 241 011e C2000000 		.4byte	.LASF24
+ 242 0122 04       		.byte	0x4
+ 243 0123 7502     		.2byte	0x275
+ 244 0125 D6000000 		.4byte	0xd6
+ 245 0129 08       		.byte	0x8
+ 246 012a 00       		.byte	0
+ 247 012b 05       		.uleb128 0x5
+ 248 012c 33020000 		.4byte	.LASF25
+ 249 0130 04       		.byte	0x4
+ 250 0131 7A02     		.2byte	0x27a
+ 251 0133 FA000000 		.4byte	0xfa
+ 252 0137 06       		.uleb128 0x6
+ 253 0138 08       		.byte	0x8
+ 254 0139 04       		.byte	0x4
+ 255 013a 7D02     		.2byte	0x27d
+ 256 013c 5B010000 		.4byte	0x15b
+ 257 0140 07       		.uleb128 0x7
+ 258 0141 CB000000 		.4byte	.LASF26
+ 259 0145 04       		.byte	0x4
+ 260 0146 7E02     		.2byte	0x27e
+ 261 0148 D6000000 		.4byte	0xd6
+ 262 014c 00       		.byte	0
+ 263 014d 07       		.uleb128 0x7
+ 264 014e 15050000 		.4byte	.LASF27
+ 265 0152 04       		.byte	0x4
+ 266 0153 7F02     		.2byte	0x27f
+ 267 0155 E2000000 		.4byte	0xe2
+ 268 0159 04       		.byte	0x4
+ 269 015a 00       		.byte	0
+ 270 015b 05       		.uleb128 0x5
+ 271 015c 70010000 		.4byte	.LASF28
+ 272 0160 04       		.byte	0x4
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccHAS57H.s 			page 8
+
+
+ 273 0161 8002     		.2byte	0x280
+ 274 0163 37010000 		.4byte	0x137
+ 275 0167 08       		.uleb128 0x8
+ 276 0168 01       		.byte	0x1
+ 277 0169 2C000000 		.4byte	0x2c
+ 278 016d 04       		.byte	0x4
+ 279 016e 8A02     		.2byte	0x28a
+ 280 0170 81010000 		.4byte	0x181
+ 281 0174 09       		.uleb128 0x9
+ 282 0175 0E040000 		.4byte	.LASF29
+ 283 0179 00       		.byte	0
+ 284 017a 09       		.uleb128 0x9
+ 285 017b C6010000 		.4byte	.LASF30
+ 286 017f 01       		.byte	0x1
+ 287 0180 00       		.byte	0
+ 288 0181 05       		.uleb128 0x5
+ 289 0182 EC020000 		.4byte	.LASF31
+ 290 0186 04       		.byte	0x4
+ 291 0187 8D02     		.2byte	0x28d
+ 292 0189 67010000 		.4byte	0x167
+ 293 018d 05       		.uleb128 0x5
+ 294 018e 8A000000 		.4byte	.LASF32
+ 295 0192 04       		.byte	0x4
+ 296 0193 9002     		.2byte	0x290
+ 297 0195 81010000 		.4byte	0x181
+ 298 0199 06       		.uleb128 0x6
+ 299 019a 0C       		.byte	0xc
+ 300 019b 04       		.byte	0x4
+ 301 019c 9402     		.2byte	0x294
+ 302 019e C8010000 		.4byte	0x1c8
+ 303 01a2 0A       		.uleb128 0xa
+ 304 01a3 6300     		.ascii	"c\000"
+ 305 01a5 04       		.byte	0x4
+ 306 01a6 9602     		.2byte	0x296
+ 307 01a8 EE000000 		.4byte	0xee
+ 308 01ac 00       		.byte	0
+ 309 01ad 07       		.uleb128 0x7
+ 310 01ae 7A000000 		.4byte	.LASF33
+ 311 01b2 04       		.byte	0x4
+ 312 01b3 9802     		.2byte	0x298
+ 313 01b5 E2000000 		.4byte	0xe2
+ 314 01b9 04       		.byte	0x4
+ 315 01ba 07       		.uleb128 0x7
+ 316 01bb 00000000 		.4byte	.LASF34
+ 317 01bf 04       		.byte	0x4
+ 318 01c0 9A02     		.2byte	0x29a
+ 319 01c2 8D010000 		.4byte	0x18d
+ 320 01c6 08       		.byte	0x8
+ 321 01c7 00       		.byte	0
+ 322 01c8 05       		.uleb128 0x5
+ 323 01c9 68030000 		.4byte	.LASF35
+ 324 01cd 04       		.byte	0x4
+ 325 01ce 9B02     		.2byte	0x29b
+ 326 01d0 99010000 		.4byte	0x199
+ 327 01d4 06       		.uleb128 0x6
+ 328 01d5 10       		.byte	0x10
+ 329 01d6 04       		.byte	0x4
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccHAS57H.s 			page 9
+
+
+ 330 01d7 9F02     		.2byte	0x29f
+ 331 01d9 12020000 		.4byte	0x212
+ 332 01dd 07       		.uleb128 0x7
+ 333 01de 17040000 		.4byte	.LASF36
+ 334 01e2 04       		.byte	0x4
+ 335 01e3 A002     		.2byte	0x2a0
+ 336 01e5 B4000000 		.4byte	0xb4
+ 337 01e9 00       		.byte	0
+ 338 01ea 07       		.uleb128 0x7
+ 339 01eb E2040000 		.4byte	.LASF37
+ 340 01ef 04       		.byte	0x4
+ 341 01f0 A102     		.2byte	0x2a1
+ 342 01f2 D6000000 		.4byte	0xd6
+ 343 01f6 04       		.byte	0x4
+ 344 01f7 07       		.uleb128 0x7
+ 345 01f8 74000000 		.4byte	.LASF38
+ 346 01fc 04       		.byte	0x4
+ 347 01fd A202     		.2byte	0x2a2
+ 348 01ff D6000000 		.4byte	0xd6
+ 349 0203 08       		.byte	0x8
+ 350 0204 07       		.uleb128 0x7
+ 351 0205 03050000 		.4byte	.LASF39
+ 352 0209 04       		.byte	0x4
+ 353 020a A302     		.2byte	0x2a3
+ 354 020c E2000000 		.4byte	0xe2
+ 355 0210 0C       		.byte	0xc
+ 356 0211 00       		.byte	0
+ 357 0212 05       		.uleb128 0x5
+ 358 0213 F0010000 		.4byte	.LASF40
+ 359 0217 04       		.byte	0x4
+ 360 0218 A402     		.2byte	0x2a4
+ 361 021a D4010000 		.4byte	0x1d4
+ 362 021e 0B       		.uleb128 0xb
+ 363 021f 39030000 		.4byte	.LASF71
+ 364 0223 01       		.byte	0x1
+ 365 0224 51       		.byte	0x51
+ 366 0225 9E000000 		.4byte	0x9e
+ 367 0229 00000000 		.4byte	.LFB70
+ 368 022d 58000000 		.4byte	.LFE70-.LFB70
+ 369 0231 01       		.uleb128 0x1
+ 370 0232 9C       		.byte	0x9c
+ 371 0233 65020000 		.4byte	0x265
+ 372 0237 0C       		.uleb128 0xc
+ 373 0238 74696400 		.ascii	"tid\000"
+ 374 023c 01       		.byte	0x1
+ 375 023d 51       		.byte	0x51
+ 376 023e BF000000 		.4byte	0xbf
+ 377 0242 00000000 		.4byte	.LLST0
+ 378 0246 0D       		.uleb128 0xd
+ 379 0247 86030000 		.4byte	.LASF41
+ 380 024b 01       		.byte	0x1
+ 381 024c 54       		.byte	0x54
+ 382 024d 9E000000 		.4byte	0x9e
+ 383 0251 21000000 		.4byte	.LLST1
+ 384 0255 0D       		.uleb128 0xd
+ 385 0256 8F020000 		.4byte	.LASF42
+ 386 025a 01       		.byte	0x1
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccHAS57H.s 			page 10
+
+
+ 387 025b 54       		.byte	0x54
+ 388 025c 9E000000 		.4byte	0x9e
+ 389 0260 4A000000 		.4byte	.LLST2
+ 390 0264 00       		.byte	0
+ 391 0265 0E       		.uleb128 0xe
+ 392 0266 5F000000 		.4byte	.LASF43
+ 393 026a 05       		.byte	0x5
+ 394 026b 44       		.byte	0x44
+ 395 026c 9E000000 		.4byte	0x9e
+ 396 0270 0E       		.uleb128 0xe
+ 397 0271 17030000 		.4byte	.LASF44
+ 398 0275 06       		.byte	0x6
+ 399 0276 48       		.byte	0x48
+ 400 0277 BF000000 		.4byte	0xbf
+ 401 027b 0F       		.uleb128 0xf
+ 402 027c 92020000 		.4byte	0x292
+ 403 0280 8B020000 		.4byte	0x28b
+ 404 0284 10       		.uleb128 0x10
+ 405 0285 8B020000 		.4byte	0x28b
+ 406 0289 03       		.byte	0x3
+ 407 028a 00       		.byte	0
+ 408 028b 02       		.uleb128 0x2
+ 409 028c 04       		.byte	0x4
+ 410 028d 07       		.byte	0x7
+ 411 028e 56000000 		.4byte	.LASF45
+ 412 0292 11       		.uleb128 0x11
+ 413 0293 9E000000 		.4byte	0x9e
+ 414 0297 0E       		.uleb128 0xe
+ 415 0298 AA000000 		.4byte	.LASF46
+ 416 029c 04       		.byte	0x4
+ 417 029d B2       		.byte	0xb2
+ 418 029e A2020000 		.4byte	0x2a2
+ 419 02a2 11       		.uleb128 0x11
+ 420 02a3 7B020000 		.4byte	0x27b
+ 421 02a7 0E       		.uleb128 0xe
+ 422 02a8 35040000 		.4byte	.LASF47
+ 423 02ac 04       		.byte	0x4
+ 424 02ad B3       		.byte	0xb3
+ 425 02ae B2020000 		.4byte	0x2b2
+ 426 02b2 11       		.uleb128 0x11
+ 427 02b3 7B020000 		.4byte	0x27b
+ 428 02b7 0F       		.uleb128 0xf
+ 429 02b8 9E000000 		.4byte	0x9e
+ 430 02bc C7020000 		.4byte	0x2c7
+ 431 02c0 10       		.uleb128 0x10
+ 432 02c1 8B020000 		.4byte	0x28b
+ 433 02c5 03       		.byte	0x3
+ 434 02c6 00       		.byte	0
+ 435 02c7 0E       		.uleb128 0xe
+ 436 02c8 28040000 		.4byte	.LASF48
+ 437 02cc 04       		.byte	0x4
+ 438 02cd CA       		.byte	0xca
+ 439 02ce B7020000 		.4byte	0x2b7
+ 440 02d2 0F       		.uleb128 0xf
+ 441 02d3 BF000000 		.4byte	0xbf
+ 442 02d7 E2020000 		.4byte	0x2e2
+ 443 02db 10       		.uleb128 0x10
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccHAS57H.s 			page 11
+
+
+ 444 02dc 8B020000 		.4byte	0x28b
+ 445 02e0 03       		.byte	0x3
+ 446 02e1 00       		.byte	0
+ 447 02e2 0E       		.uleb128 0xe
+ 448 02e3 49040000 		.4byte	.LASF49
+ 449 02e7 04       		.byte	0x4
+ 450 02e8 D2       		.byte	0xd2
+ 451 02e9 D2020000 		.4byte	0x2d2
+ 452 02ed 0E       		.uleb128 0xe
+ 453 02ee 0B030000 		.4byte	.LASF50
+ 454 02f2 04       		.byte	0x4
+ 455 02f3 DA       		.byte	0xda
+ 456 02f4 B7020000 		.4byte	0x2b7
+ 457 02f8 0E       		.uleb128 0xe
+ 458 02f9 02040000 		.4byte	.LASF51
+ 459 02fd 04       		.byte	0x4
+ 460 02fe E2       		.byte	0xe2
+ 461 02ff BF000000 		.4byte	0xbf
+ 462 0303 0E       		.uleb128 0xe
+ 463 0304 53020000 		.4byte	.LASF52
+ 464 0308 04       		.byte	0x4
+ 465 0309 F7       		.byte	0xf7
+ 466 030a 9E000000 		.4byte	0x9e
+ 467 030e 12       		.uleb128 0x12
+ 468 030f 05000000 		.4byte	.LASF53
+ 469 0313 04       		.byte	0x4
+ 470 0314 3F01     		.2byte	0x13f
+ 471 0316 CA000000 		.4byte	0xca
+ 472 031a 12       		.uleb128 0x12
+ 473 031b 28000000 		.4byte	.LASF54
+ 474 031f 04       		.byte	0x4
+ 475 0320 5C01     		.2byte	0x15c
+ 476 0322 B7020000 		.4byte	0x2b7
+ 477 0326 0F       		.uleb128 0xf
+ 478 0327 B4000000 		.4byte	0xb4
+ 479 032b 36030000 		.4byte	0x336
+ 480 032f 10       		.uleb128 0x10
+ 481 0330 8B020000 		.4byte	0x28b
+ 482 0334 03       		.byte	0x3
+ 483 0335 00       		.byte	0
+ 484 0336 12       		.uleb128 0x12
+ 485 0337 3B000000 		.4byte	.LASF55
+ 486 033b 04       		.byte	0x4
+ 487 033c 6701     		.2byte	0x167
+ 488 033e 26030000 		.4byte	0x326
+ 489 0342 0F       		.uleb128 0xf
+ 490 0343 9E000000 		.4byte	0x9e
+ 491 0347 52030000 		.4byte	0x352
+ 492 034b 10       		.uleb128 0x10
+ 493 034c 8B020000 		.4byte	0x28b
+ 494 0350 00       		.byte	0
+ 495 0351 00       		.byte	0
+ 496 0352 12       		.uleb128 0x12
+ 497 0353 8D030000 		.4byte	.LASF56
+ 498 0357 04       		.byte	0x4
+ 499 0358 8F01     		.2byte	0x18f
+ 500 035a 42030000 		.4byte	0x342
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccHAS57H.s 			page 12
+
+
+ 501 035e 0F       		.uleb128 0xf
+ 502 035f B4000000 		.4byte	0xb4
+ 503 0363 6E030000 		.4byte	0x36e
+ 504 0367 10       		.uleb128 0x10
+ 505 0368 8B020000 		.4byte	0x28b
+ 506 036c 00       		.byte	0
+ 507 036d 00       		.byte	0
+ 508 036e 12       		.uleb128 0x12
+ 509 036f 0E020000 		.4byte	.LASF57
+ 510 0373 04       		.byte	0x4
+ 511 0374 9E01     		.2byte	0x19e
+ 512 0376 5E030000 		.4byte	0x35e
+ 513 037a 12       		.uleb128 0x12
+ 514 037b EE030000 		.4byte	.LASF58
+ 515 037f 04       		.byte	0x4
+ 516 0380 BA01     		.2byte	0x1ba
+ 517 0382 B7020000 		.4byte	0x2b7
+ 518 0386 12       		.uleb128 0x12
+ 519 0387 21020000 		.4byte	.LASF59
+ 520 038b 04       		.byte	0x4
+ 521 038c BF01     		.2byte	0x1bf
+ 522 038e 42030000 		.4byte	0x342
+ 523 0392 0F       		.uleb128 0xf
+ 524 0393 A2030000 		.4byte	0x3a2
+ 525 0397 A2030000 		.4byte	0x3a2
+ 526 039b 10       		.uleb128 0x10
+ 527 039c 8B020000 		.4byte	0x28b
+ 528 03a0 00       		.byte	0
+ 529 03a1 00       		.byte	0
+ 530 03a2 11       		.uleb128 0x11
+ 531 03a3 2B010000 		.4byte	0x12b
+ 532 03a7 12       		.uleb128 0x12
+ 533 03a8 80020000 		.4byte	.LASF60
+ 534 03ac 04       		.byte	0x4
+ 535 03ad CA02     		.2byte	0x2ca
+ 536 03af B3030000 		.4byte	0x3b3
+ 537 03b3 11       		.uleb128 0x11
+ 538 03b4 92030000 		.4byte	0x392
+ 539 03b8 0F       		.uleb128 0xf
+ 540 03b9 C8030000 		.4byte	0x3c8
+ 541 03bd C8030000 		.4byte	0x3c8
+ 542 03c1 10       		.uleb128 0x10
+ 543 03c2 8B020000 		.4byte	0x28b
+ 544 03c6 02       		.byte	0x2
+ 545 03c7 00       		.byte	0
+ 546 03c8 11       		.uleb128 0x11
+ 547 03c9 C8010000 		.4byte	0x1c8
+ 548 03cd 12       		.uleb128 0x12
+ 549 03ce D1000000 		.4byte	.LASF61
+ 550 03d2 04       		.byte	0x4
+ 551 03d3 DD02     		.2byte	0x2dd
+ 552 03d5 D9030000 		.4byte	0x3d9
+ 553 03d9 11       		.uleb128 0x11
+ 554 03da B8030000 		.4byte	0x3b8
+ 555 03de 0F       		.uleb128 0xf
+ 556 03df 5B010000 		.4byte	0x15b
+ 557 03e3 EE030000 		.4byte	0x3ee
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccHAS57H.s 			page 13
+
+
+ 558 03e7 10       		.uleb128 0x10
+ 559 03e8 8B020000 		.4byte	0x28b
+ 560 03ec 00       		.byte	0
+ 561 03ed 00       		.byte	0
+ 562 03ee 12       		.uleb128 0x12
+ 563 03ef AE030000 		.4byte	.LASF62
+ 564 03f3 04       		.byte	0x4
+ 565 03f4 FB02     		.2byte	0x2fb
+ 566 03f6 DE030000 		.4byte	0x3de
+ 567 03fa 0F       		.uleb128 0xf
+ 568 03fb 12020000 		.4byte	0x212
+ 569 03ff 0A040000 		.4byte	0x40a
+ 570 0403 10       		.uleb128 0x10
+ 571 0404 8B020000 		.4byte	0x28b
+ 572 0408 02       		.byte	0x2
+ 573 0409 00       		.byte	0
+ 574 040a 12       		.uleb128 0x12
+ 575 040b A3020000 		.4byte	.LASF63
+ 576 040f 04       		.byte	0x4
+ 577 0410 0403     		.2byte	0x304
+ 578 0412 FA030000 		.4byte	0x3fa
+ 579 0416 0E       		.uleb128 0xe
+ 580 0417 EB040000 		.4byte	.LASF64
+ 581 041b 07       		.byte	0x7
+ 582 041c 40       		.byte	0x40
+ 583 041d 9E000000 		.4byte	0x9e
+ 584 0421 0E       		.uleb128 0xe
+ 585 0422 87010000 		.4byte	.LASF65
+ 586 0426 07       		.byte	0x7
+ 587 0427 47       		.byte	0x47
+ 588 0428 A9000000 		.4byte	0xa9
+ 589 042c 0E       		.uleb128 0xe
+ 590 042d BD030000 		.4byte	.LASF66
+ 591 0431 07       		.byte	0x7
+ 592 0432 4A       		.byte	0x4a
+ 593 0433 9E000000 		.4byte	0x9e
+ 594 0437 0F       		.uleb128 0xf
+ 595 0438 47040000 		.4byte	0x447
+ 596 043c 47040000 		.4byte	0x447
+ 597 0440 10       		.uleb128 0x10
+ 598 0441 8B020000 		.4byte	0x28b
+ 599 0445 FF       		.byte	0xff
+ 600 0446 00       		.byte	0
+ 601 0447 11       		.uleb128 0x11
+ 602 0448 72000000 		.4byte	0x72
+ 603 044c 12       		.uleb128 0x12
+ 604 044d 08050000 		.4byte	.LASF67
+ 605 0451 08       		.byte	0x8
+ 606 0452 AB01     		.2byte	0x1ab
+ 607 0454 58040000 		.4byte	0x458
+ 608 0458 11       		.uleb128 0x11
+ 609 0459 37040000 		.4byte	0x437
+ 610 045d 00       		.byte	0
+ 611              		.section	.debug_abbrev,"",%progbits
+ 612              	.Ldebug_abbrev0:
+ 613 0000 01       		.uleb128 0x1
+ 614 0001 11       		.uleb128 0x11
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccHAS57H.s 			page 14
+
+
+ 615 0002 01       		.byte	0x1
+ 616 0003 25       		.uleb128 0x25
+ 617 0004 0E       		.uleb128 0xe
+ 618 0005 13       		.uleb128 0x13
+ 619 0006 0B       		.uleb128 0xb
+ 620 0007 03       		.uleb128 0x3
+ 621 0008 0E       		.uleb128 0xe
+ 622 0009 1B       		.uleb128 0x1b
+ 623 000a 0E       		.uleb128 0xe
+ 624 000b 55       		.uleb128 0x55
+ 625 000c 17       		.uleb128 0x17
+ 626 000d 11       		.uleb128 0x11
+ 627 000e 01       		.uleb128 0x1
+ 628 000f 10       		.uleb128 0x10
+ 629 0010 17       		.uleb128 0x17
+ 630 0011 00       		.byte	0
+ 631 0012 00       		.byte	0
+ 632 0013 02       		.uleb128 0x2
+ 633 0014 24       		.uleb128 0x24
+ 634 0015 00       		.byte	0
+ 635 0016 0B       		.uleb128 0xb
+ 636 0017 0B       		.uleb128 0xb
+ 637 0018 3E       		.uleb128 0x3e
+ 638 0019 0B       		.uleb128 0xb
+ 639 001a 03       		.uleb128 0x3
+ 640 001b 0E       		.uleb128 0xe
+ 641 001c 00       		.byte	0
+ 642 001d 00       		.byte	0
+ 643 001e 03       		.uleb128 0x3
+ 644 001f 24       		.uleb128 0x24
+ 645 0020 00       		.byte	0
+ 646 0021 0B       		.uleb128 0xb
+ 647 0022 0B       		.uleb128 0xb
+ 648 0023 3E       		.uleb128 0x3e
+ 649 0024 0B       		.uleb128 0xb
+ 650 0025 03       		.uleb128 0x3
+ 651 0026 08       		.uleb128 0x8
+ 652 0027 00       		.byte	0
+ 653 0028 00       		.byte	0
+ 654 0029 04       		.uleb128 0x4
+ 655 002a 16       		.uleb128 0x16
+ 656 002b 00       		.byte	0
+ 657 002c 03       		.uleb128 0x3
+ 658 002d 0E       		.uleb128 0xe
+ 659 002e 3A       		.uleb128 0x3a
+ 660 002f 0B       		.uleb128 0xb
+ 661 0030 3B       		.uleb128 0x3b
+ 662 0031 0B       		.uleb128 0xb
+ 663 0032 49       		.uleb128 0x49
+ 664 0033 13       		.uleb128 0x13
+ 665 0034 00       		.byte	0
+ 666 0035 00       		.byte	0
+ 667 0036 05       		.uleb128 0x5
+ 668 0037 16       		.uleb128 0x16
+ 669 0038 00       		.byte	0
+ 670 0039 03       		.uleb128 0x3
+ 671 003a 0E       		.uleb128 0xe
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccHAS57H.s 			page 15
+
+
+ 672 003b 3A       		.uleb128 0x3a
+ 673 003c 0B       		.uleb128 0xb
+ 674 003d 3B       		.uleb128 0x3b
+ 675 003e 05       		.uleb128 0x5
+ 676 003f 49       		.uleb128 0x49
+ 677 0040 13       		.uleb128 0x13
+ 678 0041 00       		.byte	0
+ 679 0042 00       		.byte	0
+ 680 0043 06       		.uleb128 0x6
+ 681 0044 13       		.uleb128 0x13
+ 682 0045 01       		.byte	0x1
+ 683 0046 0B       		.uleb128 0xb
+ 684 0047 0B       		.uleb128 0xb
+ 685 0048 3A       		.uleb128 0x3a
+ 686 0049 0B       		.uleb128 0xb
+ 687 004a 3B       		.uleb128 0x3b
+ 688 004b 05       		.uleb128 0x5
+ 689 004c 01       		.uleb128 0x1
+ 690 004d 13       		.uleb128 0x13
+ 691 004e 00       		.byte	0
+ 692 004f 00       		.byte	0
+ 693 0050 07       		.uleb128 0x7
+ 694 0051 0D       		.uleb128 0xd
+ 695 0052 00       		.byte	0
+ 696 0053 03       		.uleb128 0x3
+ 697 0054 0E       		.uleb128 0xe
+ 698 0055 3A       		.uleb128 0x3a
+ 699 0056 0B       		.uleb128 0xb
+ 700 0057 3B       		.uleb128 0x3b
+ 701 0058 05       		.uleb128 0x5
+ 702 0059 49       		.uleb128 0x49
+ 703 005a 13       		.uleb128 0x13
+ 704 005b 38       		.uleb128 0x38
+ 705 005c 0B       		.uleb128 0xb
+ 706 005d 00       		.byte	0
+ 707 005e 00       		.byte	0
+ 708 005f 08       		.uleb128 0x8
+ 709 0060 04       		.uleb128 0x4
+ 710 0061 01       		.byte	0x1
+ 711 0062 0B       		.uleb128 0xb
+ 712 0063 0B       		.uleb128 0xb
+ 713 0064 49       		.uleb128 0x49
+ 714 0065 13       		.uleb128 0x13
+ 715 0066 3A       		.uleb128 0x3a
+ 716 0067 0B       		.uleb128 0xb
+ 717 0068 3B       		.uleb128 0x3b
+ 718 0069 05       		.uleb128 0x5
+ 719 006a 01       		.uleb128 0x1
+ 720 006b 13       		.uleb128 0x13
+ 721 006c 00       		.byte	0
+ 722 006d 00       		.byte	0
+ 723 006e 09       		.uleb128 0x9
+ 724 006f 28       		.uleb128 0x28
+ 725 0070 00       		.byte	0
+ 726 0071 03       		.uleb128 0x3
+ 727 0072 0E       		.uleb128 0xe
+ 728 0073 1C       		.uleb128 0x1c
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccHAS57H.s 			page 16
+
+
+ 729 0074 0B       		.uleb128 0xb
+ 730 0075 00       		.byte	0
+ 731 0076 00       		.byte	0
+ 732 0077 0A       		.uleb128 0xa
+ 733 0078 0D       		.uleb128 0xd
+ 734 0079 00       		.byte	0
+ 735 007a 03       		.uleb128 0x3
+ 736 007b 08       		.uleb128 0x8
+ 737 007c 3A       		.uleb128 0x3a
+ 738 007d 0B       		.uleb128 0xb
+ 739 007e 3B       		.uleb128 0x3b
+ 740 007f 05       		.uleb128 0x5
+ 741 0080 49       		.uleb128 0x49
+ 742 0081 13       		.uleb128 0x13
+ 743 0082 38       		.uleb128 0x38
+ 744 0083 0B       		.uleb128 0xb
+ 745 0084 00       		.byte	0
+ 746 0085 00       		.byte	0
+ 747 0086 0B       		.uleb128 0xb
+ 748 0087 2E       		.uleb128 0x2e
+ 749 0088 01       		.byte	0x1
+ 750 0089 3F       		.uleb128 0x3f
+ 751 008a 19       		.uleb128 0x19
+ 752 008b 03       		.uleb128 0x3
+ 753 008c 0E       		.uleb128 0xe
+ 754 008d 3A       		.uleb128 0x3a
+ 755 008e 0B       		.uleb128 0xb
+ 756 008f 3B       		.uleb128 0x3b
+ 757 0090 0B       		.uleb128 0xb
+ 758 0091 27       		.uleb128 0x27
+ 759 0092 19       		.uleb128 0x19
+ 760 0093 49       		.uleb128 0x49
+ 761 0094 13       		.uleb128 0x13
+ 762 0095 11       		.uleb128 0x11
+ 763 0096 01       		.uleb128 0x1
+ 764 0097 12       		.uleb128 0x12
+ 765 0098 06       		.uleb128 0x6
+ 766 0099 40       		.uleb128 0x40
+ 767 009a 18       		.uleb128 0x18
+ 768 009b 9742     		.uleb128 0x2117
+ 769 009d 19       		.uleb128 0x19
+ 770 009e 01       		.uleb128 0x1
+ 771 009f 13       		.uleb128 0x13
+ 772 00a0 00       		.byte	0
+ 773 00a1 00       		.byte	0
+ 774 00a2 0C       		.uleb128 0xc
+ 775 00a3 05       		.uleb128 0x5
+ 776 00a4 00       		.byte	0
+ 777 00a5 03       		.uleb128 0x3
+ 778 00a6 08       		.uleb128 0x8
+ 779 00a7 3A       		.uleb128 0x3a
+ 780 00a8 0B       		.uleb128 0xb
+ 781 00a9 3B       		.uleb128 0x3b
+ 782 00aa 0B       		.uleb128 0xb
+ 783 00ab 49       		.uleb128 0x49
+ 784 00ac 13       		.uleb128 0x13
+ 785 00ad 02       		.uleb128 0x2
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccHAS57H.s 			page 17
+
+
+ 786 00ae 17       		.uleb128 0x17
+ 787 00af 00       		.byte	0
+ 788 00b0 00       		.byte	0
+ 789 00b1 0D       		.uleb128 0xd
+ 790 00b2 34       		.uleb128 0x34
+ 791 00b3 00       		.byte	0
+ 792 00b4 03       		.uleb128 0x3
+ 793 00b5 0E       		.uleb128 0xe
+ 794 00b6 3A       		.uleb128 0x3a
+ 795 00b7 0B       		.uleb128 0xb
+ 796 00b8 3B       		.uleb128 0x3b
+ 797 00b9 0B       		.uleb128 0xb
+ 798 00ba 49       		.uleb128 0x49
+ 799 00bb 13       		.uleb128 0x13
+ 800 00bc 02       		.uleb128 0x2
+ 801 00bd 17       		.uleb128 0x17
+ 802 00be 00       		.byte	0
+ 803 00bf 00       		.byte	0
+ 804 00c0 0E       		.uleb128 0xe
+ 805 00c1 34       		.uleb128 0x34
+ 806 00c2 00       		.byte	0
+ 807 00c3 03       		.uleb128 0x3
+ 808 00c4 0E       		.uleb128 0xe
+ 809 00c5 3A       		.uleb128 0x3a
+ 810 00c6 0B       		.uleb128 0xb
+ 811 00c7 3B       		.uleb128 0x3b
+ 812 00c8 0B       		.uleb128 0xb
+ 813 00c9 49       		.uleb128 0x49
+ 814 00ca 13       		.uleb128 0x13
+ 815 00cb 3F       		.uleb128 0x3f
+ 816 00cc 19       		.uleb128 0x19
+ 817 00cd 3C       		.uleb128 0x3c
+ 818 00ce 19       		.uleb128 0x19
+ 819 00cf 00       		.byte	0
+ 820 00d0 00       		.byte	0
+ 821 00d1 0F       		.uleb128 0xf
+ 822 00d2 01       		.uleb128 0x1
+ 823 00d3 01       		.byte	0x1
+ 824 00d4 49       		.uleb128 0x49
+ 825 00d5 13       		.uleb128 0x13
+ 826 00d6 01       		.uleb128 0x1
+ 827 00d7 13       		.uleb128 0x13
+ 828 00d8 00       		.byte	0
+ 829 00d9 00       		.byte	0
+ 830 00da 10       		.uleb128 0x10
+ 831 00db 21       		.uleb128 0x21
+ 832 00dc 00       		.byte	0
+ 833 00dd 49       		.uleb128 0x49
+ 834 00de 13       		.uleb128 0x13
+ 835 00df 2F       		.uleb128 0x2f
+ 836 00e0 0B       		.uleb128 0xb
+ 837 00e1 00       		.byte	0
+ 838 00e2 00       		.byte	0
+ 839 00e3 11       		.uleb128 0x11
+ 840 00e4 26       		.uleb128 0x26
+ 841 00e5 00       		.byte	0
+ 842 00e6 49       		.uleb128 0x49
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccHAS57H.s 			page 18
+
+
+ 843 00e7 13       		.uleb128 0x13
+ 844 00e8 00       		.byte	0
+ 845 00e9 00       		.byte	0
+ 846 00ea 12       		.uleb128 0x12
+ 847 00eb 34       		.uleb128 0x34
+ 848 00ec 00       		.byte	0
+ 849 00ed 03       		.uleb128 0x3
+ 850 00ee 0E       		.uleb128 0xe
+ 851 00ef 3A       		.uleb128 0x3a
+ 852 00f0 0B       		.uleb128 0xb
+ 853 00f1 3B       		.uleb128 0x3b
+ 854 00f2 05       		.uleb128 0x5
+ 855 00f3 49       		.uleb128 0x49
+ 856 00f4 13       		.uleb128 0x13
+ 857 00f5 3F       		.uleb128 0x3f
+ 858 00f6 19       		.uleb128 0x19
+ 859 00f7 3C       		.uleb128 0x3c
+ 860 00f8 19       		.uleb128 0x19
+ 861 00f9 00       		.byte	0
+ 862 00fa 00       		.byte	0
+ 863 00fb 00       		.byte	0
+ 864              		.section	.debug_loc,"",%progbits
+ 865              	.Ldebug_loc0:
+ 866              	.LLST0:
+ 867 0000 00000000 		.4byte	.LVL0
+ 868 0004 3E000000 		.4byte	.LVL7
+ 869 0008 0100     		.2byte	0x1
+ 870 000a 50       		.byte	0x50
+ 871 000b 3E000000 		.4byte	.LVL7
+ 872 000f 58000000 		.4byte	.LFE70
+ 873 0013 0400     		.2byte	0x4
+ 874 0015 F3       		.byte	0xf3
+ 875 0016 01       		.uleb128 0x1
+ 876 0017 50       		.byte	0x50
+ 877 0018 9F       		.byte	0x9f
+ 878 0019 00000000 		.4byte	0
+ 879 001d 00000000 		.4byte	0
+ 880              	.LLST1:
+ 881 0021 08000000 		.4byte	.LVL2
+ 882 0025 22000000 		.4byte	.LVL4
+ 883 0029 0100     		.2byte	0x1
+ 884 002b 53       		.byte	0x53
+ 885 002c 22000000 		.4byte	.LVL4
+ 886 0030 26000000 		.4byte	.LVL5
+ 887 0034 0100     		.2byte	0x1
+ 888 0036 52       		.byte	0x52
+ 889 0037 26000000 		.4byte	.LVL5
+ 890 003b 34000000 		.4byte	.LVL6
+ 891 003f 0100     		.2byte	0x1
+ 892 0041 53       		.byte	0x53
+ 893 0042 00000000 		.4byte	0
+ 894 0046 00000000 		.4byte	0
+ 895              	.LLST2:
+ 896 004a 02000000 		.4byte	.LVL1
+ 897 004e 0E000000 		.4byte	.LVL3
+ 898 0052 0300     		.2byte	0x3
+ 899 0054 09       		.byte	0x9
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccHAS57H.s 			page 19
+
+
+ 900 0055 FF       		.byte	0xff
+ 901 0056 9F       		.byte	0x9f
+ 902 0057 0E000000 		.4byte	.LVL3
+ 903 005b 26000000 		.4byte	.LVL5
+ 904 005f 0100     		.2byte	0x1
+ 905 0061 53       		.byte	0x53
+ 906 0062 26000000 		.4byte	.LVL5
+ 907 0066 58000000 		.4byte	.LFE70
+ 908 006a 0100     		.2byte	0x1
+ 909 006c 51       		.byte	0x51
+ 910 006d 00000000 		.4byte	0
+ 911 0071 00000000 		.4byte	0
+ 912              		.section	.debug_aranges,"",%progbits
+ 913 0000 1C000000 		.4byte	0x1c
+ 914 0004 0200     		.2byte	0x2
+ 915 0006 00000000 		.4byte	.Ldebug_info0
+ 916 000a 04       		.byte	0x4
+ 917 000b 00       		.byte	0
+ 918 000c 0000     		.2byte	0
+ 919 000e 0000     		.2byte	0
+ 920 0010 00000000 		.4byte	.LFB70
+ 921 0014 58000000 		.4byte	.LFE70-.LFB70
+ 922 0018 00000000 		.4byte	0
+ 923 001c 00000000 		.4byte	0
+ 924              		.section	.debug_ranges,"",%progbits
+ 925              	.Ldebug_ranges0:
+ 926 0000 00000000 		.4byte	.LFB70
+ 927 0004 58000000 		.4byte	.LFE70
+ 928 0008 00000000 		.4byte	0
+ 929 000c 00000000 		.4byte	0
+ 930              		.section	.debug_line,"",%progbits
+ 931              	.Ldebug_line0:
+ 932 0000 60010000 		.section	.debug_str,"MS",%progbits,1
+ 932      02003401 
+ 932      00000201 
+ 932      FB0E0D00 
+ 932      01010101 
+ 933              	.LASF34:
+ 934 0000 6B696E64 		.ascii	"kind\000"
+ 934      00
+ 935              	.LASF53:
+ 936 0005 45455F72 		.ascii	"EE_rq_bitmask\000"
+ 936      715F6269 
+ 936      746D6173 
+ 936      6B00
+ 937              	.LASF14:
+ 938 0013 45455F55 		.ascii	"EE_UREG\000"
+ 938      52454700 
+ 939              	.LASF23:
+ 940 001b 7469636B 		.ascii	"ticksperbase\000"
+ 940      73706572 
+ 940      62617365 
+ 940      00
+ 941              	.LASF54:
+ 942 0028 45455F74 		.ascii	"EE_th_event_active\000"
+ 942      685F6576 
+ 942      656E745F 
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccHAS57H.s 			page 20
+
+
+ 942      61637469 
+ 942      766500
+ 943              	.LASF55:
+ 944 003b 45455F74 		.ascii	"EE_th_waswaiting\000"
+ 944      685F7761 
+ 944      73776169 
+ 944      74696E67 
+ 944      00
+ 945              	.LASF2:
+ 946 004c 73686F72 		.ascii	"short int\000"
+ 946      7420696E 
+ 946      7400
+ 947              	.LASF45:
+ 948 0056 73697A65 		.ascii	"sizetype\000"
+ 948      74797065 
+ 948      00
+ 949              	.LASF43:
+ 950 005f 45455F49 		.ascii	"EE_IRQ_nesting_level\000"
+ 950      52515F6E 
+ 950      65737469 
+ 950      6E675F6C 
+ 950      6576656C 
+ 951              	.LASF38:
+ 952 0074 64656C74 		.ascii	"delta\000"
+ 952      6100
+ 953              	.LASF33:
+ 954 007a 73706563 		.ascii	"spec_id\000"
+ 954      5F696400 
+ 955              	.LASF15:
+ 956 0082 45455F46 		.ascii	"EE_FREG\000"
+ 956      52454700 
+ 957              	.LASF32:
+ 958 008a 436F756E 		.ascii	"CounterObjectKindType\000"
+ 958      7465724F 
+ 958      626A6563 
+ 958      744B696E 
+ 958      64547970 
+ 959              	.LASF13:
+ 960 00a0 45455F55 		.ascii	"EE_UINT32\000"
+ 960      494E5433 
+ 960      3200
+ 961              	.LASF46:
+ 962 00aa 45455F74 		.ascii	"EE_th_ready_prio\000"
+ 962      685F7265 
+ 962      6164795F 
+ 962      7072696F 
+ 962      00
+ 963              	.LASF17:
+ 964 00bb 45455F54 		.ascii	"EE_TID\000"
+ 964      494400
+ 965              	.LASF24:
+ 966 00c2 6D696E63 		.ascii	"mincycle\000"
+ 966      79636C65 
+ 966      00
+ 967              	.LASF26:
+ 968 00cb 76616C75 		.ascii	"value\000"
+ 968      6500
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccHAS57H.s 			page 21
+
+
+ 969              	.LASF61:
+ 970 00d1 45455F6F 		.ascii	"EE_oo_counter_object_ROM\000"
+ 970      6F5F636F 
+ 970      756E7465 
+ 970      725F6F62 
+ 970      6A656374 
+ 971              	.LASF70:
+ 972 00ea 433A5C55 		.ascii	"C:\\Users\\mau_g\\Desktop\\Master\\2_SEMESTER\\EAA_"
+ 972      73657273 
+ 972      5C6D6175 
+ 972      5F675C44 
+ 972      65736B74 
+ 973 0117 4C61625C 		.ascii	"Lab\\Lab2\\Workspace_Lab2\\EAA_Lab2.cydsn\000"
+ 973      4C616232 
+ 973      5C576F72 
+ 973      6B737061 
+ 973      63655F4C 
+ 974              	.LASF69:
+ 975 013e 47656E65 		.ascii	"Generated_Source\\PSoC5\\ErikaOS_1_ee_ulockallres.c"
+ 975      72617465 
+ 975      645F536F 
+ 975      75726365 
+ 975      5C50536F 
+ 976 016f 00       		.ascii	"\000"
+ 977              	.LASF28:
+ 978 0170 45455F6F 		.ascii	"EE_oo_counter_RAM_type\000"
+ 978      6F5F636F 
+ 978      756E7465 
+ 978      725F5241 
+ 978      4D5F7479 
+ 979              	.LASF65:
+ 980 0187 45455F6F 		.ascii	"EE_oo_IRQ_suspend_status\000"
+ 980      6F5F4952 
+ 980      515F7375 
+ 980      7370656E 
+ 980      645F7374 
+ 981              	.LASF6:
+ 982 01a0 6C6F6E67 		.ascii	"long long int\000"
+ 982      206C6F6E 
+ 982      6720696E 
+ 982      7400
+ 983              	.LASF10:
+ 984 01ae 45455F49 		.ascii	"EE_INT8\000"
+ 984      4E543800 
+ 985              	.LASF18:
+ 986 01b6 45455F54 		.ascii	"EE_TYPE_RQ_MASK\000"
+ 986      5950455F 
+ 986      52515F4D 
+ 986      41534B00 
+ 987              	.LASF30:
+ 988 01c6 45455F53 		.ascii	"EE_SCHEDULETABLE\000"
+ 988      43484544 
+ 988      554C4554 
+ 988      41424C45 
+ 988      00
+ 989              	.LASF4:
+ 990 01d7 6C6F6E67 		.ascii	"long int\000"
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccHAS57H.s 			page 22
+
+
+ 990      20696E74 
+ 990      00
+ 991              	.LASF22:
+ 992 01e0 6D617861 		.ascii	"maxallowedvalue\000"
+ 992      6C6C6F77 
+ 992      65647661 
+ 992      6C756500 
+ 993              	.LASF40:
+ 994 01f0 45455F6F 		.ascii	"EE_oo_counter_object_RAM_type\000"
+ 994      6F5F636F 
+ 994      756E7465 
+ 994      725F6F62 
+ 994      6A656374 
+ 995              	.LASF57:
+ 996 020e 45455F72 		.ascii	"EE_resource_locked\000"
+ 996      65736F75 
+ 996      7263655F 
+ 996      6C6F636B 
+ 996      656400
+ 997              	.LASF59:
+ 998 0221 45455F72 		.ascii	"EE_resource_stack\000"
+ 998      65736F75 
+ 998      7263655F 
+ 998      73746163 
+ 998      6B00
+ 999              	.LASF25:
+ 1000 0233 45455F6F 		.ascii	"EE_oo_counter_ROM_type\000"
+ 1000      6F5F636F 
+ 1000      756E7465 
+ 1000      725F524F 
+ 1000      4D5F7479 
+ 1001              	.LASF19:
+ 1002 024a 5469636B 		.ascii	"TickType\000"
+ 1002      54797065 
+ 1002      00
+ 1003              	.LASF52:
+ 1004 0253 45455F73 		.ascii	"EE_sys_ceiling\000"
+ 1004      79735F63 
+ 1004      65696C69 
+ 1004      6E6700
+ 1005              	.LASF20:
+ 1006 0262 436F756E 		.ascii	"CounterObjectType\000"
+ 1006      7465724F 
+ 1006      626A6563 
+ 1006      74547970 
+ 1006      6500
+ 1007              	.LASF9:
+ 1008 0274 6C6F6E67 		.ascii	"long double\000"
+ 1008      20646F75 
+ 1008      626C6500 
+ 1009              	.LASF60:
+ 1010 0280 45455F63 		.ascii	"EE_counter_ROM\000"
+ 1010      6F756E74 
+ 1010      65725F52 
+ 1010      4F4D00
+ 1011              	.LASF42:
+ 1012 028f 52657349 		.ascii	"ResID\000"
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccHAS57H.s 			page 23
+
+
+ 1012      4400
+ 1013              	.LASF1:
+ 1014 0295 756E7369 		.ascii	"unsigned char\000"
+ 1014      676E6564 
+ 1014      20636861 
+ 1014      7200
+ 1015              	.LASF63:
+ 1016 02a3 45455F6F 		.ascii	"EE_oo_counter_object_RAM\000"
+ 1016      6F5F636F 
+ 1016      756E7465 
+ 1016      725F6F62 
+ 1016      6A656374 
+ 1017              	.LASF0:
+ 1018 02bc 7369676E 		.ascii	"signed char\000"
+ 1018      65642063 
+ 1018      68617200 
+ 1019              	.LASF7:
+ 1020 02c8 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1020      206C6F6E 
+ 1020      6720756E 
+ 1020      7369676E 
+ 1020      65642069 
+ 1021              	.LASF8:
+ 1022 02df 756E7369 		.ascii	"unsigned int\000"
+ 1022      676E6564 
+ 1022      20696E74 
+ 1022      00
+ 1023              	.LASF31:
+ 1024 02ec 45455F6F 		.ascii	"EE_oo_counter_object_kind_type\000"
+ 1024      6F5F636F 
+ 1024      756E7465 
+ 1024      725F6F62 
+ 1024      6A656374 
+ 1025              	.LASF50:
+ 1026 030b 45455F74 		.ascii	"EE_th_rnact\000"
+ 1026      685F726E 
+ 1026      61637400 
+ 1027              	.LASF44:
+ 1028 0317 45455F73 		.ascii	"EE_std_endcycle_next_tid\000"
+ 1028      74645F65 
+ 1028      6E646379 
+ 1028      636C655F 
+ 1028      6E657874 
+ 1029              	.LASF12:
+ 1030 0330 45455F49 		.ascii	"EE_INT32\000"
+ 1030      4E543332 
+ 1030      00
+ 1031              	.LASF71:
+ 1032 0339 45455F6F 		.ascii	"EE_oo_release_all_resources\000"
+ 1032      6F5F7265 
+ 1032      6C656173 
+ 1032      655F616C 
+ 1032      6C5F7265 
+ 1033              	.LASF3:
+ 1034 0355 73686F72 		.ascii	"short unsigned int\000"
+ 1034      7420756E 
+ 1034      7369676E 
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccHAS57H.s 			page 24
+
+
+ 1034      65642069 
+ 1034      6E7400
+ 1035              	.LASF35:
+ 1036 0368 45455F6F 		.ascii	"EE_oo_counter_object_ROM_type\000"
+ 1036      6F5F636F 
+ 1036      756E7465 
+ 1036      725F6F62 
+ 1036      6A656374 
+ 1037              	.LASF41:
+ 1038 0386 63757252 		.ascii	"curRes\000"
+ 1038      657300
+ 1039              	.LASF56:
+ 1040 038d 45455F72 		.ascii	"EE_resource_oldceiling\000"
+ 1040      65736F75 
+ 1040      7263655F 
+ 1040      6F6C6463 
+ 1040      65696C69 
+ 1041              	.LASF11:
+ 1042 03a4 45455F55 		.ascii	"EE_UINT16\000"
+ 1042      494E5431 
+ 1042      3600
+ 1043              	.LASF62:
+ 1044 03ae 45455F63 		.ascii	"EE_counter_RAM\000"
+ 1044      6F756E74 
+ 1044      65725F52 
+ 1044      414D00
+ 1045              	.LASF66:
+ 1046 03bd 45455F41 		.ascii	"EE_ApplicationMode\000"
+ 1046      70706C69 
+ 1046      63617469 
+ 1046      6F6E4D6F 
+ 1046      646500
+ 1047              	.LASF5:
+ 1048 03d0 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1048      20756E73 
+ 1048      69676E65 
+ 1048      6420696E 
+ 1048      7400
+ 1049              	.LASF16:
+ 1050 03e2 45455F54 		.ascii	"EE_TYPEBOOL\000"
+ 1050      59504542 
+ 1050      4F4F4C00 
+ 1051              	.LASF58:
+ 1052 03ee 45455F74 		.ascii	"EE_th_resource_last\000"
+ 1052      685F7265 
+ 1052      736F7572 
+ 1052      63655F6C 
+ 1052      61737400 
+ 1053              	.LASF51:
+ 1054 0402 45455F73 		.ascii	"EE_stkfirst\000"
+ 1054      746B6669 
+ 1054      72737400 
+ 1055              	.LASF29:
+ 1056 040e 45455F41 		.ascii	"EE_ALARM\000"
+ 1056      4C41524D 
+ 1056      00
+ 1057              	.LASF36:
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccHAS57H.s 			page 25
+
+
+ 1058 0417 75736564 		.ascii	"used\000"
+ 1058      00
+ 1059              	.LASF21:
+ 1060 041c 436F756E 		.ascii	"CounterType\000"
+ 1060      74657254 
+ 1060      79706500 
+ 1061              	.LASF48:
+ 1062 0428 45455F74 		.ascii	"EE_th_status\000"
+ 1062      685F7374 
+ 1062      61747573 
+ 1062      00
+ 1063              	.LASF47:
+ 1064 0435 45455F74 		.ascii	"EE_th_dispatch_prio\000"
+ 1064      685F6469 
+ 1064      73706174 
+ 1064      63685F70 
+ 1064      72696F00 
+ 1065              	.LASF49:
+ 1066 0449 45455F74 		.ascii	"EE_th_next\000"
+ 1066      685F6E65 
+ 1066      787400
+ 1067              	.LASF68:
+ 1068 0454 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1068      43313120 
+ 1068      352E342E 
+ 1068      31203230 
+ 1068      31363036 
+ 1069 0487 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 1069      20726576 
+ 1069      6973696F 
+ 1069      6E203233 
+ 1069      37373135 
+ 1070 04ba 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1070      66756E63 
+ 1070      74696F6E 
+ 1070      2D736563 
+ 1070      74696F6E 
+ 1071              	.LASF37:
+ 1072 04e2 636E7463 		.ascii	"cntcycle\000"
+ 1072      79636C65 
+ 1072      00
+ 1073              	.LASF64:
+ 1074 04eb 45455F6F 		.ascii	"EE_oo_IRQ_disable_count\000"
+ 1074      6F5F4952 
+ 1074      515F6469 
+ 1074      7361626C 
+ 1074      655F636F 
+ 1075              	.LASF39:
+ 1076 0503 6E657874 		.ascii	"next\000"
+ 1076      00
+ 1077              	.LASF67:
+ 1078 0508 45455F72 		.ascii	"EE_rq_lookup\000"
+ 1078      715F6C6F 
+ 1078      6F6B7570 
+ 1078      00
+ 1079              	.LASF27:
+ 1080 0515 66697273 		.ascii	"first\000"
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccHAS57H.s 			page 26
+
+
+ 1080      7400
+ 1081              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
