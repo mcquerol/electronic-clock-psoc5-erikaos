@@ -1,0 +1,2195 @@
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccnzKyVH.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"seven.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.SEVEN_Set,"ax",%progbits
+  20              		.align	2
+  21              		.global	SEVEN_Set
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	SEVEN_Set, %function
+  25              	SEVEN_Set:
+  26              	.LFB111:
+  27              		.file 1 "Source\\bsw\\seven.c"
+   1:Source\bsw/seven.c **** /**
+   2:Source\bsw/seven.c **** * \file seven.c
+   3:Source\bsw/seven.c **** * \author P. Fromm
+   4:Source\bsw/seven.c **** * \date 28.8.17
+   5:Source\bsw/seven.c **** *
+   6:Source\bsw/seven.c **** * \brief Driver for 7 segment displays
+   7:Source\bsw/seven.c **** *
+   8:Source\bsw/seven.c **** * \copyright Copyright ©2016
+   9:Source\bsw/seven.c **** * Department of electrical engineering and information technology, Hochschule Darmstadt - Universit
+  10:Source\bsw/seven.c **** * Permission to use, copy, modify, and distribute this software and its documentation for education
+  11:Source\bsw/seven.c **** * (unless permitted by h_da) and official h_da projects, is hereby granted for enrolled students of
+  12:Source\bsw/seven.c **** * this paragraph and the following paragraph appear in all copies, modifications, and distributions
+  13:Source\bsw/seven.c **** * Contact Prof.Dr.-Ing. Peter Fromm, peter.fromm@h-da.de, Birkenweg 8 64295 Darmstadt - GERMANY for
+  14:Source\bsw/seven.c **** *
+  15:Source\bsw/seven.c **** * \warning This software is a PROTOTYPE version and is not designed or intended for use in producti
+  16:Source\bsw/seven.c **** * The user represents and warrants that it will NOT use or redistribute the Software for such purpo
+  17:Source\bsw/seven.c **** * This prototype is for research purposes only. This software is provided "AS IS," without a warran
+  18:Source\bsw/seven.c **** */
+  19:Source\bsw/seven.c **** 
+  20:Source\bsw/seven.c **** /*****************************************************************************/
+  21:Source\bsw/seven.c **** /* Include files                                                             */
+  22:Source\bsw/seven.c **** /*****************************************************************************/
+  23:Source\bsw/seven.c **** #include "project.h"
+  24:Source\bsw/seven.c **** #include "seven.h"
+  25:Source\bsw/seven.c **** 
+  26:Source\bsw/seven.c **** 
+  27:Source\bsw/seven.c **** 
+  28:Source\bsw/seven.c **** 
+  29:Source\bsw/seven.c **** /*****************************************************************************/
+  30:Source\bsw/seven.c **** /* Local pre-processor symbols/macros ('#define')                            */
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccnzKyVH.s 			page 2
+
+
+  31:Source\bsw/seven.c **** /*****************************************************************************/
+  32:Source\bsw/seven.c **** 
+  33:Source\bsw/seven.c **** #define SEVEN__A  0b10000000
+  34:Source\bsw/seven.c **** #define SEVEN__B  0b01000000
+  35:Source\bsw/seven.c **** #define SEVEN__C  0b00100000
+  36:Source\bsw/seven.c **** #define SEVEN__D  0b00010000
+  37:Source\bsw/seven.c **** #define SEVEN__E  0b00001000
+  38:Source\bsw/seven.c **** #define SEVEN__F  0b00000100
+  39:Source\bsw/seven.c **** #define SEVEN__G  0b00000010
+  40:Source\bsw/seven.c **** #define SEVEN__DP 0b00000001
+  41:Source\bsw/seven.c **** 
+  42:Source\bsw/seven.c **** 
+  43:Source\bsw/seven.c **** /*****************************************************************************/
+  44:Source\bsw/seven.c **** /* Global variable definitions (declared in header file with 'extern')       */
+  45:Source\bsw/seven.c **** /*****************************************************************************/
+  46:Source\bsw/seven.c **** 
+  47:Source\bsw/seven.c **** /*****************************************************************************/
+  48:Source\bsw/seven.c **** /* Local type definitions ('typedef')                                        */
+  49:Source\bsw/seven.c **** /*****************************************************************************/
+  50:Source\bsw/seven.c **** 
+  51:Source\bsw/seven.c **** /*****************************************************************************/
+  52:Source\bsw/seven.c **** /* Local variable definitions ('static')                                     */
+  53:Source\bsw/seven.c **** /*****************************************************************************/
+  54:Source\bsw/seven.c **** 
+  55:Source\bsw/seven.c **** //    ABCDEFG
+  56:Source\bsw/seven.c **** const static uint8_t SEVEN__BitPattern[] = 
+  57:Source\bsw/seven.c **** {
+  58:Source\bsw/seven.c ****     0b11111100,     //0
+  59:Source\bsw/seven.c ****     0b01100000,     //1
+  60:Source\bsw/seven.c ****     0b11011010,     //2
+  61:Source\bsw/seven.c ****     0b11110010,     //3
+  62:Source\bsw/seven.c ****     0b01100110,     //4
+  63:Source\bsw/seven.c ****     0b10110110,     //5
+  64:Source\bsw/seven.c ****     0b10111110,     //6
+  65:Source\bsw/seven.c ****     0b11100000,     //7
+  66:Source\bsw/seven.c ****     0b11111110,     //8
+  67:Source\bsw/seven.c ****     0b11110110,     //9
+  68:Source\bsw/seven.c ****     0b11101110,     //a
+  69:Source\bsw/seven.c ****     0b00111110,     //b
+  70:Source\bsw/seven.c ****     0b10011100,     //c
+  71:Source\bsw/seven.c ****     0b01111010,     //d
+  72:Source\bsw/seven.c ****     0b10011110,     //e
+  73:Source\bsw/seven.c ****     0b10001110,     //f
+  74:Source\bsw/seven.c ****     0b00000001      //decimal point
+  75:Source\bsw/seven.c **** };
+  76:Source\bsw/seven.c ****     
+  77:Source\bsw/seven.c **** //We need to store the last latch value per display
+  78:Source\bsw/seven.c **** //-1 means empty
+  79:Source\bsw/seven.c **** static sint8_t SEVEN__latch_value[2] = {-1,-1};
+  80:Source\bsw/seven.c **** static uint8_t SEVEN__latch_pattern[2] = {0,0};
+  81:Source\bsw/seven.c **** 
+  82:Source\bsw/seven.c **** /*****************************************************************************/
+  83:Source\bsw/seven.c **** /* Local function prototypes ('static')                                      */
+  84:Source\bsw/seven.c **** /*****************************************************************************/
+  85:Source\bsw/seven.c **** 
+  86:Source\bsw/seven.c **** 
+  87:Source\bsw/seven.c **** /*****************************************************************************/
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccnzKyVH.s 			page 3
+
+
+  88:Source\bsw/seven.c **** /* Function implementation - global ('extern') and local ('static')          */
+  89:Source\bsw/seven.c **** /*****************************************************************************/
+  90:Source\bsw/seven.c **** 
+  91:Source\bsw/seven.c **** 
+  92:Source\bsw/seven.c **** 
+  93:Source\bsw/seven.c **** /**
+  94:Source\bsw/seven.c ****  * Initilasation of the seven segment display
+  95:Source\bsw/seven.c ****  * @return RC_SUCCESS if function was executed correctly, other value in case of error
+  96:Source\bsw/seven.c ****  */
+  97:Source\bsw/seven.c **** RC_t SEVEN_Init()
+  98:Source\bsw/seven.c **** {
+  99:Source\bsw/seven.c ****     
+ 100:Source\bsw/seven.c ****     SEVEN_Clear(SEVEN_0);
+ 101:Source\bsw/seven.c ****     SEVEN_Clear(SEVEN_1);
+ 102:Source\bsw/seven.c ****     
+ 103:Source\bsw/seven.c ****     return RC_SUCCESS;
+ 104:Source\bsw/seven.c **** }
+ 105:Source\bsw/seven.c **** 
+ 106:Source\bsw/seven.c **** 
+ 107:Source\bsw/seven.c **** /**
+ 108:Source\bsw/seven.c ****  * Sets value for one display
+ 109:Source\bsw/seven.c ****  * @param SEVEN_id_t sevenId - identifier for the segment to be set
+ 110:Source\bsw/seven.c ****  * @param uint8_t value - value to be set, valid range 0...15
+ 111:Source\bsw/seven.c ****  * @return RC_SUCCESS if function was executed correctly, other value in case of error
+ 112:Source\bsw/seven.c ****  */
+ 113:Source\bsw/seven.c **** RC_t SEVEN_Set(SEVEN_id_t sevenId, uint8_t value)
+ 114:Source\bsw/seven.c **** {
+  28              		.loc 1 114 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              	.LVL0:
+ 115:Source\bsw/seven.c ****     if (value > 0x0F)
+  33              		.loc 1 115 0
+  34 0000 0F29     		cmp	r1, #15
+  35 0002 0ED8     		bhi	.L3
+ 114:Source\bsw/seven.c ****     if (value > 0x0F)
+  36              		.loc 1 114 0
+  37 0004 38B5     		push	{r3, r4, r5, lr}
+  38              		.cfi_def_cfa_offset 16
+  39              		.cfi_offset 3, -16
+  40              		.cfi_offset 4, -12
+  41              		.cfi_offset 5, -8
+  42              		.cfi_offset 14, -4
+  43 0006 0C46     		mov	r4, r1
+  44 0008 0546     		mov	r5, r0
+ 116:Source\bsw/seven.c ****     {
+ 117:Source\bsw/seven.c ****         return RC_ERROR_BAD_PARAM;
+ 118:Source\bsw/seven.c ****     }
+ 119:Source\bsw/seven.c ****     
+ 120:Source\bsw/seven.c ****     //Set the selection bit for the display
+ 121:Source\bsw/seven.c ****     SEVEN_SELECT_Write((uint8_t)sevenId);
+  45              		.loc 1 121 0
+  46 000a FFF7FEFF 		bl	SEVEN_SELECT_Write
+  47              	.LVL1:
+ 122:Source\bsw/seven.c ****     
+ 123:Source\bsw/seven.c ****     //Set the bitpattern
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccnzKyVH.s 			page 4
+
+
+ 124:Source\bsw/seven.c ****     //As we do not have a single port, we have to do it bit by bit
+ 125:Source\bsw/seven.c ****     
+ 126:Source\bsw/seven.c ****     uint8_t pattern = SEVEN__BitPattern[value];
+  48              		.loc 1 126 0
+  49 000e 064B     		ldr	r3, .L6
+  50 0010 185D     		ldrb	r0, [r3, r4]	@ zero_extendqisi2
+  51              	.LVL2:
+ 127:Source\bsw/seven.c ****     
+ 128:Source\bsw/seven.c ****     //Store the current pattern in the software latch (needed for the DP function)
+ 129:Source\bsw/seven.c ****     SEVEN__latch_value[(uint8_t)sevenId] = value;
+  52              		.loc 1 129 0
+  53 0012 064B     		ldr	r3, .L6+4
+  54 0014 5C55     		strb	r4, [r3, r5]
+ 130:Source\bsw/seven.c ****     SEVEN__latch_pattern[(uint8_t)sevenId] = pattern;
+  55              		.loc 1 130 0
+  56 0016 064B     		ldr	r3, .L6+8
+  57 0018 5855     		strb	r0, [r3, r5]
+ 131:Source\bsw/seven.c ****     
+ 132:Source\bsw/seven.c ****     SEVEN_reg_Write(pattern);
+  58              		.loc 1 132 0
+  59 001a FFF7FEFF 		bl	SEVEN_reg_Write
+  60              	.LVL3:
+ 133:Source\bsw/seven.c ****     return RC_SUCCESS;
+  61              		.loc 1 133 0
+  62 001e 0020     		movs	r0, #0
+  63 0020 38BD     		pop	{r3, r4, r5, pc}
+  64              	.LVL4:
+  65              	.L3:
+  66              		.cfi_def_cfa_offset 0
+  67              		.cfi_restore 3
+  68              		.cfi_restore 4
+  69              		.cfi_restore 5
+  70              		.cfi_restore 14
+ 117:Source\bsw/seven.c ****     }
+  71              		.loc 1 117 0
+  72 0022 6FF01300 		mvn	r0, #19
+  73              	.LVL5:
+  74 0026 7047     		bx	lr
+  75              	.L7:
+  76              		.align	2
+  77              	.L6:
+  78 0028 00000000 		.word	.LANCHOR0
+  79 002c 00000000 		.word	.LANCHOR1
+  80 0030 00000000 		.word	.LANCHOR2
+  81              		.cfi_endproc
+  82              	.LFE111:
+  83              		.size	SEVEN_Set, .-SEVEN_Set
+  84              		.section	.text.SEVEN_Get,"ax",%progbits
+  85              		.align	2
+  86              		.global	SEVEN_Get
+  87              		.thumb
+  88              		.thumb_func
+  89              		.type	SEVEN_Get, %function
+  90              	SEVEN_Get:
+  91              	.LFB112:
+ 134:Source\bsw/seven.c ****     
+ 135:Source\bsw/seven.c **** }
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccnzKyVH.s 			page 5
+
+
+ 136:Source\bsw/seven.c **** 
+ 137:Source\bsw/seven.c **** /**
+ 138:Source\bsw/seven.c ****  * Get value for one display
+ 139:Source\bsw/seven.c ****  * @param SEVEN_id_t sevenId - identifier for the segment to be set
+ 140:Source\bsw/seven.c ****  * @param uint8_t value - current value, valid range 0...15
+ 141:Source\bsw/seven.c ****  * @return RC_SUCCESS if function was executed correctly, other value in case of error
+ 142:Source\bsw/seven.c ****  */
+ 143:Source\bsw/seven.c **** RC_t SEVEN_Get(SEVEN_id_t sevenId, sint8_t* value)
+ 144:Source\bsw/seven.c **** {
+  92              		.loc 1 144 0
+  93              		.cfi_startproc
+  94              		@ args = 0, pretend = 0, frame = 0
+  95              		@ frame_needed = 0, uses_anonymous_args = 0
+  96              		@ link register save eliminated.
+  97              	.LVL6:
+ 145:Source\bsw/seven.c ****     *value = SEVEN__latch_value[(uint8_t)sevenId];
+  98              		.loc 1 145 0
+  99 0000 024B     		ldr	r3, .L9
+ 100 0002 1B56     		ldrsb	r3, [r3, r0]
+ 101 0004 0B70     		strb	r3, [r1]
+ 146:Source\bsw/seven.c ****     return RC_SUCCESS;
+ 147:Source\bsw/seven.c **** }
+ 102              		.loc 1 147 0
+ 103 0006 0020     		movs	r0, #0
+ 104              	.LVL7:
+ 105 0008 7047     		bx	lr
+ 106              	.L10:
+ 107 000a 00BF     		.align	2
+ 108              	.L9:
+ 109 000c 00000000 		.word	.LANCHOR1
+ 110              		.cfi_endproc
+ 111              	.LFE112:
+ 112              		.size	SEVEN_Get, .-SEVEN_Get
+ 113              		.section	.text.SEVEN_SetHex,"ax",%progbits
+ 114              		.align	2
+ 115              		.global	SEVEN_SetHex
+ 116              		.thumb
+ 117              		.thumb_func
+ 118              		.type	SEVEN_SetHex, %function
+ 119              	SEVEN_SetHex:
+ 120              	.LFB113:
+ 148:Source\bsw/seven.c **** 
+ 149:Source\bsw/seven.c **** 
+ 150:Source\bsw/seven.c **** /**
+ 151:Source\bsw/seven.c ****  * Sets both displays
+ 152:Source\bsw/seven.c ****  * @param uint8_t value - value to be set, valid range 0...255
+ 153:Source\bsw/seven.c ****  * @return RC_SUCCESS if function was executed correctly, other value in case of error
+ 154:Source\bsw/seven.c ****  */
+ 155:Source\bsw/seven.c **** RC_t SEVEN_SetHex(uint8_t value)
+ 156:Source\bsw/seven.c **** {
+ 121              		.loc 1 156 0
+ 122              		.cfi_startproc
+ 123              		@ args = 0, pretend = 0, frame = 0
+ 124              		@ frame_needed = 0, uses_anonymous_args = 0
+ 125              	.LVL8:
+ 126 0000 10B5     		push	{r4, lr}
+ 127              		.cfi_def_cfa_offset 8
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccnzKyVH.s 			page 6
+
+
+ 128              		.cfi_offset 4, -8
+ 129              		.cfi_offset 14, -4
+ 130 0002 0446     		mov	r4, r0
+ 157:Source\bsw/seven.c ****     SEVEN_Set(SEVEN_1, value / 16);
+ 131              		.loc 1 157 0
+ 132 0004 0109     		lsrs	r1, r0, #4
+ 133 0006 0120     		movs	r0, #1
+ 134              	.LVL9:
+ 135 0008 FFF7FEFF 		bl	SEVEN_Set
+ 136              	.LVL10:
+ 158:Source\bsw/seven.c ****     SEVEN_Set(SEVEN_0, value % 16);
+ 137              		.loc 1 158 0
+ 138 000c 04F00F01 		and	r1, r4, #15
+ 139 0010 0020     		movs	r0, #0
+ 140 0012 FFF7FEFF 		bl	SEVEN_Set
+ 141              	.LVL11:
+ 159:Source\bsw/seven.c ****     
+ 160:Source\bsw/seven.c ****     return RC_SUCCESS;
+ 161:Source\bsw/seven.c **** }
+ 142              		.loc 1 161 0
+ 143 0016 0020     		movs	r0, #0
+ 144 0018 10BD     		pop	{r4, pc}
+ 145              		.cfi_endproc
+ 146              	.LFE113:
+ 147              		.size	SEVEN_SetHex, .-SEVEN_SetHex
+ 148 001a 00BF     		.section	.text.SEVEN_SetDP,"ax",%progbits
+ 149              		.align	2
+ 150              		.global	SEVEN_SetDP
+ 151              		.thumb
+ 152              		.thumb_func
+ 153              		.type	SEVEN_SetDP, %function
+ 154              	SEVEN_SetDP:
+ 155              	.LFB114:
+ 162:Source\bsw/seven.c **** 
+ 163:Source\bsw/seven.c **** /**
+ 164:Source\bsw/seven.c ****  * Sets decimal point for one display
+ 165:Source\bsw/seven.c ****  * @param SEVEN_id_t sevenId - identifier for the segment to be set
+ 166:Source\bsw/seven.c ****  * @param uint8_t value - value to be set, valid range 0 (OFF)...1(ON)
+ 167:Source\bsw/seven.c ****  * @return RC_SUCCESS if function was executed correctly, other value in case of error
+ 168:Source\bsw/seven.c ****  */
+ 169:Source\bsw/seven.c **** RC_t SEVEN_SetDP(SEVEN_id_t sevenId, uint8_t value)
+ 170:Source\bsw/seven.c **** {
+ 156              		.loc 1 170 0
+ 157              		.cfi_startproc
+ 158              		@ args = 0, pretend = 0, frame = 0
+ 159              		@ frame_needed = 0, uses_anonymous_args = 0
+ 160              	.LVL12:
+ 171:Source\bsw/seven.c ****     
+ 172:Source\bsw/seven.c ****     if (value > 1)
+ 161              		.loc 1 172 0
+ 162 0000 0129     		cmp	r1, #1
+ 163 0002 14D8     		bhi	.L16
+ 170:Source\bsw/seven.c ****     
+ 164              		.loc 1 170 0
+ 165 0004 38B5     		push	{r3, r4, r5, lr}
+ 166              		.cfi_def_cfa_offset 16
+ 167              		.cfi_offset 3, -16
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccnzKyVH.s 			page 7
+
+
+ 168              		.cfi_offset 4, -12
+ 169              		.cfi_offset 5, -8
+ 170              		.cfi_offset 14, -4
+ 171              	.LVL13:
+ 173:Source\bsw/seven.c ****     {
+ 174:Source\bsw/seven.c ****         return RC_ERROR_BAD_PARAM;
+ 175:Source\bsw/seven.c ****     }
+ 176:Source\bsw/seven.c ****     
+ 177:Source\bsw/seven.c ****     //Restore the last display pattern
+ 178:Source\bsw/seven.c ****     uint8_t pattern = 0;
+ 179:Source\bsw/seven.c ****     if (SEVEN__latch_value[(uint8_t)sevenId] != -1)
+ 172              		.loc 1 179 0
+ 173 0006 0B4B     		ldr	r3, .L20
+ 174 0008 1B56     		ldrsb	r3, [r3, r0]
+ 175 000a B3F1FF3F 		cmp	r3, #-1
+ 176 000e 02D0     		beq	.L17
+ 180:Source\bsw/seven.c ****     {
+ 181:Source\bsw/seven.c ****         pattern = SEVEN__latch_pattern[(uint8_t)sevenId];
+ 177              		.loc 1 181 0
+ 178 0010 094B     		ldr	r3, .L20+4
+ 179 0012 1D5C     		ldrb	r5, [r3, r0]	@ zero_extendqisi2
+ 180              	.LVL14:
+ 181 0014 00E0     		b	.L15
+ 182              	.LVL15:
+ 183              	.L17:
+ 178:Source\bsw/seven.c ****     if (SEVEN__latch_value[(uint8_t)sevenId] != -1)
+ 184              		.loc 1 178 0
+ 185 0016 0025     		movs	r5, #0
+ 186              	.LVL16:
+ 187              	.L15:
+ 188 0018 0C46     		mov	r4, r1
+ 189              	.LVL17:
+ 182:Source\bsw/seven.c ****     }
+ 183:Source\bsw/seven.c ****     
+ 184:Source\bsw/seven.c ****     //Set the selection bit for the display
+ 185:Source\bsw/seven.c ****     SEVEN_SELECT_Write((uint8_t)sevenId);
+ 190              		.loc 1 185 0
+ 191 001a FFF7FEFF 		bl	SEVEN_SELECT_Write
+ 192              	.LVL18:
+ 186:Source\bsw/seven.c ****     
+ 187:Source\bsw/seven.c ****     //Set the port to the pattern currently active
+ 188:Source\bsw/seven.c ****     SEVEN_reg_Write(pattern);
+ 193              		.loc 1 188 0
+ 194 001e 2846     		mov	r0, r5
+ 195 0020 FFF7FEFF 		bl	SEVEN_reg_Write
+ 196              	.LVL19:
+ 189:Source\bsw/seven.c ****     
+ 190:Source\bsw/seven.c ****     //Set the decimal point
+ 191:Source\bsw/seven.c ****     SEVEN_DP_Write(value);
+ 197              		.loc 1 191 0
+ 198 0024 2046     		mov	r0, r4
+ 199 0026 FFF7FEFF 		bl	SEVEN_DP_Write
+ 200              	.LVL20:
+ 192:Source\bsw/seven.c **** 
+ 193:Source\bsw/seven.c ****     return RC_SUCCESS;
+ 201              		.loc 1 193 0
+ 202 002a 0020     		movs	r0, #0
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccnzKyVH.s 			page 8
+
+
+ 203 002c 38BD     		pop	{r3, r4, r5, pc}
+ 204              	.LVL21:
+ 205              	.L16:
+ 206              		.cfi_def_cfa_offset 0
+ 207              		.cfi_restore 3
+ 208              		.cfi_restore 4
+ 209              		.cfi_restore 5
+ 210              		.cfi_restore 14
+ 174:Source\bsw/seven.c ****     }
+ 211              		.loc 1 174 0
+ 212 002e 6FF01300 		mvn	r0, #19
+ 213              	.LVL22:
+ 214 0032 7047     		bx	lr
+ 215              	.L21:
+ 216              		.align	2
+ 217              	.L20:
+ 218 0034 00000000 		.word	.LANCHOR1
+ 219 0038 00000000 		.word	.LANCHOR2
+ 220              		.cfi_endproc
+ 221              	.LFE114:
+ 222              		.size	SEVEN_SetDP, .-SEVEN_SetDP
+ 223              		.section	.text.SEVEN_Clear,"ax",%progbits
+ 224              		.align	2
+ 225              		.global	SEVEN_Clear
+ 226              		.thumb
+ 227              		.thumb_func
+ 228              		.type	SEVEN_Clear, %function
+ 229              	SEVEN_Clear:
+ 230              	.LFB115:
+ 194:Source\bsw/seven.c **** }
+ 195:Source\bsw/seven.c **** 
+ 196:Source\bsw/seven.c **** /**
+ 197:Source\bsw/seven.c ****  * Clears one display
+ 198:Source\bsw/seven.c ****  * @param SEVEN_id_t sevenId - identifier for the segment to be set
+ 199:Source\bsw/seven.c ****  * @return RC_SUCCESS if function was executed correctly, other value in case of error
+ 200:Source\bsw/seven.c ****  */
+ 201:Source\bsw/seven.c **** RC_t SEVEN_Clear(SEVEN_id_t sevenId)
+ 202:Source\bsw/seven.c **** {
+ 231              		.loc 1 202 0
+ 232              		.cfi_startproc
+ 233              		@ args = 0, pretend = 0, frame = 0
+ 234              		@ frame_needed = 0, uses_anonymous_args = 0
+ 235              	.LVL23:
+ 236 0000 08B5     		push	{r3, lr}
+ 237              		.cfi_def_cfa_offset 8
+ 238              		.cfi_offset 3, -8
+ 239              		.cfi_offset 14, -4
+ 203:Source\bsw/seven.c ****     //Set software latch to cleared
+ 204:Source\bsw/seven.c ****     SEVEN__latch_value[(uint8_t)sevenId] = -1;
+ 240              		.loc 1 204 0
+ 241 0002 FF22     		movs	r2, #255
+ 242 0004 044B     		ldr	r3, .L24
+ 243 0006 1A54     		strb	r2, [r3, r0]
+ 205:Source\bsw/seven.c ****     
+ 206:Source\bsw/seven.c ****     //Set the selection bit for the display
+ 207:Source\bsw/seven.c ****     SEVEN_SELECT_Write((uint8_t)sevenId);
+ 244              		.loc 1 207 0
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccnzKyVH.s 			page 9
+
+
+ 245 0008 FFF7FEFF 		bl	SEVEN_SELECT_Write
+ 246              	.LVL24:
+ 208:Source\bsw/seven.c ****     
+ 209:Source\bsw/seven.c ****     //Clear every bit
+ 210:Source\bsw/seven.c ****     SEVEN_reg_Write(0);
+ 247              		.loc 1 210 0
+ 248 000c 0020     		movs	r0, #0
+ 249 000e FFF7FEFF 		bl	SEVEN_reg_Write
+ 250              	.LVL25:
+ 211:Source\bsw/seven.c ****     
+ 212:Source\bsw/seven.c ****     return RC_SUCCESS;
+ 213:Source\bsw/seven.c **** }...
+ 251              		.loc 1 213 0
+ 252 0012 0020     		movs	r0, #0
+ 253 0014 08BD     		pop	{r3, pc}
+ 254              	.L25:
+ 255 0016 00BF     		.align	2
+ 256              	.L24:
+ 257 0018 00000000 		.word	.LANCHOR1
+ 258              		.cfi_endproc
+ 259              	.LFE115:
+ 260              		.size	SEVEN_Clear, .-SEVEN_Clear
+ 261              		.section	.text.SEVEN_Init,"ax",%progbits
+ 262              		.align	2
+ 263              		.global	SEVEN_Init
+ 264              		.thumb
+ 265              		.thumb_func
+ 266              		.type	SEVEN_Init, %function
+ 267              	SEVEN_Init:
+ 268              	.LFB110:
+  98:Source\bsw/seven.c **** {
+ 269              		.loc 1 98 0
+ 270              		.cfi_startproc
+ 271              		@ args = 0, pretend = 0, frame = 0
+ 272              		@ frame_needed = 0, uses_anonymous_args = 0
+ 273 0000 08B5     		push	{r3, lr}
+ 274              		.cfi_def_cfa_offset 8
+ 275              		.cfi_offset 3, -8
+ 276              		.cfi_offset 14, -4
+ 100:Source\bsw/seven.c ****     SEVEN_Clear(SEVEN_0);
+ 277              		.loc 1 100 0
+ 278 0002 0020     		movs	r0, #0
+ 279 0004 FFF7FEFF 		bl	SEVEN_Clear
+ 280              	.LVL26:
+ 101:Source\bsw/seven.c ****     SEVEN_Clear(SEVEN_1);
+ 281              		.loc 1 101 0
+ 282 0008 0120     		movs	r0, #1
+ 283 000a FFF7FEFF 		bl	SEVEN_Clear
+ 284              	.LVL27:
+ 104:Source\bsw/seven.c **** }
+ 285              		.loc 1 104 0
+ 286 000e 0020     		movs	r0, #0
+ 287 0010 08BD     		pop	{r3, pc}
+ 288              		.cfi_endproc
+ 289              	.LFE110:
+ 290              		.size	SEVEN_Init, .-SEVEN_Init
+ 291 0012 00BF     		.section	.rodata
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccnzKyVH.s 			page 10
+
+
+ 292              		.align	2
+ 293              		.set	.LANCHOR0,. + 0
+ 294              		.type	SEVEN__BitPattern, %object
+ 295              		.size	SEVEN__BitPattern, 17
+ 296              	SEVEN__BitPattern:
+ 297 0000 FC       		.byte	-4
+ 298 0001 60       		.byte	96
+ 299 0002 DA       		.byte	-38
+ 300 0003 F2       		.byte	-14
+ 301 0004 66       		.byte	102
+ 302 0005 B6       		.byte	-74
+ 303 0006 BE       		.byte	-66
+ 304 0007 E0       		.byte	-32
+ 305 0008 FE       		.byte	-2
+ 306 0009 F6       		.byte	-10
+ 307 000a EE       		.byte	-18
+ 308 000b 3E       		.byte	62
+ 309 000c 9C       		.byte	-100
+ 310 000d 7A       		.byte	122
+ 311 000e 9E       		.byte	-98
+ 312 000f 8E       		.byte	-114
+ 313 0010 01       		.byte	1
+ 314              		.data
+ 315              		.align	2
+ 316              		.set	.LANCHOR1,. + 0
+ 317              		.type	SEVEN__latch_value, %object
+ 318              		.size	SEVEN__latch_value, 2
+ 319              	SEVEN__latch_value:
+ 320 0000 FF       		.byte	-1
+ 321 0001 FF       		.byte	-1
+ 322              		.bss
+ 323              		.align	2
+ 324              		.set	.LANCHOR2,. + 0
+ 325              		.type	SEVEN__latch_pattern, %object
+ 326              		.size	SEVEN__latch_pattern, 2
+ 327              	SEVEN__latch_pattern:
+ 328 0000 0000     		.space	2
+ 329              		.text
+ 330              	.Letext0:
+ 331              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 332              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 333              		.file 4 "Generated_Source\\PSoC5/ErikaOS_1_common_ee_types.inc"
+ 334              		.file 5 "Generated_Source\\PSoC5/ErikaOS_1_cortex_mx_ee_cpu.inc"
+ 335              		.file 6 "Source\\bsw\\global.h"
+ 336              		.file 7 "Source\\bsw\\seven.h"
+ 337              		.file 8 "Generated_Source\\PSoC5/ErikaOS_1_ee_oo_intfunc.inc"
+ 338              		.file 9 "Generated_Source\\PSoC5/ErikaOS_1_cortex_mx_ee_context.inc"
+ 339              		.file 10 "Generated_Source\\PSoC5/ErikaOS_1_common_ee_primitives.inc"
+ 340              		.file 11 "Generated_Source\\PSoC5/core_cm3.h"
+ 341              		.file 12 "Generated_Source\\PSoC5/SEVEN_SELECT.h"
+ 342              		.file 13 "Generated_Source\\PSoC5/SEVEN_reg.h"
+ 343              		.file 14 "Generated_Source\\PSoC5/SEVEN_DP.h"
+ 344              		.section	.debug_info,"",%progbits
+ 345              	.Ldebug_info0:
+ 346 0000 A0040000 		.4byte	0x4a0
+ 347 0004 0400     		.2byte	0x4
+ 348 0006 00000000 		.4byte	.Ldebug_abbrev0
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccnzKyVH.s 			page 11
+
+
+ 349 000a 04       		.byte	0x4
+ 350 000b 01       		.uleb128 0x1
+ 351 000c FD020000 		.4byte	.LASF73
+ 352 0010 0C       		.byte	0xc
+ 353 0011 7E000000 		.4byte	.LASF74
+ 354 0015 F6000000 		.4byte	.LASF75
+ 355 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 356 001d 00000000 		.4byte	0
+ 357 0021 00000000 		.4byte	.Ldebug_line0
+ 358 0025 02       		.uleb128 0x2
+ 359 0026 01       		.byte	0x1
+ 360 0027 06       		.byte	0x6
+ 361 0028 78010000 		.4byte	.LASF0
+ 362 002c 03       		.uleb128 0x3
+ 363 002d 15020000 		.4byte	.LASF4
+ 364 0031 02       		.byte	0x2
+ 365 0032 1D       		.byte	0x1d
+ 366 0033 37000000 		.4byte	0x37
+ 367 0037 02       		.uleb128 0x2
+ 368 0038 01       		.byte	0x1
+ 369 0039 08       		.byte	0x8
+ 370 003a 64020000 		.4byte	.LASF1
+ 371 003e 02       		.uleb128 0x2
+ 372 003f 02       		.byte	0x2
+ 373 0040 05       		.byte	0x5
+ 374 0041 45000000 		.4byte	.LASF2
+ 375 0045 02       		.uleb128 0x2
+ 376 0046 02       		.byte	0x2
+ 377 0047 07       		.byte	0x7
+ 378 0048 EA020000 		.4byte	.LASF3
+ 379 004c 03       		.uleb128 0x3
+ 380 004d 5A040000 		.4byte	.LASF5
+ 381 0051 02       		.byte	0x2
+ 382 0052 3F       		.byte	0x3f
+ 383 0053 57000000 		.4byte	0x57
+ 384 0057 02       		.uleb128 0x2
+ 385 0058 04       		.byte	0x4
+ 386 0059 05       		.byte	0x5
+ 387 005a EC010000 		.4byte	.LASF6
+ 388 005e 02       		.uleb128 0x2
+ 389 005f 04       		.byte	0x4
+ 390 0060 07       		.byte	0x7
+ 391 0061 0D040000 		.4byte	.LASF7
+ 392 0065 02       		.uleb128 0x2
+ 393 0066 08       		.byte	0x8
+ 394 0067 05       		.byte	0x5
+ 395 0068 94010000 		.4byte	.LASF8
+ 396 006c 02       		.uleb128 0x2
+ 397 006d 08       		.byte	0x8
+ 398 006e 07       		.byte	0x7
+ 399 006f 7A020000 		.4byte	.LASF9
+ 400 0073 04       		.uleb128 0x4
+ 401 0074 04       		.byte	0x4
+ 402 0075 05       		.byte	0x5
+ 403 0076 696E7400 		.ascii	"int\000"
+ 404 007a 02       		.uleb128 0x2
+ 405 007b 04       		.byte	0x4
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccnzKyVH.s 			page 12
+
+
+ 406 007c 07       		.byte	0x7
+ 407 007d 91020000 		.4byte	.LASF10
+ 408 0081 03       		.uleb128 0x3
+ 409 0082 D7000000 		.4byte	.LASF11
+ 410 0086 03       		.byte	0x3
+ 411 0087 18       		.byte	0x18
+ 412 0088 2C000000 		.4byte	0x2c
+ 413 008c 03       		.uleb128 0x3
+ 414 008d C1030000 		.4byte	.LASF12
+ 415 0091 03       		.byte	0x3
+ 416 0092 2C       		.byte	0x2c
+ 417 0093 4C000000 		.4byte	0x4c
+ 418 0097 02       		.uleb128 0x2
+ 419 0098 04       		.byte	0x4
+ 420 0099 04       		.byte	0x4
+ 421 009a 84010000 		.4byte	.LASF13
+ 422 009e 02       		.uleb128 0x2
+ 423 009f 08       		.byte	0x8
+ 424 00a0 04       		.byte	0x4
+ 425 00a1 1F040000 		.4byte	.LASF14
+ 426 00a5 02       		.uleb128 0x2
+ 427 00a6 01       		.byte	0x1
+ 428 00a7 08       		.byte	0x8
+ 429 00a8 9B030000 		.4byte	.LASF15
+ 430 00ac 02       		.uleb128 0x2
+ 431 00ad 08       		.byte	0x8
+ 432 00ae 04       		.byte	0x4
+ 433 00af 58020000 		.4byte	.LASF16
+ 434 00b3 03       		.uleb128 0x3
+ 435 00b4 E1020000 		.4byte	.LASF17
+ 436 00b8 04       		.byte	0x4
+ 437 00b9 53       		.byte	0x53
+ 438 00ba 73000000 		.4byte	0x73
+ 439 00be 03       		.uleb128 0x3
+ 440 00bf C0000000 		.4byte	.LASF18
+ 441 00c3 04       		.byte	0x4
+ 442 00c4 54       		.byte	0x54
+ 443 00c5 7A000000 		.4byte	0x7a
+ 444 00c9 03       		.uleb128 0x3
+ 445 00ca 43040000 		.4byte	.LASF19
+ 446 00ce 05       		.byte	0x5
+ 447 00cf 4D       		.byte	0x4d
+ 448 00d0 BE000000 		.4byte	0xbe
+ 449 00d4 03       		.uleb128 0x3
+ 450 00d5 A7000000 		.4byte	.LASF20
+ 451 00d9 05       		.byte	0x5
+ 452 00da 4F       		.byte	0x4f
+ 453 00db BE000000 		.4byte	0xbe
+ 454 00df 03       		.uleb128 0x3
+ 455 00e0 CA000000 		.4byte	.LASF21
+ 456 00e4 05       		.byte	0x5
+ 457 00e5 78       		.byte	0x78
+ 458 00e6 B3000000 		.4byte	0xb3
+ 459 00ea 02       		.uleb128 0x2
+ 460 00eb 04       		.byte	0x4
+ 461 00ec 07       		.byte	0x7
+ 462 00ed 75000000 		.4byte	.LASF22
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccnzKyVH.s 			page 13
+
+
+ 463 00f1 03       		.uleb128 0x3
+ 464 00f2 F1040000 		.4byte	.LASF23
+ 465 00f6 06       		.byte	0x6
+ 466 00f7 76       		.byte	0x76
+ 467 00f8 25000000 		.4byte	0x25
+ 468 00fc 05       		.uleb128 0x5
+ 469 00fd 65524300 		.ascii	"eRC\000"
+ 470 0101 01       		.byte	0x1
+ 471 0102 25000000 		.4byte	0x25
+ 472 0106 06       		.byte	0x6
+ 473 0107 AC       		.byte	0xac
+ 474 0108 A3010000 		.4byte	0x1a3
+ 475 010c 06       		.uleb128 0x6
+ 476 010d 26000000 		.4byte	.LASF24
+ 477 0111 00       		.byte	0
+ 478 0112 07       		.uleb128 0x7
+ 479 0113 A5040000 		.4byte	.LASF25
+ 480 0117 7F       		.sleb128 -1
+ 481 0118 07       		.uleb128 0x7
+ 482 0119 BE020000 		.4byte	.LASF26
+ 483 011d 7E       		.sleb128 -2
+ 484 011e 07       		.uleb128 0x7
+ 485 011f 99000000 		.4byte	.LASF27
+ 486 0123 7D       		.sleb128 -3
+ 487 0124 07       		.uleb128 0x7
+ 488 0125 AE040000 		.4byte	.LASF28
+ 489 0129 7C       		.sleb128 -4
+ 490 012a 07       		.uleb128 0x7
+ 491 012b 4B040000 		.4byte	.LASF29
+ 492 012f 7B       		.sleb128 -5
+ 493 0130 07       		.uleb128 0x7
+ 494 0131 4F000000 		.4byte	.LASF30
+ 495 0135 7A       		.sleb128 -6
+ 496 0136 07       		.uleb128 0x7
+ 497 0137 F5010000 		.4byte	.LASF31
+ 498 013b 79       		.sleb128 -7
+ 499 013c 07       		.uleb128 0x7
+ 500 013d AC030000 		.4byte	.LASF32
+ 501 0141 78       		.sleb128 -8
+ 502 0142 07       		.uleb128 0x7
+ 503 0143 D6040000 		.4byte	.LASF33
+ 504 0147 77       		.sleb128 -9
+ 505 0148 07       		.uleb128 0x7
+ 506 0149 07020000 		.4byte	.LASF34
+ 507 014d 76       		.sleb128 -10
+ 508 014e 07       		.uleb128 0x7
+ 509 014f F9040000 		.4byte	.LASF35
+ 510 0153 75       		.sleb128 -11
+ 511 0154 07       		.uleb128 0x7
+ 512 0155 9E020000 		.4byte	.LASF36
+ 513 0159 74       		.sleb128 -12
+ 514 015a 07       		.uleb128 0x7
+ 515 015b 31040000 		.4byte	.LASF37
+ 516 015f 73       		.sleb128 -13
+ 517 0160 07       		.uleb128 0x7
+ 518 0161 13000000 		.4byte	.LASF38
+ 519 0165 72       		.sleb128 -14
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccnzKyVH.s 			page 14
+
+
+ 520 0166 07       		.uleb128 0x7
+ 521 0167 31000000 		.4byte	.LASF39
+ 522 016b 71       		.sleb128 -15
+ 523 016c 07       		.uleb128 0x7
+ 524 016d AF000000 		.4byte	.LASF40
+ 525 0171 70       		.sleb128 -16
+ 526 0172 07       		.uleb128 0x7
+ 527 0173 D3030000 		.4byte	.LASF41
+ 528 0177 6F       		.sleb128 -17
+ 529 0178 07       		.uleb128 0x7
+ 530 0179 60000000 		.4byte	.LASF42
+ 531 017d 6E       		.sleb128 -18
+ 532 017e 07       		.uleb128 0x7
+ 533 017f C8010000 		.4byte	.LASF43
+ 534 0183 6D       		.sleb128 -19
+ 535 0184 07       		.uleb128 0x7
+ 536 0185 E7030000 		.4byte	.LASF44
+ 537 0189 6C       		.sleb128 -20
+ 538 018a 07       		.uleb128 0x7
+ 539 018b 32020000 		.4byte	.LASF45
+ 540 018f 6B       		.sleb128 -21
+ 541 0190 07       		.uleb128 0x7
+ 542 0191 73040000 		.4byte	.LASF46
+ 543 0195 6A       		.sleb128 -22
+ 544 0196 07       		.uleb128 0x7
+ 545 0197 DF000000 		.4byte	.LASF47
+ 546 019b 69       		.sleb128 -23
+ 547 019c 07       		.uleb128 0x7
+ 548 019d DB010000 		.4byte	.LASF48
+ 549 01a1 68       		.sleb128 -24
+ 550 01a2 00       		.byte	0
+ 551 01a3 03       		.uleb128 0x3
+ 552 01a4 EC040000 		.4byte	.LASF49
+ 553 01a8 06       		.byte	0x6
+ 554 01a9 C8       		.byte	0xc8
+ 555 01aa FC000000 		.4byte	0xfc
+ 556 01ae 08       		.uleb128 0x8
+ 557 01af 01       		.byte	0x1
+ 558 01b0 37000000 		.4byte	0x37
+ 559 01b4 07       		.byte	0x7
+ 560 01b5 5F       		.byte	0x5f
+ 561 01b6 C7010000 		.4byte	0x1c7
+ 562 01ba 06       		.uleb128 0x6
+ 563 01bb 91000000 		.4byte	.LASF50
+ 564 01bf 00       		.byte	0
+ 565 01c0 06       		.uleb128 0x6
+ 566 01c1 72020000 		.4byte	.LASF51
+ 567 01c5 01       		.byte	0x1
+ 568 01c6 00       		.byte	0
+ 569 01c7 03       		.uleb128 0x3
+ 570 01c8 26040000 		.4byte	.LASF52
+ 571 01cc 07       		.byte	0x7
+ 572 01cd 62       		.byte	0x62
+ 573 01ce AE010000 		.4byte	0x1ae
+ 574 01d2 09       		.uleb128 0x9
+ 575 01d3 8A010000 		.4byte	.LASF55
+ 576 01d7 01       		.byte	0x1
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccnzKyVH.s 			page 15
+
+
+ 577 01d8 71       		.byte	0x71
+ 578 01d9 A3010000 		.4byte	0x1a3
+ 579 01dd 00000000 		.4byte	.LFB111
+ 580 01e1 34000000 		.4byte	.LFE111-.LFB111
+ 581 01e5 01       		.uleb128 0x1
+ 582 01e6 9C       		.byte	0x9c
+ 583 01e7 45020000 		.4byte	0x245
+ 584 01eb 0A       		.uleb128 0xa
+ 585 01ec 44020000 		.4byte	.LASF53
+ 586 01f0 01       		.byte	0x1
+ 587 01f1 71       		.byte	0x71
+ 588 01f2 C7010000 		.4byte	0x1c7
+ 589 01f6 00000000 		.4byte	.LLST0
+ 590 01fa 0A       		.uleb128 0xa
+ 591 01fb D1000000 		.4byte	.LASF54
+ 592 01ff 01       		.byte	0x1
+ 593 0200 71       		.byte	0x71
+ 594 0201 81000000 		.4byte	0x81
+ 595 0205 3A000000 		.4byte	.LLST1
+ 596 0209 0B       		.uleb128 0xb
+ 597 020a 0B000000 		.4byte	.LASF59
+ 598 020e 01       		.byte	0x1
+ 599 020f 7E       		.byte	0x7e
+ 600 0210 81000000 		.4byte	0x81
+ 601 0214 66000000 		.4byte	.LLST2
+ 602 0218 0C       		.uleb128 0xc
+ 603 0219 0E000000 		.4byte	.LVL1
+ 604 021d 82040000 		.4byte	0x482
+ 605 0221 2C020000 		.4byte	0x22c
+ 606 0225 0D       		.uleb128 0xd
+ 607 0226 01       		.uleb128 0x1
+ 608 0227 50       		.byte	0x50
+ 609 0228 02       		.uleb128 0x2
+ 610 0229 75       		.byte	0x75
+ 611 022a 00       		.sleb128 0
+ 612 022b 00       		.byte	0
+ 613 022c 0E       		.uleb128 0xe
+ 614 022d 1E000000 		.4byte	.LVL3
+ 615 0231 8D040000 		.4byte	0x48d
+ 616 0235 0D       		.uleb128 0xd
+ 617 0236 01       		.uleb128 0x1
+ 618 0237 50       		.byte	0x50
+ 619 0238 0A       		.uleb128 0xa
+ 620 0239 74       		.byte	0x74
+ 621 023a 00       		.sleb128 0
+ 622 023b 03       		.byte	0x3
+ 623 023c 00000000 		.4byte	.LANCHOR0
+ 624 0240 22       		.byte	0x22
+ 625 0241 94       		.byte	0x94
+ 626 0242 01       		.byte	0x1
+ 627 0243 00       		.byte	0
+ 628 0244 00       		.byte	0
+ 629 0245 09       		.uleb128 0x9
+ 630 0246 C9030000 		.4byte	.LASF56
+ 631 024a 01       		.byte	0x1
+ 632 024b 8F       		.byte	0x8f
+ 633 024c A3010000 		.4byte	0x1a3
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccnzKyVH.s 			page 16
+
+
+ 634 0250 00000000 		.4byte	.LFB112
+ 635 0254 10000000 		.4byte	.LFE112-.LFB112
+ 636 0258 01       		.uleb128 0x1
+ 637 0259 9C       		.byte	0x9c
+ 638 025a 7B020000 		.4byte	0x27b
+ 639 025e 0A       		.uleb128 0xa
+ 640 025f 44020000 		.4byte	.LASF53
+ 641 0263 01       		.byte	0x1
+ 642 0264 8F       		.byte	0x8f
+ 643 0265 C7010000 		.4byte	0x1c7
+ 644 0269 8B000000 		.4byte	.LLST3
+ 645 026d 0F       		.uleb128 0xf
+ 646 026e D1000000 		.4byte	.LASF54
+ 647 0272 01       		.byte	0x1
+ 648 0273 8F       		.byte	0x8f
+ 649 0274 7B020000 		.4byte	0x27b
+ 650 0278 01       		.uleb128 0x1
+ 651 0279 51       		.byte	0x51
+ 652 027a 00       		.byte	0
+ 653 027b 10       		.uleb128 0x10
+ 654 027c 04       		.byte	0x4
+ 655 027d F1000000 		.4byte	0xf1
+ 656 0281 09       		.uleb128 0x9
+ 657 0282 BB010000 		.4byte	.LASF57
+ 658 0286 01       		.byte	0x1
+ 659 0287 9B       		.byte	0x9b
+ 660 0288 A3010000 		.4byte	0x1a3
+ 661 028c 00000000 		.4byte	.LFB113
+ 662 0290 1A000000 		.4byte	.LFE113-.LFB113
+ 663 0294 01       		.uleb128 0x1
+ 664 0295 9C       		.byte	0x9c
+ 665 0296 DC020000 		.4byte	0x2dc
+ 666 029a 0A       		.uleb128 0xa
+ 667 029b D1000000 		.4byte	.LASF54
+ 668 029f 01       		.byte	0x1
+ 669 02a0 9B       		.byte	0x9b
+ 670 02a1 81000000 		.4byte	0x81
+ 671 02a5 AC000000 		.4byte	.LLST4
+ 672 02a9 0C       		.uleb128 0xc
+ 673 02aa 0C000000 		.4byte	.LVL10
+ 674 02ae D2010000 		.4byte	0x1d2
+ 675 02b2 C4020000 		.4byte	0x2c4
+ 676 02b6 0D       		.uleb128 0xd
+ 677 02b7 01       		.uleb128 0x1
+ 678 02b8 50       		.byte	0x50
+ 679 02b9 01       		.uleb128 0x1
+ 680 02ba 31       		.byte	0x31
+ 681 02bb 0D       		.uleb128 0xd
+ 682 02bc 01       		.uleb128 0x1
+ 683 02bd 51       		.byte	0x51
+ 684 02be 04       		.uleb128 0x4
+ 685 02bf 74       		.byte	0x74
+ 686 02c0 00       		.sleb128 0
+ 687 02c1 34       		.byte	0x34
+ 688 02c2 25       		.byte	0x25
+ 689 02c3 00       		.byte	0
+ 690 02c4 0E       		.uleb128 0xe
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccnzKyVH.s 			page 17
+
+
+ 691 02c5 16000000 		.4byte	.LVL11
+ 692 02c9 D2010000 		.4byte	0x1d2
+ 693 02cd 0D       		.uleb128 0xd
+ 694 02ce 01       		.uleb128 0x1
+ 695 02cf 50       		.byte	0x50
+ 696 02d0 01       		.uleb128 0x1
+ 697 02d1 30       		.byte	0x30
+ 698 02d2 0D       		.uleb128 0xd
+ 699 02d3 01       		.uleb128 0x1
+ 700 02d4 51       		.byte	0x51
+ 701 02d5 04       		.uleb128 0x4
+ 702 02d6 74       		.byte	0x74
+ 703 02d7 00       		.sleb128 0
+ 704 02d8 3F       		.byte	0x3f
+ 705 02d9 1A       		.byte	0x1a
+ 706 02da 00       		.byte	0
+ 707 02db 00       		.byte	0
+ 708 02dc 09       		.uleb128 0x9
+ 709 02dd A0030000 		.4byte	.LASF58
+ 710 02e1 01       		.byte	0x1
+ 711 02e2 A9       		.byte	0xa9
+ 712 02e3 A3010000 		.4byte	0x1a3
+ 713 02e7 00000000 		.4byte	.LFB114
+ 714 02eb 3C000000 		.4byte	.LFE114-.LFB114
+ 715 02ef 01       		.uleb128 0x1
+ 716 02f0 9C       		.byte	0x9c
+ 717 02f1 50030000 		.4byte	0x350
+ 718 02f5 0A       		.uleb128 0xa
+ 719 02f6 44020000 		.4byte	.LASF53
+ 720 02fa 01       		.byte	0x1
+ 721 02fb A9       		.byte	0xa9
+ 722 02fc C7010000 		.4byte	0x1c7
+ 723 0300 CD000000 		.4byte	.LLST5
+ 724 0304 0A       		.uleb128 0xa
+ 725 0305 D1000000 		.4byte	.LASF54
+ 726 0309 01       		.byte	0x1
+ 727 030a A9       		.byte	0xa9
+ 728 030b 81000000 		.4byte	0x81
+ 729 030f 07010000 		.4byte	.LLST6
+ 730 0313 0B       		.uleb128 0xb
+ 731 0314 0B000000 		.4byte	.LASF59
+ 732 0318 01       		.byte	0x1
+ 733 0319 B2       		.byte	0xb2
+ 734 031a 81000000 		.4byte	0x81
+ 735 031e 33010000 		.4byte	.LLST7
+ 736 0322 11       		.uleb128 0x11
+ 737 0323 1E000000 		.4byte	.LVL18
+ 738 0327 82040000 		.4byte	0x482
+ 739 032b 0C       		.uleb128 0xc
+ 740 032c 24000000 		.4byte	.LVL19
+ 741 0330 8D040000 		.4byte	0x48d
+ 742 0334 3F030000 		.4byte	0x33f
+ 743 0338 0D       		.uleb128 0xd
+ 744 0339 01       		.uleb128 0x1
+ 745 033a 50       		.byte	0x50
+ 746 033b 02       		.uleb128 0x2
+ 747 033c 75       		.byte	0x75
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccnzKyVH.s 			page 18
+
+
+ 748 033d 00       		.sleb128 0
+ 749 033e 00       		.byte	0
+ 750 033f 0E       		.uleb128 0xe
+ 751 0340 2A000000 		.4byte	.LVL20
+ 752 0344 98040000 		.4byte	0x498
+ 753 0348 0D       		.uleb128 0xd
+ 754 0349 01       		.uleb128 0x1
+ 755 034a 50       		.byte	0x50
+ 756 034b 02       		.uleb128 0x2
+ 757 034c 74       		.byte	0x74
+ 758 034d 00       		.sleb128 0
+ 759 034e 00       		.byte	0
+ 760 034f 00       		.byte	0
+ 761 0350 09       		.uleb128 0x9
+ 762 0351 4C020000 		.4byte	.LASF60
+ 763 0355 01       		.byte	0x1
+ 764 0356 C9       		.byte	0xc9
+ 765 0357 A3010000 		.4byte	0x1a3
+ 766 035b 00000000 		.4byte	.LFB115
+ 767 035f 1C000000 		.4byte	.LFE115-.LFB115
+ 768 0363 01       		.uleb128 0x1
+ 769 0364 9C       		.byte	0x9c
+ 770 0365 91030000 		.4byte	0x391
+ 771 0369 0A       		.uleb128 0xa
+ 772 036a 44020000 		.4byte	.LASF53
+ 773 036e 01       		.byte	0x1
+ 774 036f C9       		.byte	0xc9
+ 775 0370 C7010000 		.4byte	0x1c7
+ 776 0374 69010000 		.4byte	.LLST8
+ 777 0378 11       		.uleb128 0x11
+ 778 0379 0C000000 		.4byte	.LVL24
+ 779 037d 82040000 		.4byte	0x482
+ 780 0381 0E       		.uleb128 0xe
+ 781 0382 12000000 		.4byte	.LVL25
+ 782 0386 8D040000 		.4byte	0x48d
+ 783 038a 0D       		.uleb128 0xd
+ 784 038b 01       		.uleb128 0x1
+ 785 038c 50       		.byte	0x50
+ 786 038d 01       		.uleb128 0x1
+ 787 038e 30       		.byte	0x30
+ 788 038f 00       		.byte	0
+ 789 0390 00       		.byte	0
+ 790 0391 12       		.uleb128 0x12
+ 791 0392 00000000 		.4byte	.LASF76
+ 792 0396 01       		.byte	0x1
+ 793 0397 61       		.byte	0x61
+ 794 0398 A3010000 		.4byte	0x1a3
+ 795 039c 00000000 		.4byte	.LFB110
+ 796 03a0 12000000 		.4byte	.LFE110-.LFB110
+ 797 03a4 01       		.uleb128 0x1
+ 798 03a5 9C       		.byte	0x9c
+ 799 03a6 CD030000 		.4byte	0x3cd
+ 800 03aa 0C       		.uleb128 0xc
+ 801 03ab 08000000 		.4byte	.LVL26
+ 802 03af 50030000 		.4byte	0x350
+ 803 03b3 BD030000 		.4byte	0x3bd
+ 804 03b7 0D       		.uleb128 0xd
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccnzKyVH.s 			page 19
+
+
+ 805 03b8 01       		.uleb128 0x1
+ 806 03b9 50       		.byte	0x50
+ 807 03ba 01       		.uleb128 0x1
+ 808 03bb 30       		.byte	0x30
+ 809 03bc 00       		.byte	0
+ 810 03bd 0E       		.uleb128 0xe
+ 811 03be 0E000000 		.4byte	.LVL27
+ 812 03c2 50030000 		.4byte	0x350
+ 813 03c6 0D       		.uleb128 0xd
+ 814 03c7 01       		.uleb128 0x1
+ 815 03c8 50       		.byte	0x50
+ 816 03c9 01       		.uleb128 0x1
+ 817 03ca 31       		.byte	0x31
+ 818 03cb 00       		.byte	0
+ 819 03cc 00       		.byte	0
+ 820 03cd 13       		.uleb128 0x13
+ 821 03ce DD030000 		.4byte	0x3dd
+ 822 03d2 DD030000 		.4byte	0x3dd
+ 823 03d6 14       		.uleb128 0x14
+ 824 03d7 EA000000 		.4byte	0xea
+ 825 03db 10       		.byte	0x10
+ 826 03dc 00       		.byte	0
+ 827 03dd 15       		.uleb128 0x15
+ 828 03de 81000000 		.4byte	0x81
+ 829 03e2 16       		.uleb128 0x16
+ 830 03e3 AC020000 		.4byte	.LASF61
+ 831 03e7 01       		.byte	0x1
+ 832 03e8 38       		.byte	0x38
+ 833 03e9 F3030000 		.4byte	0x3f3
+ 834 03ed 05       		.uleb128 0x5
+ 835 03ee 03       		.byte	0x3
+ 836 03ef 00000000 		.4byte	SEVEN__BitPattern
+ 837 03f3 15       		.uleb128 0x15
+ 838 03f4 CD030000 		.4byte	0x3cd
+ 839 03f8 13       		.uleb128 0x13
+ 840 03f9 F1000000 		.4byte	0xf1
+ 841 03fd 08040000 		.4byte	0x408
+ 842 0401 14       		.uleb128 0x14
+ 843 0402 EA000000 		.4byte	0xea
+ 844 0406 01       		.byte	0x1
+ 845 0407 00       		.byte	0
+ 846 0408 16       		.uleb128 0x16
+ 847 0409 1F020000 		.4byte	.LASF62
+ 848 040d 01       		.byte	0x1
+ 849 040e 4F       		.byte	0x4f
+ 850 040f F8030000 		.4byte	0x3f8
+ 851 0413 05       		.uleb128 0x5
+ 852 0414 03       		.byte	0x3
+ 853 0415 00000000 		.4byte	SEVEN__latch_value
+ 854 0419 13       		.uleb128 0x13
+ 855 041a 81000000 		.4byte	0x81
+ 856 041e 29040000 		.4byte	0x429
+ 857 0422 14       		.uleb128 0x14
+ 858 0423 EA000000 		.4byte	0xea
+ 859 0427 01       		.byte	0x1
+ 860 0428 00       		.byte	0
+ 861 0429 16       		.uleb128 0x16
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccnzKyVH.s 			page 20
+
+
+ 862 042a CC020000 		.4byte	.LASF63
+ 863 042e 01       		.byte	0x1
+ 864 042f 50       		.byte	0x50
+ 865 0430 19040000 		.4byte	0x419
+ 866 0434 05       		.uleb128 0x5
+ 867 0435 03       		.byte	0x3
+ 868 0436 00000000 		.4byte	SEVEN__latch_pattern
+ 869 043a 17       		.uleb128 0x17
+ 870 043b BE040000 		.4byte	.LASF64
+ 871 043f 08       		.byte	0x8
+ 872 0440 40       		.byte	0x40
+ 873 0441 C9000000 		.4byte	0xc9
+ 874 0445 17       		.uleb128 0x17
+ 875 0446 A2010000 		.4byte	.LASF65
+ 876 044a 08       		.byte	0x8
+ 877 044b 47       		.byte	0x47
+ 878 044c D4000000 		.4byte	0xd4
+ 879 0450 17       		.uleb128 0x17
+ 880 0451 FA030000 		.4byte	.LASF66
+ 881 0455 08       		.byte	0x8
+ 882 0456 4A       		.byte	0x4a
+ 883 0457 C9000000 		.4byte	0xc9
+ 884 045b 17       		.uleb128 0x17
+ 885 045c 5F010000 		.4byte	.LASF67
+ 886 0460 09       		.byte	0x9
+ 887 0461 48       		.byte	0x48
+ 888 0462 DF000000 		.4byte	0xdf
+ 889 0466 17       		.uleb128 0x17
+ 890 0467 4A010000 		.4byte	.LASF68
+ 891 046b 0A       		.byte	0xa
+ 892 046c 44       		.byte	0x44
+ 893 046d C9000000 		.4byte	0xc9
+ 894 0471 18       		.uleb128 0x18
+ 895 0472 98040000 		.4byte	.LASF69
+ 896 0476 0B       		.byte	0xb
+ 897 0477 1207     		.2byte	0x712
+ 898 0479 7D040000 		.4byte	0x47d
+ 899 047d 19       		.uleb128 0x19
+ 900 047e 8C000000 		.4byte	0x8c
+ 901 0482 1A       		.uleb128 0x1a
+ 902 0483 85040000 		.4byte	.LASF70
+ 903 0487 85040000 		.4byte	.LASF70
+ 904 048b 0C       		.byte	0xc
+ 905 048c 26       		.byte	0x26
+ 906 048d 1A       		.uleb128 0x1a
+ 907 048e 8B030000 		.4byte	.LASF71
+ 908 0492 8B030000 		.4byte	.LASF71
+ 909 0496 0D       		.byte	0xd
+ 910 0497 2F       		.byte	0x2f
+ 911 0498 1A       		.uleb128 0x1a
+ 912 0499 64040000 		.4byte	.LASF72
+ 913 049d 64040000 		.4byte	.LASF72
+ 914 04a1 0E       		.byte	0xe
+ 915 04a2 26       		.byte	0x26
+ 916 04a3 00       		.byte	0
+ 917              		.section	.debug_abbrev,"",%progbits
+ 918              	.Ldebug_abbrev0:
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccnzKyVH.s 			page 21
+
+
+ 919 0000 01       		.uleb128 0x1
+ 920 0001 11       		.uleb128 0x11
+ 921 0002 01       		.byte	0x1
+ 922 0003 25       		.uleb128 0x25
+ 923 0004 0E       		.uleb128 0xe
+ 924 0005 13       		.uleb128 0x13
+ 925 0006 0B       		.uleb128 0xb
+ 926 0007 03       		.uleb128 0x3
+ 927 0008 0E       		.uleb128 0xe
+ 928 0009 1B       		.uleb128 0x1b
+ 929 000a 0E       		.uleb128 0xe
+ 930 000b 55       		.uleb128 0x55
+ 931 000c 17       		.uleb128 0x17
+ 932 000d 11       		.uleb128 0x11
+ 933 000e 01       		.uleb128 0x1
+ 934 000f 10       		.uleb128 0x10
+ 935 0010 17       		.uleb128 0x17
+ 936 0011 00       		.byte	0
+ 937 0012 00       		.byte	0
+ 938 0013 02       		.uleb128 0x2
+ 939 0014 24       		.uleb128 0x24
+ 940 0015 00       		.byte	0
+ 941 0016 0B       		.uleb128 0xb
+ 942 0017 0B       		.uleb128 0xb
+ 943 0018 3E       		.uleb128 0x3e
+ 944 0019 0B       		.uleb128 0xb
+ 945 001a 03       		.uleb128 0x3
+ 946 001b 0E       		.uleb128 0xe
+ 947 001c 00       		.byte	0
+ 948 001d 00       		.byte	0
+ 949 001e 03       		.uleb128 0x3
+ 950 001f 16       		.uleb128 0x16
+ 951 0020 00       		.byte	0
+ 952 0021 03       		.uleb128 0x3
+ 953 0022 0E       		.uleb128 0xe
+ 954 0023 3A       		.uleb128 0x3a
+ 955 0024 0B       		.uleb128 0xb
+ 956 0025 3B       		.uleb128 0x3b
+ 957 0026 0B       		.uleb128 0xb
+ 958 0027 49       		.uleb128 0x49
+ 959 0028 13       		.uleb128 0x13
+ 960 0029 00       		.byte	0
+ 961 002a 00       		.byte	0
+ 962 002b 04       		.uleb128 0x4
+ 963 002c 24       		.uleb128 0x24
+ 964 002d 00       		.byte	0
+ 965 002e 0B       		.uleb128 0xb
+ 966 002f 0B       		.uleb128 0xb
+ 967 0030 3E       		.uleb128 0x3e
+ 968 0031 0B       		.uleb128 0xb
+ 969 0032 03       		.uleb128 0x3
+ 970 0033 08       		.uleb128 0x8
+ 971 0034 00       		.byte	0
+ 972 0035 00       		.byte	0
+ 973 0036 05       		.uleb128 0x5
+ 974 0037 04       		.uleb128 0x4
+ 975 0038 01       		.byte	0x1
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccnzKyVH.s 			page 22
+
+
+ 976 0039 03       		.uleb128 0x3
+ 977 003a 08       		.uleb128 0x8
+ 978 003b 0B       		.uleb128 0xb
+ 979 003c 0B       		.uleb128 0xb
+ 980 003d 49       		.uleb128 0x49
+ 981 003e 13       		.uleb128 0x13
+ 982 003f 3A       		.uleb128 0x3a
+ 983 0040 0B       		.uleb128 0xb
+ 984 0041 3B       		.uleb128 0x3b
+ 985 0042 0B       		.uleb128 0xb
+ 986 0043 01       		.uleb128 0x1
+ 987 0044 13       		.uleb128 0x13
+ 988 0045 00       		.byte	0
+ 989 0046 00       		.byte	0
+ 990 0047 06       		.uleb128 0x6
+ 991 0048 28       		.uleb128 0x28
+ 992 0049 00       		.byte	0
+ 993 004a 03       		.uleb128 0x3
+ 994 004b 0E       		.uleb128 0xe
+ 995 004c 1C       		.uleb128 0x1c
+ 996 004d 0B       		.uleb128 0xb
+ 997 004e 00       		.byte	0
+ 998 004f 00       		.byte	0
+ 999 0050 07       		.uleb128 0x7
+ 1000 0051 28       		.uleb128 0x28
+ 1001 0052 00       		.byte	0
+ 1002 0053 03       		.uleb128 0x3
+ 1003 0054 0E       		.uleb128 0xe
+ 1004 0055 1C       		.uleb128 0x1c
+ 1005 0056 0D       		.uleb128 0xd
+ 1006 0057 00       		.byte	0
+ 1007 0058 00       		.byte	0
+ 1008 0059 08       		.uleb128 0x8
+ 1009 005a 04       		.uleb128 0x4
+ 1010 005b 01       		.byte	0x1
+ 1011 005c 0B       		.uleb128 0xb
+ 1012 005d 0B       		.uleb128 0xb
+ 1013 005e 49       		.uleb128 0x49
+ 1014 005f 13       		.uleb128 0x13
+ 1015 0060 3A       		.uleb128 0x3a
+ 1016 0061 0B       		.uleb128 0xb
+ 1017 0062 3B       		.uleb128 0x3b
+ 1018 0063 0B       		.uleb128 0xb
+ 1019 0064 01       		.uleb128 0x1
+ 1020 0065 13       		.uleb128 0x13
+ 1021 0066 00       		.byte	0
+ 1022 0067 00       		.byte	0
+ 1023 0068 09       		.uleb128 0x9
+ 1024 0069 2E       		.uleb128 0x2e
+ 1025 006a 01       		.byte	0x1
+ 1026 006b 3F       		.uleb128 0x3f
+ 1027 006c 19       		.uleb128 0x19
+ 1028 006d 03       		.uleb128 0x3
+ 1029 006e 0E       		.uleb128 0xe
+ 1030 006f 3A       		.uleb128 0x3a
+ 1031 0070 0B       		.uleb128 0xb
+ 1032 0071 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccnzKyVH.s 			page 23
+
+
+ 1033 0072 0B       		.uleb128 0xb
+ 1034 0073 27       		.uleb128 0x27
+ 1035 0074 19       		.uleb128 0x19
+ 1036 0075 49       		.uleb128 0x49
+ 1037 0076 13       		.uleb128 0x13
+ 1038 0077 11       		.uleb128 0x11
+ 1039 0078 01       		.uleb128 0x1
+ 1040 0079 12       		.uleb128 0x12
+ 1041 007a 06       		.uleb128 0x6
+ 1042 007b 40       		.uleb128 0x40
+ 1043 007c 18       		.uleb128 0x18
+ 1044 007d 9742     		.uleb128 0x2117
+ 1045 007f 19       		.uleb128 0x19
+ 1046 0080 01       		.uleb128 0x1
+ 1047 0081 13       		.uleb128 0x13
+ 1048 0082 00       		.byte	0
+ 1049 0083 00       		.byte	0
+ 1050 0084 0A       		.uleb128 0xa
+ 1051 0085 05       		.uleb128 0x5
+ 1052 0086 00       		.byte	0
+ 1053 0087 03       		.uleb128 0x3
+ 1054 0088 0E       		.uleb128 0xe
+ 1055 0089 3A       		.uleb128 0x3a
+ 1056 008a 0B       		.uleb128 0xb
+ 1057 008b 3B       		.uleb128 0x3b
+ 1058 008c 0B       		.uleb128 0xb
+ 1059 008d 49       		.uleb128 0x49
+ 1060 008e 13       		.uleb128 0x13
+ 1061 008f 02       		.uleb128 0x2
+ 1062 0090 17       		.uleb128 0x17
+ 1063 0091 00       		.byte	0
+ 1064 0092 00       		.byte	0
+ 1065 0093 0B       		.uleb128 0xb
+ 1066 0094 34       		.uleb128 0x34
+ 1067 0095 00       		.byte	0
+ 1068 0096 03       		.uleb128 0x3
+ 1069 0097 0E       		.uleb128 0xe
+ 1070 0098 3A       		.uleb128 0x3a
+ 1071 0099 0B       		.uleb128 0xb
+ 1072 009a 3B       		.uleb128 0x3b
+ 1073 009b 0B       		.uleb128 0xb
+ 1074 009c 49       		.uleb128 0x49
+ 1075 009d 13       		.uleb128 0x13
+ 1076 009e 02       		.uleb128 0x2
+ 1077 009f 17       		.uleb128 0x17
+ 1078 00a0 00       		.byte	0
+ 1079 00a1 00       		.byte	0
+ 1080 00a2 0C       		.uleb128 0xc
+ 1081 00a3 898201   		.uleb128 0x4109
+ 1082 00a6 01       		.byte	0x1
+ 1083 00a7 11       		.uleb128 0x11
+ 1084 00a8 01       		.uleb128 0x1
+ 1085 00a9 31       		.uleb128 0x31
+ 1086 00aa 13       		.uleb128 0x13
+ 1087 00ab 01       		.uleb128 0x1
+ 1088 00ac 13       		.uleb128 0x13
+ 1089 00ad 00       		.byte	0
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccnzKyVH.s 			page 24
+
+
+ 1090 00ae 00       		.byte	0
+ 1091 00af 0D       		.uleb128 0xd
+ 1092 00b0 8A8201   		.uleb128 0x410a
+ 1093 00b3 00       		.byte	0
+ 1094 00b4 02       		.uleb128 0x2
+ 1095 00b5 18       		.uleb128 0x18
+ 1096 00b6 9142     		.uleb128 0x2111
+ 1097 00b8 18       		.uleb128 0x18
+ 1098 00b9 00       		.byte	0
+ 1099 00ba 00       		.byte	0
+ 1100 00bb 0E       		.uleb128 0xe
+ 1101 00bc 898201   		.uleb128 0x4109
+ 1102 00bf 01       		.byte	0x1
+ 1103 00c0 11       		.uleb128 0x11
+ 1104 00c1 01       		.uleb128 0x1
+ 1105 00c2 31       		.uleb128 0x31
+ 1106 00c3 13       		.uleb128 0x13
+ 1107 00c4 00       		.byte	0
+ 1108 00c5 00       		.byte	0
+ 1109 00c6 0F       		.uleb128 0xf
+ 1110 00c7 05       		.uleb128 0x5
+ 1111 00c8 00       		.byte	0
+ 1112 00c9 03       		.uleb128 0x3
+ 1113 00ca 0E       		.uleb128 0xe
+ 1114 00cb 3A       		.uleb128 0x3a
+ 1115 00cc 0B       		.uleb128 0xb
+ 1116 00cd 3B       		.uleb128 0x3b
+ 1117 00ce 0B       		.uleb128 0xb
+ 1118 00cf 49       		.uleb128 0x49
+ 1119 00d0 13       		.uleb128 0x13
+ 1120 00d1 02       		.uleb128 0x2
+ 1121 00d2 18       		.uleb128 0x18
+ 1122 00d3 00       		.byte	0
+ 1123 00d4 00       		.byte	0
+ 1124 00d5 10       		.uleb128 0x10
+ 1125 00d6 0F       		.uleb128 0xf
+ 1126 00d7 00       		.byte	0
+ 1127 00d8 0B       		.uleb128 0xb
+ 1128 00d9 0B       		.uleb128 0xb
+ 1129 00da 49       		.uleb128 0x49
+ 1130 00db 13       		.uleb128 0x13
+ 1131 00dc 00       		.byte	0
+ 1132 00dd 00       		.byte	0
+ 1133 00de 11       		.uleb128 0x11
+ 1134 00df 898201   		.uleb128 0x4109
+ 1135 00e2 00       		.byte	0
+ 1136 00e3 11       		.uleb128 0x11
+ 1137 00e4 01       		.uleb128 0x1
+ 1138 00e5 31       		.uleb128 0x31
+ 1139 00e6 13       		.uleb128 0x13
+ 1140 00e7 00       		.byte	0
+ 1141 00e8 00       		.byte	0
+ 1142 00e9 12       		.uleb128 0x12
+ 1143 00ea 2E       		.uleb128 0x2e
+ 1144 00eb 01       		.byte	0x1
+ 1145 00ec 3F       		.uleb128 0x3f
+ 1146 00ed 19       		.uleb128 0x19
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccnzKyVH.s 			page 25
+
+
+ 1147 00ee 03       		.uleb128 0x3
+ 1148 00ef 0E       		.uleb128 0xe
+ 1149 00f0 3A       		.uleb128 0x3a
+ 1150 00f1 0B       		.uleb128 0xb
+ 1151 00f2 3B       		.uleb128 0x3b
+ 1152 00f3 0B       		.uleb128 0xb
+ 1153 00f4 49       		.uleb128 0x49
+ 1154 00f5 13       		.uleb128 0x13
+ 1155 00f6 11       		.uleb128 0x11
+ 1156 00f7 01       		.uleb128 0x1
+ 1157 00f8 12       		.uleb128 0x12
+ 1158 00f9 06       		.uleb128 0x6
+ 1159 00fa 40       		.uleb128 0x40
+ 1160 00fb 18       		.uleb128 0x18
+ 1161 00fc 9742     		.uleb128 0x2117
+ 1162 00fe 19       		.uleb128 0x19
+ 1163 00ff 01       		.uleb128 0x1
+ 1164 0100 13       		.uleb128 0x13
+ 1165 0101 00       		.byte	0
+ 1166 0102 00       		.byte	0
+ 1167 0103 13       		.uleb128 0x13
+ 1168 0104 01       		.uleb128 0x1
+ 1169 0105 01       		.byte	0x1
+ 1170 0106 49       		.uleb128 0x49
+ 1171 0107 13       		.uleb128 0x13
+ 1172 0108 01       		.uleb128 0x1
+ 1173 0109 13       		.uleb128 0x13
+ 1174 010a 00       		.byte	0
+ 1175 010b 00       		.byte	0
+ 1176 010c 14       		.uleb128 0x14
+ 1177 010d 21       		.uleb128 0x21
+ 1178 010e 00       		.byte	0
+ 1179 010f 49       		.uleb128 0x49
+ 1180 0110 13       		.uleb128 0x13
+ 1181 0111 2F       		.uleb128 0x2f
+ 1182 0112 0B       		.uleb128 0xb
+ 1183 0113 00       		.byte	0
+ 1184 0114 00       		.byte	0
+ 1185 0115 15       		.uleb128 0x15
+ 1186 0116 26       		.uleb128 0x26
+ 1187 0117 00       		.byte	0
+ 1188 0118 49       		.uleb128 0x49
+ 1189 0119 13       		.uleb128 0x13
+ 1190 011a 00       		.byte	0
+ 1191 011b 00       		.byte	0
+ 1192 011c 16       		.uleb128 0x16
+ 1193 011d 34       		.uleb128 0x34
+ 1194 011e 00       		.byte	0
+ 1195 011f 03       		.uleb128 0x3
+ 1196 0120 0E       		.uleb128 0xe
+ 1197 0121 3A       		.uleb128 0x3a
+ 1198 0122 0B       		.uleb128 0xb
+ 1199 0123 3B       		.uleb128 0x3b
+ 1200 0124 0B       		.uleb128 0xb
+ 1201 0125 49       		.uleb128 0x49
+ 1202 0126 13       		.uleb128 0x13
+ 1203 0127 02       		.uleb128 0x2
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccnzKyVH.s 			page 26
+
+
+ 1204 0128 18       		.uleb128 0x18
+ 1205 0129 00       		.byte	0
+ 1206 012a 00       		.byte	0
+ 1207 012b 17       		.uleb128 0x17
+ 1208 012c 34       		.uleb128 0x34
+ 1209 012d 00       		.byte	0
+ 1210 012e 03       		.uleb128 0x3
+ 1211 012f 0E       		.uleb128 0xe
+ 1212 0130 3A       		.uleb128 0x3a
+ 1213 0131 0B       		.uleb128 0xb
+ 1214 0132 3B       		.uleb128 0x3b
+ 1215 0133 0B       		.uleb128 0xb
+ 1216 0134 49       		.uleb128 0x49
+ 1217 0135 13       		.uleb128 0x13
+ 1218 0136 3F       		.uleb128 0x3f
+ 1219 0137 19       		.uleb128 0x19
+ 1220 0138 3C       		.uleb128 0x3c
+ 1221 0139 19       		.uleb128 0x19
+ 1222 013a 00       		.byte	0
+ 1223 013b 00       		.byte	0
+ 1224 013c 18       		.uleb128 0x18
+ 1225 013d 34       		.uleb128 0x34
+ 1226 013e 00       		.byte	0
+ 1227 013f 03       		.uleb128 0x3
+ 1228 0140 0E       		.uleb128 0xe
+ 1229 0141 3A       		.uleb128 0x3a
+ 1230 0142 0B       		.uleb128 0xb
+ 1231 0143 3B       		.uleb128 0x3b
+ 1232 0144 05       		.uleb128 0x5
+ 1233 0145 49       		.uleb128 0x49
+ 1234 0146 13       		.uleb128 0x13
+ 1235 0147 3F       		.uleb128 0x3f
+ 1236 0148 19       		.uleb128 0x19
+ 1237 0149 3C       		.uleb128 0x3c
+ 1238 014a 19       		.uleb128 0x19
+ 1239 014b 00       		.byte	0
+ 1240 014c 00       		.byte	0
+ 1241 014d 19       		.uleb128 0x19
+ 1242 014e 35       		.uleb128 0x35
+ 1243 014f 00       		.byte	0
+ 1244 0150 49       		.uleb128 0x49
+ 1245 0151 13       		.uleb128 0x13
+ 1246 0152 00       		.byte	0
+ 1247 0153 00       		.byte	0
+ 1248 0154 1A       		.uleb128 0x1a
+ 1249 0155 2E       		.uleb128 0x2e
+ 1250 0156 00       		.byte	0
+ 1251 0157 3F       		.uleb128 0x3f
+ 1252 0158 19       		.uleb128 0x19
+ 1253 0159 3C       		.uleb128 0x3c
+ 1254 015a 19       		.uleb128 0x19
+ 1255 015b 6E       		.uleb128 0x6e
+ 1256 015c 0E       		.uleb128 0xe
+ 1257 015d 03       		.uleb128 0x3
+ 1258 015e 0E       		.uleb128 0xe
+ 1259 015f 3A       		.uleb128 0x3a
+ 1260 0160 0B       		.uleb128 0xb
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccnzKyVH.s 			page 27
+
+
+ 1261 0161 3B       		.uleb128 0x3b
+ 1262 0162 0B       		.uleb128 0xb
+ 1263 0163 00       		.byte	0
+ 1264 0164 00       		.byte	0
+ 1265 0165 00       		.byte	0
+ 1266              		.section	.debug_loc,"",%progbits
+ 1267              	.Ldebug_loc0:
+ 1268              	.LLST0:
+ 1269 0000 00000000 		.4byte	.LVL0
+ 1270 0004 0D000000 		.4byte	.LVL1-1
+ 1271 0008 0100     		.2byte	0x1
+ 1272 000a 50       		.byte	0x50
+ 1273 000b 0D000000 		.4byte	.LVL1-1
+ 1274 000f 22000000 		.4byte	.LVL4
+ 1275 0013 0400     		.2byte	0x4
+ 1276 0015 F3       		.byte	0xf3
+ 1277 0016 01       		.uleb128 0x1
+ 1278 0017 50       		.byte	0x50
+ 1279 0018 9F       		.byte	0x9f
+ 1280 0019 22000000 		.4byte	.LVL4
+ 1281 001d 26000000 		.4byte	.LVL5
+ 1282 0021 0100     		.2byte	0x1
+ 1283 0023 50       		.byte	0x50
+ 1284 0024 26000000 		.4byte	.LVL5
+ 1285 0028 34000000 		.4byte	.LFE111
+ 1286 002c 0400     		.2byte	0x4
+ 1287 002e F3       		.byte	0xf3
+ 1288 002f 01       		.uleb128 0x1
+ 1289 0030 50       		.byte	0x50
+ 1290 0031 9F       		.byte	0x9f
+ 1291 0032 00000000 		.4byte	0
+ 1292 0036 00000000 		.4byte	0
+ 1293              	.LLST1:
+ 1294 003a 00000000 		.4byte	.LVL0
+ 1295 003e 0D000000 		.4byte	.LVL1-1
+ 1296 0042 0100     		.2byte	0x1
+ 1297 0044 51       		.byte	0x51
+ 1298 0045 0D000000 		.4byte	.LVL1-1
+ 1299 0049 22000000 		.4byte	.LVL4
+ 1300 004d 0400     		.2byte	0x4
+ 1301 004f F3       		.byte	0xf3
+ 1302 0050 01       		.uleb128 0x1
+ 1303 0051 51       		.byte	0x51
+ 1304 0052 9F       		.byte	0x9f
+ 1305 0053 22000000 		.4byte	.LVL4
+ 1306 0057 34000000 		.4byte	.LFE111
+ 1307 005b 0100     		.2byte	0x1
+ 1308 005d 51       		.byte	0x51
+ 1309 005e 00000000 		.4byte	0
+ 1310 0062 00000000 		.4byte	0
+ 1311              	.LLST2:
+ 1312 0066 12000000 		.4byte	.LVL2
+ 1313 006a 1D000000 		.4byte	.LVL3-1
+ 1314 006e 0100     		.2byte	0x1
+ 1315 0070 50       		.byte	0x50
+ 1316 0071 1D000000 		.4byte	.LVL3-1
+ 1317 0075 22000000 		.4byte	.LVL4
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccnzKyVH.s 			page 28
+
+
+ 1318 0079 0800     		.2byte	0x8
+ 1319 007b 74       		.byte	0x74
+ 1320 007c 00       		.sleb128 0
+ 1321 007d 03       		.byte	0x3
+ 1322 007e 00000000 		.4byte	.LANCHOR0
+ 1323 0082 22       		.byte	0x22
+ 1324 0083 00000000 		.4byte	0
+ 1325 0087 00000000 		.4byte	0
+ 1326              	.LLST3:
+ 1327 008b 00000000 		.4byte	.LVL6
+ 1328 008f 08000000 		.4byte	.LVL7
+ 1329 0093 0100     		.2byte	0x1
+ 1330 0095 50       		.byte	0x50
+ 1331 0096 08000000 		.4byte	.LVL7
+ 1332 009a 10000000 		.4byte	.LFE112
+ 1333 009e 0400     		.2byte	0x4
+ 1334 00a0 F3       		.byte	0xf3
+ 1335 00a1 01       		.uleb128 0x1
+ 1336 00a2 50       		.byte	0x50
+ 1337 00a3 9F       		.byte	0x9f
+ 1338 00a4 00000000 		.4byte	0
+ 1339 00a8 00000000 		.4byte	0
+ 1340              	.LLST4:
+ 1341 00ac 00000000 		.4byte	.LVL8
+ 1342 00b0 08000000 		.4byte	.LVL9
+ 1343 00b4 0100     		.2byte	0x1
+ 1344 00b6 50       		.byte	0x50
+ 1345 00b7 08000000 		.4byte	.LVL9
+ 1346 00bb 1A000000 		.4byte	.LFE113
+ 1347 00bf 0400     		.2byte	0x4
+ 1348 00c1 F3       		.byte	0xf3
+ 1349 00c2 01       		.uleb128 0x1
+ 1350 00c3 50       		.byte	0x50
+ 1351 00c4 9F       		.byte	0x9f
+ 1352 00c5 00000000 		.4byte	0
+ 1353 00c9 00000000 		.4byte	0
+ 1354              	.LLST5:
+ 1355 00cd 00000000 		.4byte	.LVL12
+ 1356 00d1 1D000000 		.4byte	.LVL18-1
+ 1357 00d5 0100     		.2byte	0x1
+ 1358 00d7 50       		.byte	0x50
+ 1359 00d8 1D000000 		.4byte	.LVL18-1
+ 1360 00dc 2E000000 		.4byte	.LVL21
+ 1361 00e0 0400     		.2byte	0x4
+ 1362 00e2 F3       		.byte	0xf3
+ 1363 00e3 01       		.uleb128 0x1
+ 1364 00e4 50       		.byte	0x50
+ 1365 00e5 9F       		.byte	0x9f
+ 1366 00e6 2E000000 		.4byte	.LVL21
+ 1367 00ea 32000000 		.4byte	.LVL22
+ 1368 00ee 0100     		.2byte	0x1
+ 1369 00f0 50       		.byte	0x50
+ 1370 00f1 32000000 		.4byte	.LVL22
+ 1371 00f5 3C000000 		.4byte	.LFE114
+ 1372 00f9 0400     		.2byte	0x4
+ 1373 00fb F3       		.byte	0xf3
+ 1374 00fc 01       		.uleb128 0x1
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccnzKyVH.s 			page 29
+
+
+ 1375 00fd 50       		.byte	0x50
+ 1376 00fe 9F       		.byte	0x9f
+ 1377 00ff 00000000 		.4byte	0
+ 1378 0103 00000000 		.4byte	0
+ 1379              	.LLST6:
+ 1380 0107 00000000 		.4byte	.LVL12
+ 1381 010b 1D000000 		.4byte	.LVL18-1
+ 1382 010f 0100     		.2byte	0x1
+ 1383 0111 51       		.byte	0x51
+ 1384 0112 1D000000 		.4byte	.LVL18-1
+ 1385 0116 2E000000 		.4byte	.LVL21
+ 1386 011a 0400     		.2byte	0x4
+ 1387 011c F3       		.byte	0xf3
+ 1388 011d 01       		.uleb128 0x1
+ 1389 011e 51       		.byte	0x51
+ 1390 011f 9F       		.byte	0x9f
+ 1391 0120 2E000000 		.4byte	.LVL21
+ 1392 0124 3C000000 		.4byte	.LFE114
+ 1393 0128 0100     		.2byte	0x1
+ 1394 012a 51       		.byte	0x51
+ 1395 012b 00000000 		.4byte	0
+ 1396 012f 00000000 		.4byte	0
+ 1397              	.LLST7:
+ 1398 0133 06000000 		.4byte	.LVL13
+ 1399 0137 14000000 		.4byte	.LVL14
+ 1400 013b 0200     		.2byte	0x2
+ 1401 013d 30       		.byte	0x30
+ 1402 013e 9F       		.byte	0x9f
+ 1403 013f 14000000 		.4byte	.LVL14
+ 1404 0143 16000000 		.4byte	.LVL15
+ 1405 0147 0100     		.2byte	0x1
+ 1406 0149 55       		.byte	0x55
+ 1407 014a 16000000 		.4byte	.LVL15
+ 1408 014e 18000000 		.4byte	.LVL16
+ 1409 0152 0200     		.2byte	0x2
+ 1410 0154 30       		.byte	0x30
+ 1411 0155 9F       		.byte	0x9f
+ 1412 0156 1A000000 		.4byte	.LVL17
+ 1413 015a 2E000000 		.4byte	.LVL21
+ 1414 015e 0100     		.2byte	0x1
+ 1415 0160 55       		.byte	0x55
+ 1416 0161 00000000 		.4byte	0
+ 1417 0165 00000000 		.4byte	0
+ 1418              	.LLST8:
+ 1419 0169 00000000 		.4byte	.LVL23
+ 1420 016d 0B000000 		.4byte	.LVL24-1
+ 1421 0171 0100     		.2byte	0x1
+ 1422 0173 50       		.byte	0x50
+ 1423 0174 0B000000 		.4byte	.LVL24-1
+ 1424 0178 1C000000 		.4byte	.LFE115
+ 1425 017c 0400     		.2byte	0x4
+ 1426 017e F3       		.byte	0xf3
+ 1427 017f 01       		.uleb128 0x1
+ 1428 0180 50       		.byte	0x50
+ 1429 0181 9F       		.byte	0x9f
+ 1430 0182 00000000 		.4byte	0
+ 1431 0186 00000000 		.4byte	0
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccnzKyVH.s 			page 30
+
+
+ 1432              		.section	.debug_aranges,"",%progbits
+ 1433 0000 44000000 		.4byte	0x44
+ 1434 0004 0200     		.2byte	0x2
+ 1435 0006 00000000 		.4byte	.Ldebug_info0
+ 1436 000a 04       		.byte	0x4
+ 1437 000b 00       		.byte	0
+ 1438 000c 0000     		.2byte	0
+ 1439 000e 0000     		.2byte	0
+ 1440 0010 00000000 		.4byte	.LFB111
+ 1441 0014 34000000 		.4byte	.LFE111-.LFB111
+ 1442 0018 00000000 		.4byte	.LFB112
+ 1443 001c 10000000 		.4byte	.LFE112-.LFB112
+ 1444 0020 00000000 		.4byte	.LFB113
+ 1445 0024 1A000000 		.4byte	.LFE113-.LFB113
+ 1446 0028 00000000 		.4byte	.LFB114
+ 1447 002c 3C000000 		.4byte	.LFE114-.LFB114
+ 1448 0030 00000000 		.4byte	.LFB115
+ 1449 0034 1C000000 		.4byte	.LFE115-.LFB115
+ 1450 0038 00000000 		.4byte	.LFB110
+ 1451 003c 12000000 		.4byte	.LFE110-.LFB110
+ 1452 0040 00000000 		.4byte	0
+ 1453 0044 00000000 		.4byte	0
+ 1454              		.section	.debug_ranges,"",%progbits
+ 1455              	.Ldebug_ranges0:
+ 1456 0000 00000000 		.4byte	.LFB111
+ 1457 0004 34000000 		.4byte	.LFE111
+ 1458 0008 00000000 		.4byte	.LFB112
+ 1459 000c 10000000 		.4byte	.LFE112
+ 1460 0010 00000000 		.4byte	.LFB113
+ 1461 0014 1A000000 		.4byte	.LFE113
+ 1462 0018 00000000 		.4byte	.LFB114
+ 1463 001c 3C000000 		.4byte	.LFE114
+ 1464 0020 00000000 		.4byte	.LFB115
+ 1465 0024 1C000000 		.4byte	.LFE115
+ 1466 0028 00000000 		.4byte	.LFB110
+ 1467 002c 12000000 		.4byte	.LFE110
+ 1468 0030 00000000 		.4byte	0
+ 1469 0034 00000000 		.4byte	0
+ 1470              		.section	.debug_line,"",%progbits
+ 1471              	.Ldebug_line0:
+ 1472 0000 CA020000 		.section	.debug_str,"MS",%progbits,1
+ 1472      02003F02 
+ 1472      00000201 
+ 1472      FB0E0D00 
+ 1472      01010101 
+ 1473              	.LASF76:
+ 1474 0000 53455645 		.ascii	"SEVEN_Init\000"
+ 1474      4E5F496E 
+ 1474      697400
+ 1475              	.LASF59:
+ 1476 000b 70617474 		.ascii	"pattern\000"
+ 1476      65726E00 
+ 1477              	.LASF38:
+ 1478 0013 52435F45 		.ascii	"RC_ERROR_READ_ONLY\000"
+ 1478      52524F52 
+ 1478      5F524541 
+ 1478      445F4F4E 
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccnzKyVH.s 			page 31
+
+
+ 1478      4C5900
+ 1479              	.LASF24:
+ 1480 0026 52435F53 		.ascii	"RC_SUCCESS\000"
+ 1480      55434345 
+ 1480      535300
+ 1481              	.LASF39:
+ 1482 0031 52435F45 		.ascii	"RC_ERROR_WRITE_ONLY\000"
+ 1482      52524F52 
+ 1482      5F575249 
+ 1482      54455F4F 
+ 1482      4E4C5900 
+ 1483              	.LASF2:
+ 1484 0045 73686F72 		.ascii	"short int\000"
+ 1484      7420696E 
+ 1484      7400
+ 1485              	.LASF30:
+ 1486 004f 52435F45 		.ascii	"RC_ERROR_OVERRUN\000"
+ 1486      52524F52 
+ 1486      5F4F5645 
+ 1486      5252554E 
+ 1486      00
+ 1487              	.LASF42:
+ 1488 0060 52435F45 		.ascii	"RC_ERROR_WRITE_FAILS\000"
+ 1488      52524F52 
+ 1488      5F575249 
+ 1488      54455F46 
+ 1488      41494C53 
+ 1489              	.LASF22:
+ 1490 0075 73697A65 		.ascii	"sizetype\000"
+ 1490      74797065 
+ 1490      00
+ 1491              	.LASF74:
+ 1492 007e 536F7572 		.ascii	"Source\\bsw\\seven.c\000"
+ 1492      63655C62 
+ 1492      73775C73 
+ 1492      6576656E 
+ 1492      2E6300
+ 1493              	.LASF50:
+ 1494 0091 53455645 		.ascii	"SEVEN_0\000"
+ 1494      4E5F3000 
+ 1495              	.LASF27:
+ 1496 0099 52435F45 		.ascii	"RC_ERROR_ZERO\000"
+ 1496      52524F52 
+ 1496      5F5A4552 
+ 1496      4F00
+ 1497              	.LASF20:
+ 1498 00a7 45455F46 		.ascii	"EE_FREG\000"
+ 1498      52454700 
+ 1499              	.LASF40:
+ 1500 00af 52435F45 		.ascii	"RC_ERROR_INVALID\000"
+ 1500      52524F52 
+ 1500      5F494E56 
+ 1500      414C4944 
+ 1500      00
+ 1501              	.LASF18:
+ 1502 00c0 45455F55 		.ascii	"EE_UINT32\000"
+ 1502      494E5433 
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccnzKyVH.s 			page 32
+
+
+ 1502      3200
+ 1503              	.LASF21:
+ 1504 00ca 45455F54 		.ascii	"EE_TID\000"
+ 1504      494400
+ 1505              	.LASF54:
+ 1506 00d1 76616C75 		.ascii	"value\000"
+ 1506      6500
+ 1507              	.LASF11:
+ 1508 00d7 75696E74 		.ascii	"uint8_t\000"
+ 1508      385F7400 
+ 1509              	.LASF47:
+ 1510 00df 52435F45 		.ascii	"RC_ERROR_INVALID_STATE\000"
+ 1510      52524F52 
+ 1510      5F494E56 
+ 1510      414C4944 
+ 1510      5F535441 
+ 1511              	.LASF75:
+ 1512 00f6 433A5C55 		.ascii	"C:\\Users\\mau_g\\Desktop\\Master\\2_SEMESTER\\EAA_"
+ 1512      73657273 
+ 1512      5C6D6175 
+ 1512      5F675C44 
+ 1512      65736B74 
+ 1513 0123 4C61625C 		.ascii	"Lab\\Lab2\\Workspace_Lab2\\EAA_Lab2.cydsn\000"
+ 1513      4C616232 
+ 1513      5C576F72 
+ 1513      6B737061 
+ 1513      63655F4C 
+ 1514              	.LASF68:
+ 1515 014a 45455F49 		.ascii	"EE_IRQ_nesting_level\000"
+ 1515      52515F6E 
+ 1515      65737469 
+ 1515      6E675F6C 
+ 1515      6576656C 
+ 1516              	.LASF67:
+ 1517 015f 45455F73 		.ascii	"EE_std_endcycle_next_tid\000"
+ 1517      74645F65 
+ 1517      6E646379 
+ 1517      636C655F 
+ 1517      6E657874 
+ 1518              	.LASF0:
+ 1519 0178 7369676E 		.ascii	"signed char\000"
+ 1519      65642063 
+ 1519      68617200 
+ 1520              	.LASF13:
+ 1521 0184 666C6F61 		.ascii	"float\000"
+ 1521      7400
+ 1522              	.LASF55:
+ 1523 018a 53455645 		.ascii	"SEVEN_Set\000"
+ 1523      4E5F5365 
+ 1523      7400
+ 1524              	.LASF8:
+ 1525 0194 6C6F6E67 		.ascii	"long long int\000"
+ 1525      206C6F6E 
+ 1525      6720696E 
+ 1525      7400
+ 1526              	.LASF65:
+ 1527 01a2 45455F6F 		.ascii	"EE_oo_IRQ_suspend_status\000"
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccnzKyVH.s 			page 33
+
+
+ 1527      6F5F4952 
+ 1527      515F7375 
+ 1527      7370656E 
+ 1527      645F7374 
+ 1528              	.LASF57:
+ 1529 01bb 53455645 		.ascii	"SEVEN_SetHex\000"
+ 1529      4E5F5365 
+ 1529      74486578 
+ 1529      00
+ 1530              	.LASF43:
+ 1531 01c8 52435F45 		.ascii	"RC_ERROR_NOT_MATCH\000"
+ 1531      52524F52 
+ 1531      5F4E4F54 
+ 1531      5F4D4154 
+ 1531      434800
+ 1532              	.LASF48:
+ 1533 01db 52435F45 		.ascii	"RC_ERROR_UNKNOWN\000"
+ 1533      52524F52 
+ 1533      5F554E4B 
+ 1533      4E4F574E 
+ 1533      00
+ 1534              	.LASF6:
+ 1535 01ec 6C6F6E67 		.ascii	"long int\000"
+ 1535      20696E74 
+ 1535      00
+ 1536              	.LASF31:
+ 1537 01f5 52435F45 		.ascii	"RC_ERROR_UNDERRUN\000"
+ 1537      52524F52 
+ 1537      5F554E44 
+ 1537      45525255 
+ 1537      4E00
+ 1538              	.LASF34:
+ 1539 0207 52435F45 		.ascii	"RC_ERROR_BUSY\000"
+ 1539      52524F52 
+ 1539      5F425553 
+ 1539      5900
+ 1540              	.LASF4:
+ 1541 0215 5F5F7569 		.ascii	"__uint8_t\000"
+ 1541      6E74385F 
+ 1541      7400
+ 1542              	.LASF62:
+ 1543 021f 53455645 		.ascii	"SEVEN__latch_value\000"
+ 1543      4E5F5F6C 
+ 1543      61746368 
+ 1543      5F76616C 
+ 1543      756500
+ 1544              	.LASF45:
+ 1545 0232 52435F45 		.ascii	"RC_ERROR_BAD_DATA\000"
+ 1545      52524F52 
+ 1545      5F424144 
+ 1545      5F444154 
+ 1545      4100
+ 1546              	.LASF53:
+ 1547 0244 73657665 		.ascii	"sevenId\000"
+ 1547      6E496400 
+ 1548              	.LASF60:
+ 1549 024c 53455645 		.ascii	"SEVEN_Clear\000"
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccnzKyVH.s 			page 34
+
+
+ 1549      4E5F436C 
+ 1549      65617200 
+ 1550              	.LASF16:
+ 1551 0258 6C6F6E67 		.ascii	"long double\000"
+ 1551      20646F75 
+ 1551      626C6500 
+ 1552              	.LASF1:
+ 1553 0264 756E7369 		.ascii	"unsigned char\000"
+ 1553      676E6564 
+ 1553      20636861 
+ 1553      7200
+ 1554              	.LASF51:
+ 1555 0272 53455645 		.ascii	"SEVEN_1\000"
+ 1555      4E5F3100 
+ 1556              	.LASF9:
+ 1557 027a 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1557      206C6F6E 
+ 1557      6720756E 
+ 1557      7369676E 
+ 1557      65642069 
+ 1558              	.LASF10:
+ 1559 0291 756E7369 		.ascii	"unsigned int\000"
+ 1559      676E6564 
+ 1559      20696E74 
+ 1559      00
+ 1560              	.LASF36:
+ 1561 029e 52435F45 		.ascii	"RC_ERROR_OPEN\000"
+ 1561      52524F52 
+ 1561      5F4F5045 
+ 1561      4E00
+ 1562              	.LASF61:
+ 1563 02ac 53455645 		.ascii	"SEVEN__BitPattern\000"
+ 1563      4E5F5F42 
+ 1563      69745061 
+ 1563      74746572 
+ 1563      6E00
+ 1564              	.LASF26:
+ 1565 02be 52435F45 		.ascii	"RC_ERROR_NULL\000"
+ 1565      52524F52 
+ 1565      5F4E554C 
+ 1565      4C00
+ 1566              	.LASF63:
+ 1567 02cc 53455645 		.ascii	"SEVEN__latch_pattern\000"
+ 1567      4E5F5F6C 
+ 1567      61746368 
+ 1567      5F706174 
+ 1567      7465726E 
+ 1568              	.LASF17:
+ 1569 02e1 45455F49 		.ascii	"EE_INT32\000"
+ 1569      4E543332 
+ 1569      00
+ 1570              	.LASF3:
+ 1571 02ea 73686F72 		.ascii	"short unsigned int\000"
+ 1571      7420756E 
+ 1571      7369676E 
+ 1571      65642069 
+ 1571      6E7400
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccnzKyVH.s 			page 35
+
+
+ 1572              	.LASF73:
+ 1573 02fd 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1573      43313120 
+ 1573      352E342E 
+ 1573      31203230 
+ 1573      31363036 
+ 1574 0330 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 1574      20726576 
+ 1574      6973696F 
+ 1574      6E203233 
+ 1574      37373135 
+ 1575 0363 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1575      66756E63 
+ 1575      74696F6E 
+ 1575      2D736563 
+ 1575      74696F6E 
+ 1576              	.LASF71:
+ 1577 038b 53455645 		.ascii	"SEVEN_reg_Write\000"
+ 1577      4E5F7265 
+ 1577      675F5772 
+ 1577      69746500 
+ 1578              	.LASF15:
+ 1579 039b 63686172 		.ascii	"char\000"
+ 1579      00
+ 1580              	.LASF58:
+ 1581 03a0 53455645 		.ascii	"SEVEN_SetDP\000"
+ 1581      4E5F5365 
+ 1581      74445000 
+ 1582              	.LASF32:
+ 1583 03ac 52435F45 		.ascii	"RC_ERROR_BUFFER_FULL\000"
+ 1583      52524F52 
+ 1583      5F425546 
+ 1583      4645525F 
+ 1583      46554C4C 
+ 1584              	.LASF12:
+ 1585 03c1 696E7433 		.ascii	"int32_t\000"
+ 1585      325F7400 
+ 1586              	.LASF56:
+ 1587 03c9 53455645 		.ascii	"SEVEN_Get\000"
+ 1587      4E5F4765 
+ 1587      7400
+ 1588              	.LASF41:
+ 1589 03d3 52435F45 		.ascii	"RC_ERROR_READ_FAILS\000"
+ 1589      52524F52 
+ 1589      5F524541 
+ 1589      445F4641 
+ 1589      494C5300 
+ 1590              	.LASF44:
+ 1591 03e7 52435F45 		.ascii	"RC_ERROR_BAD_PARAM\000"
+ 1591      52524F52 
+ 1591      5F424144 
+ 1591      5F504152 
+ 1591      414D00
+ 1592              	.LASF66:
+ 1593 03fa 45455F41 		.ascii	"EE_ApplicationMode\000"
+ 1593      70706C69 
+ 1593      63617469 
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccnzKyVH.s 			page 36
+
+
+ 1593      6F6E4D6F 
+ 1593      646500
+ 1594              	.LASF7:
+ 1595 040d 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1595      20756E73 
+ 1595      69676E65 
+ 1595      6420696E 
+ 1595      7400
+ 1596              	.LASF14:
+ 1597 041f 646F7562 		.ascii	"double\000"
+ 1597      6C6500
+ 1598              	.LASF52:
+ 1599 0426 53455645 		.ascii	"SEVEN_id_t\000"
+ 1599      4E5F6964 
+ 1599      5F7400
+ 1600              	.LASF37:
+ 1601 0431 52435F45 		.ascii	"RC_ERROR_CHECKSUM\000"
+ 1601      52524F52 
+ 1601      5F434845 
+ 1601      434B5355 
+ 1601      4D00
+ 1602              	.LASF19:
+ 1603 0443 45455F55 		.ascii	"EE_UREG\000"
+ 1603      52454700 
+ 1604              	.LASF29:
+ 1605 044b 52435F45 		.ascii	"RC_ERROR_RANGE\000"
+ 1605      52524F52 
+ 1605      5F52414E 
+ 1605      474500
+ 1606              	.LASF5:
+ 1607 045a 5F5F696E 		.ascii	"__int32_t\000"
+ 1607      7433325F 
+ 1607      7400
+ 1608              	.LASF72:
+ 1609 0464 53455645 		.ascii	"SEVEN_DP_Write\000"
+ 1609      4E5F4450 
+ 1609      5F577269 
+ 1609      746500
+ 1610              	.LASF46:
+ 1611 0473 52435F45 		.ascii	"RC_ERROR_CANCELED\000"
+ 1611      52524F52 
+ 1611      5F43414E 
+ 1611      43454C45 
+ 1611      4400
+ 1612              	.LASF70:
+ 1613 0485 53455645 		.ascii	"SEVEN_SELECT_Write\000"
+ 1613      4E5F5345 
+ 1613      4C454354 
+ 1613      5F577269 
+ 1613      746500
+ 1614              	.LASF69:
+ 1615 0498 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1615      52784275 
+ 1615      66666572 
+ 1615      00
+ 1616              	.LASF25:
+ 1617 04a5 52435F45 		.ascii	"RC_ERROR\000"
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccnzKyVH.s 			page 37
+
+
+ 1617      52524F52 
+ 1617      00
+ 1618              	.LASF28:
+ 1619 04ae 52435F45 		.ascii	"RC_ERROR_MEMORY\000"
+ 1619      52524F52 
+ 1619      5F4D454D 
+ 1619      4F525900 
+ 1620              	.LASF64:
+ 1621 04be 45455F6F 		.ascii	"EE_oo_IRQ_disable_count\000"
+ 1621      6F5F4952 
+ 1621      515F6469 
+ 1621      7361626C 
+ 1621      655F636F 
+ 1622              	.LASF33:
+ 1623 04d6 52435F45 		.ascii	"RC_ERROR_BUFFER_EMTPY\000"
+ 1623      52524F52 
+ 1623      5F425546 
+ 1623      4645525F 
+ 1623      454D5450 
+ 1624              	.LASF49:
+ 1625 04ec 52435F74 		.ascii	"RC_t\000"
+ 1625      00
+ 1626              	.LASF23:
+ 1627 04f1 73696E74 		.ascii	"sint8_t\000"
+ 1627      385F7400 
+ 1628              	.LASF35:
+ 1629 04f9 52435F45 		.ascii	"RC_ERROR_TIME_OUT\000"
+ 1629      52524F52 
+ 1629      5F54494D 
+ 1629      455F4F55 
+ 1629      5400
+ 1630              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
