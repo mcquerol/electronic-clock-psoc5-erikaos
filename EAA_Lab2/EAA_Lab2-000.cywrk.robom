@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CyXmlSerializer>
+<!--This file is machine generated and read. It is not intended to be edited by hand.-->
+<!--Due to this, there is no schema for this file.-->
+<CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWrkspcCustomData" version="4">
+<CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997 type_name="CyDesigner.Common.Base.CyCustomData" version="2">
+<userData>
+<dataGuid v="5f2be1a5-0687-4501-bb8c-cf21cb8211bf">
+<CyGuid_5f2be1a5-0687-4501-bb8c-cf21cb8211bf type_name="CyDesigner.Common.ProjMgmt.GUI.CyBookmarkData" version="1">
+<indicators />
+</CyGuid_5f2be1a5-0687-4501-bb8c-cf21cb8211bf>
+</dataGuid>
+<dataGuid v="1b906a0f-a7b6-4e4d-a428-82f98b53cb35">
+<CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35 type_name="CyDesigner.Common.ProjMgmt.GUI.CyExplorerWindow+CyExplorerWindowState" version="3" SelectedTab="Source">
+<TreeKeys>
+<v>Source</v>
+<v>Components</v>
+<v>Output</v>
+</TreeKeys>
+<TreeStates>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="EAA_Lab2-000\EAA_Lab2\bsw\ringbuffer.h">
+<ExpandedNodeIds>
+<v>EAA_Lab2-000</v>
+<v>EAA_Lab2-000\EAA_Lab2</v>
+<v>EAA_Lab2-000\EAA_Lab2\TopDesign</v>
+<v>EAA_Lab2-000\EAA_Lab2\EAA_Lab2.cydwr</v>
+<v>EAA_Lab2-000\EAA_Lab2\EAA_Lab2.cydwr\Pins</v>
+<v>EAA_Lab2-000\EAA_Lab2\EAA_Lab2.cydwr\Analog</v>
+<v>EAA_Lab2-000\EAA_Lab2\EAA_Lab2.cydwr\Clocks</v>
+<v>EAA_Lab2-000\EAA_Lab2\EAA_Lab2.cydwr\Interrupts</v>
+<v>EAA_Lab2-000\EAA_Lab2\EAA_Lab2.cydwr\DMA</v>
+<v>EAA_Lab2-000\EAA_Lab2\EAA_Lab2.cydwr\System</v>
+<v>EAA_Lab2-000\EAA_Lab2\EAA_Lab2.cydwr\Directives</v>
+<v>EAA_Lab2-000\EAA_Lab2\EAA_Lab2.cydwr\Flash Security</v>
+<v>EAA_Lab2-000\EAA_Lab2\EAA_Lab2.cydwr\EEPROM</v>
+<v>EAA_Lab2-000\EAA_Lab2\asw</v>
+<v>EAA_Lab2-000\EAA_Lab2\asw\clock_type.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\asw\clock_type.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\asw\cyapicallbacks.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\asw\main.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\asw\statemachine.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\asw\statemachine.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\asw\swc_clock.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\asw\swc_clock.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\asw\tsk_control.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\asw\tsk_control.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\asw\tsk_io.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\asw\tsk_io.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft\fonts</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft\fonts\FreeMono12pt7b.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft\fonts\FreeMono18pt7b.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft\fonts\FreeMono24pt7b.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft\fonts\FreeMono9pt7b.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft\fonts\FreeMonoBold12pt7b.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft\fonts\FreeMonoBold18pt7b.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft\fonts\FreeMonoBold24pt7b.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft\fonts\FreeMonoBold9pt7b.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft\fonts\FreeMonoBoldOblique12pt7b.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft\fonts\FreeMonoBoldOblique18pt7b.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft\fonts\FreeMonoBoldOblique24pt7b.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft\fonts\FreeMonoBoldOblique9pt7b.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft\fonts\FreeMonoOblique12pt7b.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft\fonts\FreeMonoOblique18pt7b.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft\fonts\FreeMonoOblique24pt7b.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft\fonts\FreeMonoOblique9pt7b.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft\fonts\FreeSans12pt7b.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft\fonts\FreeSans18pt7b.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft\fonts\FreeSans24pt7b.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft\fonts\FreeSans9pt7b.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft\fonts\FreeSansBold12pt7b.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft\fonts\FreeSansBold18pt7b.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft\fonts\FreeSansBold24pt7b.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft\fonts\FreeSansBold9pt7b.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft\fonts\FreeSansBoldOblique12pt7b.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft\fonts\FreeSansBoldOblique18pt7b.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft\fonts\FreeSansBoldOblique24pt7b.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft\fonts\FreeSansBoldOblique9pt7b.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft\fonts\FreeSansOblique12pt7b.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft\fonts\FreeSansOblique18pt7b.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft\fonts\FreeSansOblique24pt7b.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft\fonts\FreeSansOblique9pt7b.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft\fonts\FreeSerif12pt7b.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft\fonts\FreeSerif18pt7b.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft\fonts\FreeSerif24pt7b.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft\fonts\FreeSerif9pt7b.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft\fonts\FreeSerifBold12pt7b.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft\fonts\FreeSerifBold18pt7b.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft\fonts\FreeSerifBold24pt7b.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft\fonts\FreeSerifBold9pt7b.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft\fonts\FreeSerifBoldItalic12pt7b.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft\fonts\FreeSerifBoldItalic18pt7b.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft\fonts\FreeSerifBoldItalic24pt7b.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft\fonts\FreeSerifBoldItalic9pt7b.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft\fonts\FreeSerifItalic12pt7b.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft\fonts\FreeSerifItalic18pt7b.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft\fonts\FreeSerifItalic24pt7b.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft\fonts\FreeSerifItalic9pt7b.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft\fonts\glcdfont.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft\fonts\Org_01.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft\fonts\Picopixel.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft\fonts\Tiny3x3a2pt7b.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft\fonts\TomThumb.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft\ST7735.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft\tft.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\tft\tft.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\button.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\button.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\derivate.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\glcdfont.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\global.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\led.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\led.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\logging.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\logging.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\logging_cfg.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\math_helper.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\ringbuffer.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\seven.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\bsw\seven.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\rte</v>
+<v>EAA_Lab2-000\EAA_Lab2\rte\info.txt</v>
+<v>EAA_Lab2-000\EAA_Lab2\rte\rte.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\rte\rte.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\rte\rte_types.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\rte\sc_button.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\rte\sc_button.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\rte\sc_button_type.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\rte\sc_button_type.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\rte\sc_clock.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\rte\sc_clock.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\rte\sc_clock_type.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\rte\sc_clock_type.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\rte\sc_event.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\rte\sc_event.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\rte\sc_event_type.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\rte\sp_common.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\rte\sp_common.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\cyapicallbacks.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\Generated_Source</v>
+<v>EAA_Lab2-000\EAA_Lab2\Generated_Source\PSoC5</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>EAA_Lab2-000\EAA_Lab2\Generated_Source\PSoC5\SEVEN_E</v>
+<v>EAA_Lab2-000\EAA_Lab2\Generated_Source\PSoC5\SEVEN_F</v>
+<v>EAA_Lab2-000\EAA_Lab2\Generated_Source\PSoC5\SEVEN_G</v>
+<v>EAA_Lab2-000\EAA_Lab2\Generated_Source\PSoC5\SEVEN_reg</v>
+<v>EAA_Lab2-000\EAA_Lab2\Generated_Source\PSoC5\SEVEN_SELECT</v>
+<v>EAA_Lab2-000\EAA_Lab2\Generated_Source\PSoC5\TFT_BackLight</v>
+<v>EAA_Lab2-000\EAA_Lab2\Generated_Source\PSoC5\TFT_CS</v>
+<v>EAA_Lab2-000\EAA_Lab2\Generated_Source\PSoC5\TFT_DC</v>
+<v>EAA_Lab2-000\EAA_Lab2\Generated_Source\PSoC5\TFT_LED</v>
+<v>EAA_Lab2-000\EAA_Lab2\Generated_Source\PSoC5\TFT_RES</v>
+<v>EAA_Lab2-000\EAA_Lab2\Generated_Source\PSoC5\TFT_SCL</v>
+<v>EAA_Lab2-000\EAA_Lab2\Generated_Source\PSoC5\TFT_SDA</v>
+<v>EAA_Lab2-000\EAA_Lab2\Generated_Source\PSoC5\TFT_SPI</v>
+<v>EAA_Lab2-000\EAA_Lab2\Generated_Source\PSoC5\TFT_SPI_IntClock</v>
+<v>EAA_Lab2-000\EAA_Lab2\Generated_Source\PSoC5\UART_LOG</v>
+<v>EAA_Lab2-000\EAA_Lab2\Generated_Source\PSoC5\UART_LOG_IntClock</v>
+<v>EAA_Lab2-000\EAA_Lab2\Generated_Source\PSoC5\cycodeshareexport.ld</v>
+<v>EAA_Lab2-000\EAA_Lab2\Generated_Source\PSoC5\cycodeshareimport.ld</v>
+<v>EAA_Lab2-000\EAA_Lab2\Generated_Source\PSoC5\cycodeshareimport.scat</v>
+<v>EAA_Lab2-000\EAA_Lab2\Generated_Source\PSoC5\cydevice.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\Generated_Source\PSoC5\cydevice_trm.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\Generated_Source\PSoC5\cydevicegnu.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\Generated_Source\PSoC5\cydevicegnu_trm.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\Generated_Source\PSoC5\cydeviceiar.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\Generated_Source\PSoC5\cydeviceiar_trm.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\Generated_Source\PSoC5\cydevicerv.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\Generated_Source\PSoC5\cydevicerv_trm.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\Generated_Source\PSoC5\cydisabledsheets.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\Generated_Source\PSoC5\cyfitter.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\Generated_Source\PSoC5\cyfitter_cfg.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\Generated_Source\PSoC5\cyfitter_cfg.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\Generated_Source\PSoC5\cyfittergnu.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\Generated_Source\PSoC5\cyfitteriar.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\Generated_Source\PSoC5\cyfitterrv.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\Generated_Source\PSoC5\cymetadata.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\Generated_Source\PSoC5\project.h</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>EAA_Lab2-000</v>
+<v>EAA_Lab2-000\EAA_Lab2</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\common_ee_compiler_gcc.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\common_ee_hal_structs.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\common_ee_hal_structs.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\common_ee_irqstub.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\common_ee_primitives.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\common_ee_stdint.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\common_ee_types.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\cortex_mx_ee_context.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\cortex_mx_ee_context.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\cortex_mx_ee_cpu.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\cortex_mx_ee_internal.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\cortex_mx_ee_irq.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\cortex_mx_ee_irq_cng_cont.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\cortex_mx_ee_nvic.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\cortex_mx_ee_system_timer.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\cortex_mx_ee_systick.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\cortex_mx_ee_utils.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_activate.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_alcancel.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_alget.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_algetbase.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_alsetabs.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_alsetrel.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_altick.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_api.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_as_internal.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_as_kernel.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_as_timing_prot.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_chaintas.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_evclear.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_evget.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_evset.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_evwait.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_force_schedule.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_getcountervalue.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_getelapsedvalue.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_gettaskid.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_gettaskstate.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_gnu_change_context_isr.s</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_gnu_irq_stack.s</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_gnu_multi_context.s</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_gnu_oo.s</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_internal.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_iparam.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_irq.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_irqendin.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_lockres.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_lookup.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_oo_api.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_oo_common.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_oo_inline.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_oo_internal.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_oo_intfunc.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_oo_irq.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_oo_kernel.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_os.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_rq_exchg.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_rq_first.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_rq_inser.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_rtdruid_versions.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_schedule.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_semgetvalue.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_sempost.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_semtrywait.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_semwait.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_shtdown.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_startos.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_terminat.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_thendin.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_tnterm.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_tracing.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_tstub.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_ulockallres.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_ulockres.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\eecfg.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\eecfg.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\event_definition.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ISR_definition.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\resource_priorities.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\task_priorities.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\Custom</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\Custom\ErikaOSAlarmsCounters.cs</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\Custom\ErikaOSAlarmsCounters.Designer.cs</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\Custom\ErikaOSAlarmsCounters.resx</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\Custom\ErikaOSControl.cs</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\Custom\ErikaOSControl.Designer.cs</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\Custom\ErikaOSControl.resx</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\Custom\ErikaOSCustomizer.cs</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\Custom\ErikaOSEventsResources.cs</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\Custom\ErikaOSEventsResources.Designer.cs</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\Custom\ErikaOSEventsResources.resx</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\Custom\ErikaOSISRs.cs</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\Custom\ErikaOSISRs.Designer.cs</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\Custom\ErikaOSISRs.resx</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\Custom\ErikaOSParameters.cs</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\Custom\ErikaOSTask.cs</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\Custom\ErikaOSTask.Designer.cs</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\Custom\ErikaOSTask.resx</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\ErikaOS_v2_5_3.cysym</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\ErikaOS_v2_5_3.pdf</v>
+<v>EAA_Lab2-000\EAA_Lab2\TopDesign</v>
+<v>EAA_Lab2-000\EAA_Lab2\TopDesign\TopDesign.cysch</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>EAA_Lab2-000</v>
+<v>EAA_Lab2-000\EAA_Lab2</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\common_ee_compiler_gcc.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\common_ee_hal_structs.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\common_ee_hal_structs.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\common_ee_irqstub.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\common_ee_primitives.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\common_ee_stdint.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\common_ee_types.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\cortex_mx_ee_context.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\cortex_mx_ee_context.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\cortex_mx_ee_cpu.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\cortex_mx_ee_internal.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\cortex_mx_ee_irq.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\cortex_mx_ee_irq_cng_cont.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\cortex_mx_ee_nvic.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\cortex_mx_ee_system_timer.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\cortex_mx_ee_systick.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\cortex_mx_ee_utils.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee.h</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_activate.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_alcancel.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_alget.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_algetbase.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_alsetabs.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_alsetrel.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_altick.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_api.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_as_internal.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_as_kernel.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_as_timing_prot.inc</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_chaintas.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_evclear.c</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3\API\ee_evget.c</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>EAA_Lab2-000</v>
+<v>EAA_Lab2-000\EAA_Lab2</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\button.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\BUTTON_1.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\BUTTON_2.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\BUTTON_3.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\BUTTON_4.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\CLK_LED.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\clock_type.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\CySpc.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_common_ee_hal_structs.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_cortex_mx_ee_context.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_cortex_mx_ee_system_timer.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_cortex_mx_ee_utils.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_activate.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_alcancel.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_alget.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_algetbase.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_alsetabs.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_alsetrel.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_altick.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_chaintas.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_evclear.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_evget.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_evset.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_evwait.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_force_schedule.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_getcountervalue.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_getelapsedvalue.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_gettaskid.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_gettaskstate.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_gnu_change_context_isr.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_gnu_irq_stack.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_gnu_multi_context.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_gnu_oo.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_iparam.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_irqendin.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_lockres.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_lookup.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_rq_exchg.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_rq_first.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_rq_inser.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_schedule.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_semgetvalue.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_sempost.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_semtrywait.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_semwait.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_shtdown.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_startos.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_terminat.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_thendin.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_tnterm.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_tstub.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_ulockallres.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_ulockres.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_eecfg.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\isr_Button.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\JOYSTICK_ADC_XY.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\JOYSTICK_ADC_XY_FinalBuf_dma.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\JOYSTICK_ADC_XY_INT.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\JOYSTICK_ADC_XY_IntClock.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\JOYSTICK_ADC_XY_IRQ.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\JOYSTICK_ADC_XY_PM.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\JOYSTICK_ADC_XY_SAR.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\JOYSTICK_ADC_XY_SAR_INT.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\JOYSTICK_ADC_XY_SAR_PM.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\JOYSTICK_ADC_XY_TempBuf_dma.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\JS_X.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\JS_Y.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\led.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\LED_green.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\LED_red.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\LED_yellow.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\logging.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\PWM_Clock.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\RGB_B.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\RGB_G.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\RGB_PWM_blue.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\RGB_PWM_blue_PM.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\RGB_PWM_green.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\RGB_PWM_green_PM.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\RGB_PWM_red.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\RGB_PWM_red_PM.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\RGB_R.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\rte.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\sc_button.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\sc_button_type.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\sc_clock.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\sc_clock_type.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\sc_event.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\seven.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\SEVEN_A.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\SEVEN_B.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\SEVEN_C.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\SEVEN_D.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\SEVEN_DP.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\SEVEN_E.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\SEVEN_F.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\SEVEN_G.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\SEVEN_reg.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\SEVEN_reg_PM.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\SEVEN_SELECT.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\sp_common.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\statemachine.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\swc_clock.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\tft.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\TFT_BackLight.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\TFT_BackLight_PM.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\TFT_CS.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\TFT_DC.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\TFT_LED.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\TFT_RES.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\TFT_SCL.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\TFT_SDA.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\TFT_SPI.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\TFT_SPI_INT.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\TFT_SPI_IntClock.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\TFT_SPI_PM.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\tsk_control.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\tsk_io.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_LOG.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_LOG_BOOT.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_LOG_INT.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_LOG_IntClock.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_LOG_PM.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\EAA_Lab2.elf</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\EAA_Lab2.hex</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\EAA_Lab2.map</v>
+<v>EAA_Lab2-000\EAA_Lab2\EAA_Lab2.gpdsc</v>
+<v>EAA_Lab2-000\EAA_Lab2\EAA_Lab2.rpt</v>
+<v>EAA_Lab2-000\EAA_Lab2\EAA_Lab2_timing.html</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>EAA_Lab2-000</v>
+<v>EAA_Lab2-000\EAA_Lab2</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\button.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\BUTTON_1.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\BUTTON_2.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\BUTTON_3.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\BUTTON_4.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\CLK_LED.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\clock_type.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\CySpc.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_common_ee_hal_structs.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_cortex_mx_ee_context.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_cortex_mx_ee_system_timer.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_cortex_mx_ee_utils.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_activate.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_alcancel.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_alget.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_algetbase.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_alsetabs.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_alsetrel.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_altick.lst</v>
+<v>EAA_Lab2-000\EAA_Lab2\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_1_ee_chaintas.lst</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStates>
+<TreeKeysV2>
+<v>Datasheet</v>
+</TreeKeysV2>
+<TreeStatesV2>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>EAA_Lab2-000</v>
+<v>EAA_Lab2-000\EAA_Lab2</v>
+<v>EAA_Lab2-000\EAA_Lab2\PSoC 5LP Architecture TRM</v>
+<v>EAA_Lab2-000\EAA_Lab2\CY8C58LP Family Datasheet</v>
+<v>EAA_Lab2-000\EAA_Lab2\System Reference Guides</v>
+<v>EAA_Lab2-000\EAA_Lab2\System Reference Guides\cy_boot_v6_0</v>
+<v>EAA_Lab2-000\EAA_Lab2\ADC_SAR_SEQ_v2_10.pdf</v>
+<v>EAA_Lab2-000\EAA_Lab2\cy_clock_v2_20</v>
+<v>EAA_Lab2-000\EAA_Lab2\cy_clock_v2_20\cy_clock_v2_20.pdf</v>
+<v>EAA_Lab2-000\EAA_Lab2\cy_constant_v1_0</v>
+<v>EAA_Lab2-000\EAA_Lab2\cy_constant_v1_0\cy_constant_v1_0.pdf</v>
+<v>EAA_Lab2-000\EAA_Lab2\cy_isr_v1_70.pdf</v>
+<v>EAA_Lab2-000\EAA_Lab2\cy_pins_v2_20</v>
+<v>EAA_Lab2-000\EAA_Lab2\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>EAA_Lab2-000\EAA_Lab2\CyControlReg_v1_80.pdf</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3.pdf</v>
+<v>EAA_Lab2-000\EAA_Lab2\Gnd_v1_0.pdf</v>
+<v>EAA_Lab2-000\EAA_Lab2\or_v1_0.pdf</v>
+<v>EAA_Lab2-000\EAA_Lab2\Power_v1_0.pdf</v>
+<v>EAA_Lab2-000\EAA_Lab2\PWM_v3_30</v>
+<v>EAA_Lab2-000\EAA_Lab2\PWM_v3_30\PWM_v3_30.pdf</v>
+<v>EAA_Lab2-000\EAA_Lab2\Resistor_v1_0.pdf</v>
+<v>EAA_Lab2-000\EAA_Lab2\SPI_Master_v2_50.pdf</v>
+<v>EAA_Lab2-000\EAA_Lab2\UART_v2_50.pdf</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>EAA_Lab2-000</v>
+<v>EAA_Lab2-000\EAA_Lab2</v>
+<v>EAA_Lab2-000\EAA_Lab2\PSoC 5LP Architecture TRM</v>
+<v>EAA_Lab2-000\EAA_Lab2\CY8C58LP Family Datasheet</v>
+<v>EAA_Lab2-000\EAA_Lab2\System Reference Guides</v>
+<v>EAA_Lab2-000\EAA_Lab2\System Reference Guides\cy_boot_v6_0</v>
+<v>EAA_Lab2-000\EAA_Lab2\ADC_SAR_SEQ_v2_10.pdf</v>
+<v>EAA_Lab2-000\EAA_Lab2\cy_clock_v2_20</v>
+<v>EAA_Lab2-000\EAA_Lab2\cy_clock_v2_20\cy_clock_v2_20.pdf</v>
+<v>EAA_Lab2-000\EAA_Lab2\cy_constant_v1_0</v>
+<v>EAA_Lab2-000\EAA_Lab2\cy_constant_v1_0\cy_constant_v1_0.pdf</v>
+<v>EAA_Lab2-000\EAA_Lab2\cy_isr_v1_70.pdf</v>
+<v>EAA_Lab2-000\EAA_Lab2\cy_pins_v2_20</v>
+<v>EAA_Lab2-000\EAA_Lab2\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>EAA_Lab2-000\EAA_Lab2\CyControlReg_v1_80.pdf</v>
+<v>EAA_Lab2-000\EAA_Lab2\ErikaOS_v2_5_3.pdf</v>
+<v>EAA_Lab2-000\EAA_Lab2\Gnd_v1_0.pdf</v>
+<v>EAA_Lab2-000\EAA_Lab2\or_v1_0.pdf</v>
+<v>EAA_Lab2-000\EAA_Lab2\Power_v1_0.pdf</v>
+<v>EAA_Lab2-000\EAA_Lab2\PWM_v3_30</v>
+<v>EAA_Lab2-000\EAA_Lab2\PWM_v3_30\PWM_v3_30.pdf</v>
+<v>EAA_Lab2-000\EAA_Lab2\Resistor_v1_0.pdf</v>
+<v>EAA_Lab2-000\EAA_Lab2\SPI_Master_v2_50.pdf</v>
+<v>EAA_Lab2-000\EAA_Lab2\UART_v2_50.pdf</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStatesV2>
+</CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35>
+</dataGuid>
+</userData>
+</CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
+<Unloaded />
+<OpenDocs>
+<name v=".\TopDesign\TopDesign.cysch" />
+<name v=".\Source\bsw\ringbuffer.h" />
+<name v=".\Source\asw\tsk_io.c" />
+<name v=".\Source\asw\tsk_io.h" />
+<name v=".\Source\asw\main.c" />
+</OpenDocs>
+<OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
+
+  Actipro Docking/MDI for WinForms
+  Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
+  http://www.actiprosoftware.com
+
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1250, 664" SelectedTabbedMdiWindow="78a4bc5c-7741-4036-88ec-679f6caf797d"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="8771d9ab-22a6-4579-8d2c-0a106d7fe695" /><DocumentWindow Key="C:\Users\robom\Desktop\EAA_Lab2.cydsn\TopDesign\TopDesign.cysch" Guid="30968397-badb-4be4-9763-d63fef0bed4b" /><DocumentWindow Key="C:\Users\robom\Desktop\EAA_Lab2.cydsn\Source\bsw\ringbuffer.h" Guid="78a4bc5c-7741-4036-88ec-679f6caf797d" /><DocumentWindow Key="C:\Users\robom\Desktop\EAA_Lab2.cydsn\Source\asw\tsk_io.c" Guid="13ea5169-9c81-4969-b065-69d9420638c5" /><DocumentWindow Key="C:\Users\robom\Desktop\EAA_Lab2.cydsn\Source\asw\tsk_io.h" Guid="b6b04523-4fd7-40c6-b3f0-4a9e9e7b1a99" /><DocumentWindow Key="C:\Users\robom\Desktop\EAA_Lab2.cydsn\Source\asw\main.c" Guid="e920318c-41c8-4ee6-8c50-5ba484d68773" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+<config v="" />
+<AutoUpdate v="true" />
+</CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
+</CyXmlSerializer>
