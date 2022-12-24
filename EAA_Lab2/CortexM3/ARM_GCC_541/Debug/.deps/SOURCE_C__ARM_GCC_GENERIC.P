@@ -1,0 +1,270 @@
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/CortexM3/ARM_GCC_541/Debug/main.o : C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/BUTTON_1.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/BUTTON_1_aliases.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/BUTTON_2.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/BUTTON_2_aliases.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/BUTTON_3.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/BUTTON_3_aliases.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/BUTTON_4.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/BUTTON_4_aliases.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/CLK_LED.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/CYDMAC.H C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/CYFITTER.H C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/CyDmac.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/CyFlash.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/CyLib.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/CySpc.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/ErikaOS_1_ISR_definition.inc C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/ErikaOS_1_common_ee_compiler_gcc.inc C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/ErikaOS_1_common_ee_hal_structs.inc C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/ErikaOS_1_common_ee_irqstub.inc C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/ErikaOS_1_common_ee_primitives.inc C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/ErikaOS_1_common_ee_types.inc C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/ErikaOS_1_cortex_mx_ee_context.inc C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/ErikaOS_1_cortex_mx_ee_cpu.inc C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/ErikaOS_1_cortex_mx_ee_irq.inc C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/ErikaOS_1_cortex_mx_ee_irq_cng_cont.inc C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/ErikaOS_1_cortex_mx_ee_nvic.inc C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/ErikaOS_1_cortex_mx_ee_systick.inc C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/ErikaOS_1_ee.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/ErikaOS_1_ee_api.inc C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/ErikaOS_1_ee_as_kernel.inc C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/ErikaOS_1_ee_as_timing_prot.inc C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/ErikaOS_1_ee_irq.inc C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/ErikaOS_1_ee_oo_api.inc C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/ErikaOS_1_ee_oo_common.inc C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/ErikaOS_1_ee_oo_inline.inc C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/ErikaOS_1_ee_oo_intfunc.inc C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/ErikaOS_1_ee_oo_irq.inc C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/ErikaOS_1_ee_oo_kernel.inc C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/ErikaOS_1_ee_rtdruid_versions.inc C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/ErikaOS_1_ee_tracing.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/ErikaOS_1_eecfg.inc C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/ErikaOS_1_event_definition.inc C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/JOYSTICK_ADC_XY.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/JOYSTICK_ADC_XY_FinalBuf_dma.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/JOYSTICK_ADC_XY_IRQ.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/JOYSTICK_ADC_XY_IntClock.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/JOYSTICK_ADC_XY_SAR.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/JOYSTICK_ADC_XY_TempBuf_dma.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/JS_X.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/JS_X_aliases.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/JS_Y.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/JS_Y_aliases.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/LED_green.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/LED_green_aliases.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/LED_red.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/LED_red_aliases.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/LED_yellow.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/LED_yellow_aliases.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/PWM_Clock.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/RGB_B.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/RGB_B_aliases.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/RGB_G.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/RGB_G_aliases.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/RGB_PWM_blue.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/RGB_PWM_green.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/RGB_PWM_red.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/RGB_R.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/RGB_R_aliases.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/SEVEN_A.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/SEVEN_A_aliases.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/SEVEN_B.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/SEVEN_B_aliases.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/SEVEN_C.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/SEVEN_C_aliases.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/SEVEN_D.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/SEVEN_DP.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/SEVEN_DP_aliases.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/SEVEN_D_aliases.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/SEVEN_E.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/SEVEN_E_aliases.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/SEVEN_F.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/SEVEN_F_aliases.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/SEVEN_G.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/SEVEN_G_aliases.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/SEVEN_SELECT.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/SEVEN_SELECT_aliases.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/SEVEN_reg.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/TFT_BackLight.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/TFT_CS.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/TFT_CS_aliases.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/TFT_DC.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/TFT_DC_aliases.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/TFT_LED.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/TFT_LED_aliases.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/TFT_RES.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/TFT_RES_aliases.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/TFT_SCL.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/TFT_SCL_aliases.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/TFT_SDA.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/TFT_SDA_aliases.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/TFT_SPI.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/TFT_SPI_IntClock.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/TFT_SPI_PVT.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/UART_LOG.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/UART_LOG_IntClock.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/cmsis_armcc.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/cmsis_compiler.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/cmsis_gcc.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/core_cm3.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/core_cm3_psoc5.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/cyPm.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/cy_em_eeprom.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/cydevice.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/cydevice_trm.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/cydisabledsheets.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/cyfitter.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/cyfitter_cfg.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/cypins.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/cytypes.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/isr_Button.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/project.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Source/bsw/button.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Source/bsw/derivate.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Source/bsw/global.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Source/bsw/tft/tft.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Source/rte/rte.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Source/rte/rte_types.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Source/rte/sc_button.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Source/rte/sc_button_type.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Source/rte/sc_clock.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Source/rte/sc_clock_type.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Source/rte/sc_event.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Source/rte/sc_event_type.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Source/rte/sp_common.h C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Source/asw/main.c C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Source/asw/statemachine.h 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/BUTTON_1.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/BUTTON_1_aliases.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/BUTTON_2.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/BUTTON_2_aliases.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/BUTTON_3.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/BUTTON_3_aliases.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/BUTTON_4.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/BUTTON_4_aliases.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/CLK_LED.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/CYDMAC.H : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/CYFITTER.H : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/CyFlash.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/CyLib.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/CySpc.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/ErikaOS_1_ISR_definition.inc : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/ErikaOS_1_common_ee_compiler_gcc.inc : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/ErikaOS_1_common_ee_hal_structs.inc : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/ErikaOS_1_common_ee_irqstub.inc : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/ErikaOS_1_common_ee_primitives.inc : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/ErikaOS_1_common_ee_types.inc : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/ErikaOS_1_cortex_mx_ee_context.inc : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/ErikaOS_1_cortex_mx_ee_cpu.inc : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/ErikaOS_1_cortex_mx_ee_irq.inc : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/ErikaOS_1_cortex_mx_ee_irq_cng_cont.inc : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/ErikaOS_1_cortex_mx_ee_nvic.inc : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/ErikaOS_1_cortex_mx_ee_systick.inc : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/ErikaOS_1_ee.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/ErikaOS_1_ee_api.inc : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/ErikaOS_1_ee_as_kernel.inc : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/ErikaOS_1_ee_as_timing_prot.inc : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/ErikaOS_1_ee_irq.inc : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/ErikaOS_1_ee_oo_api.inc : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/ErikaOS_1_ee_oo_common.inc : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/ErikaOS_1_ee_oo_inline.inc : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/ErikaOS_1_ee_oo_intfunc.inc : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/ErikaOS_1_ee_oo_irq.inc : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/ErikaOS_1_ee_oo_kernel.inc : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/ErikaOS_1_ee_rtdruid_versions.inc : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/ErikaOS_1_ee_tracing.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/ErikaOS_1_eecfg.inc : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/ErikaOS_1_event_definition.inc : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/JOYSTICK_ADC_XY.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/JOYSTICK_ADC_XY_FinalBuf_dma.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/JOYSTICK_ADC_XY_IRQ.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/JOYSTICK_ADC_XY_IntClock.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/JOYSTICK_ADC_XY_SAR.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/JOYSTICK_ADC_XY_TempBuf_dma.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/JS_X.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/JS_X_aliases.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/JS_Y.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/JS_Y_aliases.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/LED_green.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/LED_green_aliases.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/LED_red.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/LED_red_aliases.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/LED_yellow.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/LED_yellow_aliases.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/PWM_Clock.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/RGB_B.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/RGB_B_aliases.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/RGB_G.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/RGB_G_aliases.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/RGB_PWM_blue.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/RGB_PWM_green.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/RGB_PWM_red.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/RGB_R.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/RGB_R_aliases.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/SEVEN_A.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/SEVEN_A_aliases.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/SEVEN_B.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/SEVEN_B_aliases.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/SEVEN_C.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/SEVEN_C_aliases.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/SEVEN_D.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/SEVEN_DP.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/SEVEN_DP_aliases.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/SEVEN_D_aliases.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/SEVEN_E.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/SEVEN_E_aliases.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/SEVEN_F.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/SEVEN_F_aliases.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/SEVEN_G.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/SEVEN_G_aliases.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/SEVEN_SELECT.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/SEVEN_SELECT_aliases.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/SEVEN_reg.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/TFT_BackLight.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/TFT_CS.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/TFT_CS_aliases.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/TFT_DC.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/TFT_DC_aliases.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/TFT_LED.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/TFT_LED_aliases.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/TFT_RES.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/TFT_RES_aliases.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/TFT_SCL.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/TFT_SCL_aliases.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/TFT_SDA.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/TFT_SDA_aliases.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/TFT_SPI.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/TFT_SPI_IntClock.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/TFT_SPI_PVT.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/UART_LOG.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/UART_LOG_IntClock.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/cmsis_armcc.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/cmsis_compiler.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/cmsis_gcc.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/core_cm3.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/core_cm3_psoc5.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/cyPm.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/cy_em_eeprom.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/cydevice.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/cydevice_trm.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/cydisabledsheets.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/cyfitter_cfg.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/cypins.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/cytypes.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/isr_Button.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Generated_Source/PSoC5/project.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Source/bsw/button.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Source/bsw/derivate.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Source/bsw/global.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Source/bsw/tft/tft.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Source/rte/rte.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Source/rte/rte_types.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Source/rte/sc_button.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Source/rte/sc_button_type.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Source/rte/sc_clock.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Source/rte/sc_clock_type.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Source/rte/sc_event.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Source/rte/sc_event_type.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Source/rte/sp_common.h : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Source/asw/main.c : 
+
+C:/Users/mau_g/Desktop/Master/2_SEMESTER/EAA_Lab/Lab2/Workspace_Lab2/EAA_Lab2.cydsn/Source/asw/statemachine.h : 
+
