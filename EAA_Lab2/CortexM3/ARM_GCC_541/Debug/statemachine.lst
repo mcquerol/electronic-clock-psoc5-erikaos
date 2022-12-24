@@ -1,0 +1,2681 @@
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccRRG0jp.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"statemachine.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.STATE__getIndexCurrentState,"ax",%progbits
+  20              		.align	2
+  21              		.global	STATE__getIndexCurrentState
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	STATE__getIndexCurrentState, %function
+  25              	STATE__getIndexCurrentState:
+  26              	.LFB117:
+  27              		.file 1 "Source\\asw\\statemachine.c"
+   1:Source\asw/statemachine.c **** /**
+   2:Source\asw/statemachine.c **** * \file <filename>
+   3:Source\asw/statemachine.c **** * \author <author-name>
+   4:Source\asw/statemachine.c **** * \date <date>
+   5:Source\asw/statemachine.c **** *
+   6:Source\asw/statemachine.c **** * \brief <Symbolic File name>
+   7:Source\asw/statemachine.c **** *
+   8:Source\asw/statemachine.c **** * \copyright Copyright ©2016
+   9:Source\asw/statemachine.c **** * Department of electrical engineering and information technology, Hochschule Darmstadt - Universit
+  10:Source\asw/statemachine.c **** * Permission to use, copy, modify, and distribute this software and its documentation for education
+  11:Source\asw/statemachine.c **** * (unless permitted by h_da) and official h_da projects, is hereby granted for enrolled students of
+  12:Source\asw/statemachine.c **** * this paragraph and the following paragraph appear in all copies, modifications, and distributions
+  13:Source\asw/statemachine.c **** * Contact Prof.Dr.-Ing. Peter Fromm, peter.fromm@h-da.de, Birkenweg 8 64295 Darmstadt - GERMANY for
+  14:Source\asw/statemachine.c **** *
+  15:Source\asw/statemachine.c **** * \warning This software is a PROTOTYPE version and is not designed or intended for use in producti
+  16:Source\asw/statemachine.c **** * The user represents and warrants that it will NOT use or redistribute the Software for such purpo
+  17:Source\asw/statemachine.c **** * This prototype is for research purposes only. This software is provided "AS IS," without a warran
+  18:Source\asw/statemachine.c **** */
+  19:Source\asw/statemachine.c **** 
+  20:Source\asw/statemachine.c **** /*****************************************************************************/
+  21:Source\asw/statemachine.c **** /* Include files                                                             */
+  22:Source\asw/statemachine.c **** /*****************************************************************************/
+  23:Source\asw/statemachine.c **** #include "statemachine.h"
+  24:Source\asw/statemachine.c **** #include "logging.h"
+  25:Source\asw/statemachine.c **** 
+  26:Source\asw/statemachine.c **** /*****************************************************************************/
+  27:Source\asw/statemachine.c **** /* Local pre-processor symbols/macros ('#define')                            */
+  28:Source\asw/statemachine.c **** /*****************************************************************************/
+  29:Source\asw/statemachine.c **** 
+  30:Source\asw/statemachine.c **** /*****************************************************************************/
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccRRG0jp.s 			page 2
+
+
+  31:Source\asw/statemachine.c **** /* Global variable definitions (declared in header file with 'extern')       */
+  32:Source\asw/statemachine.c **** /*****************************************************************************/
+  33:Source\asw/statemachine.c **** 
+  34:Source\asw/statemachine.c **** /*****************************************************************************/
+  35:Source\asw/statemachine.c **** /* Local type definitions ('typedef')                                        */
+  36:Source\asw/statemachine.c **** /*****************************************************************************/
+  37:Source\asw/statemachine.c **** 
+  38:Source\asw/statemachine.c **** /*****************************************************************************/
+  39:Source\asw/statemachine.c **** /* Local variable definitions ('static')                                     */
+  40:Source\asw/statemachine.c **** /*****************************************************************************/
+  41:Source\asw/statemachine.c **** 
+  42:Source\asw/statemachine.c **** 
+  43:Source\asw/statemachine.c **** 
+  44:Source\asw/statemachine.c **** /*****************************************************************************/
+  45:Source\asw/statemachine.c **** /* Local function prototypes ('static')                                      */
+  46:Source\asw/statemachine.c **** /*****************************************************************************/
+  47:Source\asw/statemachine.c **** 
+  48:Source\asw/statemachine.c **** 
+  49:Source\asw/statemachine.c **** /*****************************************************************************/
+  50:Source\asw/statemachine.c **** /* Function implementation - global ('extern') and local ('static')          */
+  51:Source\asw/statemachine.c **** /*****************************************************************************/
+  52:Source\asw/statemachine.c **** 
+  53:Source\asw/statemachine.c **** #define INVALIDINDEX -1
+  54:Source\asw/statemachine.c **** 
+  55:Source\asw/statemachine.c **** /** return the index of the provided state in the given table 
+  56:Source\asw/statemachine.c ****  **/
+  57:Source\asw/statemachine.c **** sint16_t STATE__getIndexCurrentState(STATE_t * const me)
+  58:Source\asw/statemachine.c **** {
+  28              		.loc 1 58 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+  33              	.LVL0:
+  34 0000 10B4     		push	{r4}
+  35              		.cfi_def_cfa_offset 4
+  36              		.cfi_offset 4, -4
+  37              	.LVL1:
+  38              	.LBB2:
+  59:Source\asw/statemachine.c ****     
+  60:Source\asw/statemachine.c ****     sint16_t result = INVALIDINDEX; //error
+  61:Source\asw/statemachine.c ****     
+  62:Source\asw/statemachine.c ****     for (uint16_t i = 0; i < me->m_transitionTableSize; i++)
+  39              		.loc 1 62 0
+  40 0002 0023     		movs	r3, #0
+  41 0004 0BE0     		b	.L2
+  42              	.LVL2:
+  43              	.L5:
+  63:Source\asw/statemachine.c ****     {
+  64:Source\asw/statemachine.c ****         if ((*me->m_transitionTable)[i].fromState == me->m_state)
+  44              		.loc 1 64 0
+  45 0006 0468     		ldr	r4, [r0]
+  46 0008 03EB4301 		add	r1, r3, r3, lsl #1
+  47 000c 8A00     		lsls	r2, r1, #2
+  48 000e A15A     		ldrh	r1, [r4, r2]
+  49 0010 C289     		ldrh	r2, [r0, #14]
+  50 0012 9142     		cmp	r1, r2
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccRRG0jp.s 			page 3
+
+
+  51 0014 01D1     		bne	.L3
+  65:Source\asw/statemachine.c ****         {
+  66:Source\asw/statemachine.c ****             return i;
+  52              		.loc 1 66 0
+  53 0016 18B2     		sxth	r0, r3
+  54              	.LVL3:
+  55 0018 06E0     		b	.L4
+  56              	.LVL4:
+  57              	.L3:
+  62:Source\asw/statemachine.c ****     {
+  58              		.loc 1 62 0 discriminator 2
+  59 001a 0133     		adds	r3, r3, #1
+  60              	.LVL5:
+  61 001c 9BB2     		uxth	r3, r3
+  62              	.LVL6:
+  63              	.L2:
+  62:Source\asw/statemachine.c ****     {
+  64              		.loc 1 62 0 is_stmt 0 discriminator 1
+  65 001e 8288     		ldrh	r2, [r0, #4]
+  66 0020 9342     		cmp	r3, r2
+  67 0022 F0D3     		bcc	.L5
+  68              	.LBE2:
+  67:Source\asw/statemachine.c ****         }
+  68:Source\asw/statemachine.c ****     }
+  69:Source\asw/statemachine.c ****     
+  70:Source\asw/statemachine.c ****     return INVALIDINDEX;
+  69              		.loc 1 70 0 is_stmt 1
+  70 0024 4FF0FF30 		mov	r0, #-1
+  71              	.LVL7:
+  72              	.L4:
+  71:Source\asw/statemachine.c **** }
+  73              		.loc 1 71 0
+  74 0028 10BC     		pop	{r4}
+  75              		.cfi_restore 4
+  76              		.cfi_def_cfa_offset 0
+  77 002a 7047     		bx	lr
+  78              		.cfi_endproc
+  79              	.LFE117:
+  80              		.size	STATE__getIndexCurrentState, .-STATE__getIndexCurrentState
+  81              		.section	.text.STATE_initState,"ax",%progbits
+  82              		.align	2
+  83              		.global	STATE_initState
+  84              		.thumb
+  85              		.thumb_func
+  86              		.type	STATE_initState, %function
+  87              	STATE_initState:
+  88              	.LFB118:
+  72:Source\asw/statemachine.c **** 
+  73:Source\asw/statemachine.c **** /**
+  74:Source\asw/statemachine.c ****  * This function will initialise the state machine and process any state actions of the initial sta
+  75:Source\asw/statemachine.c ****  * The state machine is implemented as a generic object, Several instances and configurations are s
+  76:Source\asw/statemachine.c ****  * \param STATE_t * const me            : IN - Pointer to the state machine object
+  77:Source\asw/statemachine.c ****  * \return RC_SUCCESS or error
+  78:Source\asw/statemachine.c ****  */
+  79:Source\asw/statemachine.c **** RC_t STATE_initState(STATE_t * const me)
+  80:Source\asw/statemachine.c **** {
+  89              		.loc 1 80 0
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccRRG0jp.s 			page 4
+
+
+  90              		.cfi_startproc
+  91              		@ args = 0, pretend = 0, frame = 0
+  92              		@ frame_needed = 0, uses_anonymous_args = 0
+  93              	.LVL8:
+  94 0000 38B5     		push	{r3, r4, r5, lr}
+  95              		.cfi_def_cfa_offset 16
+  96              		.cfi_offset 3, -16
+  97              		.cfi_offset 4, -12
+  98              		.cfi_offset 5, -8
+  99              		.cfi_offset 14, -4
+ 100              	.LVL9:
+  81:Source\asw/statemachine.c ****     
+  82:Source\asw/statemachine.c ****     STATE_ActionPtr_t acEntry = 0;
+  83:Source\asw/statemachine.c ****     
+  84:Source\asw/statemachine.c ****     me->m_state = 0;
+ 101              		.loc 1 84 0
+ 102 0002 0023     		movs	r3, #0
+ 103 0004 C381     		strh	r3, [r0, #14]	@ movhi
+  85:Source\asw/statemachine.c ****     
+  86:Source\asw/statemachine.c ****     //Check if entry actios are present in the init state
+  87:Source\asw/statemachine.c ****     if (0 != me->m_actionTable)
+ 104              		.loc 1 87 0
+ 105 0006 8368     		ldr	r3, [r0, #8]
+ 106 0008 83B9     		cbnz	r3, .L12
+ 107              	.LBB3:
+ 108 000a 38BD     		pop	{r3, r4, r5, pc}
+ 109              	.LVL10:
+ 110              	.L11:
+  88:Source\asw/statemachine.c ****     {
+  89:Source\asw/statemachine.c ****         for (uint16_t j = 0; j < me->m_actionTableSize; j++)
+  90:Source\asw/statemachine.c ****         {
+  91:Source\asw/statemachine.c **** 
+  92:Source\asw/statemachine.c ****             if (0 == (*me->m_actionTable)[j].state)
+ 111              		.loc 1 92 0
+ 112 000c A968     		ldr	r1, [r5, #8]
+ 113 000e 04EB4402 		add	r2, r4, r4, lsl #1
+ 114 0012 9300     		lsls	r3, r2, #2
+ 115 0014 CB5A     		ldrh	r3, [r1, r3]
+ 116 0016 33B9     		cbnz	r3, .L10
+  93:Source\asw/statemachine.c ****             {
+  94:Source\asw/statemachine.c ****                 acEntry = (*me->m_actionTable)[j].actionEntry;
+ 117              		.loc 1 94 0
+ 118 0018 04EB4402 		add	r2, r4, r4, lsl #1
+ 119 001c 9300     		lsls	r3, r2, #2
+ 120 001e 0B44     		add	r3, r3, r1
+ 121 0020 5B68     		ldr	r3, [r3, #4]
+ 122              	.LVL11:
+  95:Source\asw/statemachine.c ****                 if (0 != acEntry) acEntry();
+ 123              		.loc 1 95 0
+ 124 0022 03B1     		cbz	r3, .L10
+ 125              		.loc 1 95 0 is_stmt 0 discriminator 1
+ 126 0024 9847     		blx	r3
+ 127              	.LVL12:
+ 128              	.L10:
+  89:Source\asw/statemachine.c ****         {
+ 129              		.loc 1 89 0 is_stmt 1 discriminator 2
+ 130 0026 0134     		adds	r4, r4, #1
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccRRG0jp.s 			page 5
+
+
+ 131              	.LVL13:
+ 132 0028 A4B2     		uxth	r4, r4
+ 133              	.LVL14:
+ 134 002a 01E0     		b	.L8
+ 135              	.LVL15:
+ 136              	.L12:
+ 137 002c 0546     		mov	r5, r0
+ 138              	.LBE3:
+ 139 002e 0024     		movs	r4, #0
+ 140              	.LVL16:
+ 141              	.L8:
+ 142              	.LBB4:
+  89:Source\asw/statemachine.c ****         {
+ 143              		.loc 1 89 0 is_stmt 0 discriminator 1
+ 144 0030 AB89     		ldrh	r3, [r5, #12]
+ 145 0032 9C42     		cmp	r4, r3
+ 146 0034 EAD3     		bcc	.L11
+ 147              	.LBE4:
+  96:Source\asw/statemachine.c ****             }
+  97:Source\asw/statemachine.c ****         }
+  98:Source\asw/statemachine.c ****     }
+  99:Source\asw/statemachine.c ****     
+ 100:Source\asw/statemachine.c **** }
+ 148              		.loc 1 100 0 is_stmt 1
+ 149 0036 38BD     		pop	{r3, r4, r5, pc}
+ 150              		.cfi_endproc
+ 151              	.LFE118:
+ 152              		.size	STATE_initState, .-STATE_initState
+ 153              		.section	.text.STATE_processEvent,"ax",%progbits
+ 154              		.align	2
+ 155              		.global	STATE_processEvent
+ 156              		.thumb
+ 157              		.thumb_func
+ 158              		.type	STATE_processEvent, %function
+ 159              	STATE_processEvent:
+ 160              	.LFB119:
+ 101:Source\asw/statemachine.c **** 
+ 102:Source\asw/statemachine.c **** /**
+ 103:Source\asw/statemachine.c ****  * This function will process the event with the defined state machine
+ 104:Source\asw/statemachine.c ****  * The state machine is implemented as a generic object, Several instances and configurations are s
+ 105:Source\asw/statemachine.c ****  * \param STATE_t * const me            : IN/OUT - Pointer to the state machine object
+ 106:Source\asw/statemachine.c ****  * \param uint16_t      ev              : IN - Event to be processed
+ 107:Source\asw/statemachine.c ****  * \return RC_SUCCESS or error
+ 108:Source\asw/statemachine.c ****  */
+ 109:Source\asw/statemachine.c **** RC_t STATE_processEvent(STATE_t * const me,
+ 110:Source\asw/statemachine.c ****                         uint16_t ev)
+ 111:Source\asw/statemachine.c **** {
+ 161              		.loc 1 111 0
+ 162              		.cfi_startproc
+ 163              		@ args = 0, pretend = 0, frame = 0
+ 164              		@ frame_needed = 0, uses_anonymous_args = 0
+ 165              	.LVL17:
+ 166 0000 2DE9F047 		push	{r4, r5, r6, r7, r8, r9, r10, lr}
+ 167              		.cfi_def_cfa_offset 32
+ 168              		.cfi_offset 4, -32
+ 169              		.cfi_offset 5, -28
+ 170              		.cfi_offset 6, -24
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccRRG0jp.s 			page 6
+
+
+ 171              		.cfi_offset 7, -20
+ 172              		.cfi_offset 8, -16
+ 173              		.cfi_offset 9, -12
+ 174              		.cfi_offset 10, -8
+ 175              		.cfi_offset 14, -4
+ 176 0004 8146     		mov	r9, r0
+ 177 0006 8846     		mov	r8, r1
+ 178              	.LVL18:
+ 112:Source\asw/statemachine.c ****     STATE_GuardPtr_t guard = 0;
+ 113:Source\asw/statemachine.c ****     STATE_ActionPtr_t acTransition = 0;
+ 114:Source\asw/statemachine.c ****     STATE_ActionPtr_t acEntry = 0;
+ 115:Source\asw/statemachine.c ****     STATE_ActionPtr_t acExit = 0;
+ 116:Source\asw/statemachine.c ****     
+ 117:Source\asw/statemachine.c ****     
+ 118:Source\asw/statemachine.c ****     //Read the state from the watchdog object;
+ 119:Source\asw/statemachine.c ****     uint16_t currentState = me->m_state;
+ 179              		.loc 1 119 0
+ 180 0008 B0F80EA0 		ldrh	r10, [r0, #14]
+ 181              	.LVL19:
+ 120:Source\asw/statemachine.c ****     uint16_t toState = currentState; //Just in case
+ 121:Source\asw/statemachine.c ****     
+ 122:Source\asw/statemachine.c ****     //Calculate the table index of the outer table
+ 123:Source\asw/statemachine.c **** 
+ 124:Source\asw/statemachine.c ****     sint16_t index = STATE__getIndexCurrentState(me);
+ 182              		.loc 1 124 0
+ 183 000c FFF7FEFF 		bl	STATE__getIndexCurrentState
+ 184              	.LVL20:
+ 125:Source\asw/statemachine.c ****     
+ 126:Source\asw/statemachine.c ****     //This should never happen
+ 127:Source\asw/statemachine.c ****     if (INVALIDINDEX == index)
+ 185              		.loc 1 127 0
+ 186 0010 B0F1FF3F 		cmp	r0, #-1
+ 187 0014 6FD0     		beq	.L30
+ 128:Source\asw/statemachine.c ****     {
+ 129:Source\asw/statemachine.c ****         return RC_ERROR_BAD_PARAM;
+ 130:Source\asw/statemachine.c ****     }
+ 131:Source\asw/statemachine.c ****     
+ 132:Source\asw/statemachine.c ****     STATE_stateInnerTransitionTable_t const* const pInnerTable = (*me->m_transitionTable)[index].pI
+ 188              		.loc 1 132 0
+ 189 0016 D9F80010 		ldr	r1, [r9]
+ 190 001a 00EB4002 		add	r2, r0, r0, lsl #1
+ 191 001e 9300     		lsls	r3, r2, #2
+ 192 0020 1A46     		mov	r2, r3
+ 193 0022 0B44     		add	r3, r3, r1
+ 194 0024 5D68     		ldr	r5, [r3, #4]
+ 195              	.LVL21:
+ 133:Source\asw/statemachine.c **** 	
+ 134:Source\asw/statemachine.c ****     uint16_t innerTableSize = 0;
+ 135:Source\asw/statemachine.c **** 	if (0 != pInnerTable)
+ 196              		.loc 1 135 0
+ 197 0026 1DB1     		cbz	r5, .L31
+ 136:Source\asw/statemachine.c **** 	{
+ 137:Source\asw/statemachine.c **** 		innerTableSize = (*me->m_transitionTable)[index].size;
+ 198              		.loc 1 137 0
+ 199 0028 1346     		mov	r3, r2
+ 200 002a 0B44     		add	r3, r3, r1
+ 201 002c 1E89     		ldrh	r6, [r3, #8]
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccRRG0jp.s 			page 7
+
+
+ 202              	.LVL22:
+ 203 002e 00E0     		b	.L16
+ 204              	.LVL23:
+ 205              	.L31:
+ 134:Source\asw/statemachine.c **** 	if (0 != pInnerTable)
+ 206              		.loc 1 134 0
+ 207 0030 0026     		movs	r6, #0
+ 208              	.LVL24:
+ 209              	.L16:
+ 138:Source\asw/statemachine.c **** 	}
+ 139:Source\asw/statemachine.c ****     
+ 140:Source\asw/statemachine.c ****     if (0 == pInnerTable || 0 == innerTableSize)
+ 210              		.loc 1 140 0
+ 211 0032 002D     		cmp	r5, #0
+ 212 0034 63D0     		beq	.L32
+ 213              		.loc 1 140 0 is_stmt 0 discriminator 1
+ 214 0036 002E     		cmp	r6, #0
+ 215 0038 65D0     		beq	.L33
+ 216 003a 0024     		movs	r4, #0
+ 217 003c 56E0     		b	.L17
+ 218              	.LVL25:
+ 219              	.L29:
+ 220              	.LBB5:
+ 141:Source\asw/statemachine.c ****     {
+ 142:Source\asw/statemachine.c ****         //No transitions in this state
+ 143:Source\asw/statemachine.c ****         return RC_ERROR_INVALID_STATE;
+ 144:Source\asw/statemachine.c ****     }
+ 145:Source\asw/statemachine.c ****     
+ 146:Source\asw/statemachine.c ****     //Iterate through the inner table and find correct transition
+ 147:Source\asw/statemachine.c ****     for (uint16_t i = 0; i < innerTableSize; i++)
+ 148:Source\asw/statemachine.c ****     {
+ 149:Source\asw/statemachine.c ****         if ((*pInnerTable)[i].event == ev)
+ 221              		.loc 1 149 0 is_stmt 1
+ 222 003e 2746     		mov	r7, r4
+ 223 0040 04EB4402 		add	r2, r4, r4, lsl #1
+ 224 0044 9300     		lsls	r3, r2, #2
+ 225 0046 EB5A     		ldrh	r3, [r5, r3]
+ 226 0048 4345     		cmp	r3, r8
+ 227 004a 4DD1     		bne	.L18
+ 150:Source\asw/statemachine.c ****         {
+ 151:Source\asw/statemachine.c ****             //Transition found, let's check the guard
+ 152:Source\asw/statemachine.c ****             guard = (*pInnerTable)[i].guard;
+ 228              		.loc 1 152 0
+ 229 004c 04EB4402 		add	r2, r4, r4, lsl #1
+ 230 0050 9300     		lsls	r3, r2, #2
+ 231 0052 2B44     		add	r3, r3, r5
+ 232 0054 5B68     		ldr	r3, [r3, #4]
+ 233              	.LVL26:
+ 153:Source\asw/statemachine.c ****             if (0 == guard || TRUE == guard())
+ 234              		.loc 1 153 0
+ 235 0056 13B1     		cbz	r3, .L19
+ 236              		.loc 1 153 0 is_stmt 0 discriminator 1
+ 237 0058 9847     		blx	r3
+ 238              	.LVL27:
+ 239 005a 0128     		cmp	r0, #1
+ 240 005c 44D1     		bne	.L18
+ 241              	.L19:
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccRRG0jp.s 			page 8
+
+
+ 154:Source\asw/statemachine.c ****             {
+ 155:Source\asw/statemachine.c ****                 //Transition is valid
+ 156:Source\asw/statemachine.c ****                 acTransition = (*pInnerTable)[i].actionTransition;
+ 242              		.loc 1 156 0 is_stmt 1
+ 243 005e 7A00     		lsls	r2, r7, #1
+ 244 0060 D119     		adds	r1, r2, r7
+ 245 0062 8B00     		lsls	r3, r1, #2
+ 246 0064 1946     		mov	r1, r3
+ 247 0066 2B44     		add	r3, r3, r5
+ 248 0068 9E68     		ldr	r6, [r3, #8]
+ 249              	.LVL28:
+ 157:Source\asw/statemachine.c ****                 toState = (*pInnerTable)[i].toState;
+ 250              		.loc 1 157 0
+ 251 006a 0D44     		add	r5, r5, r1
+ 252              	.LVL29:
+ 253 006c 6D88     		ldrh	r5, [r5, #2]
+ 254              	.LVL30:
+ 158:Source\asw/statemachine.c ****                 
+ 159:Source\asw/statemachine.c ****                 //Now lets find exit actions. Note: their might be more than one
+ 160:Source\asw/statemachine.c ****                 if (0 != me->m_actionTable)
+ 255              		.loc 1 160 0
+ 256 006e D9F80830 		ldr	r3, [r9, #8]
+ 257 0072 93B9     		cbnz	r3, .L34
+ 258              	.LBB6:
+ 259 0074 16E0     		b	.L21
+ 260              	.LVL31:
+ 261              	.L23:
+ 161:Source\asw/statemachine.c ****                 {
+ 162:Source\asw/statemachine.c ****                     for (uint16_t j = 0; j < me->m_actionTableSize; j++)
+ 163:Source\asw/statemachine.c ****                     {
+ 164:Source\asw/statemachine.c ****                         if (currentState == (*me->m_actionTable)[j].state)
+ 262              		.loc 1 164 0
+ 263 0076 D9F80810 		ldr	r1, [r9, #8]
+ 264 007a 04EB4402 		add	r2, r4, r4, lsl #1
+ 265 007e 9300     		lsls	r3, r2, #2
+ 266 0080 CB5A     		ldrh	r3, [r1, r3]
+ 267 0082 9A45     		cmp	r10, r3
+ 268 0084 06D1     		bne	.L22
+ 165:Source\asw/statemachine.c ****                         {
+ 166:Source\asw/statemachine.c ****                             acExit = (*me->m_actionTable)[j].actionExit;
+ 269              		.loc 1 166 0
+ 270 0086 04EB4402 		add	r2, r4, r4, lsl #1
+ 271 008a 9300     		lsls	r3, r2, #2
+ 272 008c 1944     		add	r1, r1, r3
+ 273 008e 8B68     		ldr	r3, [r1, #8]
+ 274              	.LVL32:
+ 167:Source\asw/statemachine.c ****                             if (0 != acExit) acExit();
+ 275              		.loc 1 167 0
+ 276 0090 03B1     		cbz	r3, .L22
+ 277              		.loc 1 167 0 is_stmt 0 discriminator 1
+ 278 0092 9847     		blx	r3
+ 279              	.LVL33:
+ 280              	.L22:
+ 162:Source\asw/statemachine.c ****                     {
+ 281              		.loc 1 162 0 is_stmt 1 discriminator 2
+ 282 0094 0134     		adds	r4, r4, #1
+ 283              	.LVL34:
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccRRG0jp.s 			page 9
+
+
+ 284 0096 A4B2     		uxth	r4, r4
+ 285              	.LVL35:
+ 286 0098 00E0     		b	.L20
+ 287              	.LVL36:
+ 288              	.L34:
+ 289              	.LBE6:
+ 290 009a 0024     		movs	r4, #0
+ 291              	.LVL37:
+ 292              	.L20:
+ 293              	.LBB7:
+ 162:Source\asw/statemachine.c ****                     {
+ 294              		.loc 1 162 0 is_stmt 0 discriminator 1
+ 295 009c B9F80C30 		ldrh	r3, [r9, #12]
+ 296 00a0 9C42     		cmp	r4, r3
+ 297 00a2 E8D3     		bcc	.L23
+ 298              	.LVL38:
+ 299              	.L21:
+ 300              	.LBE7:
+ 168:Source\asw/statemachine.c ****                         }
+ 169:Source\asw/statemachine.c ****                     }
+ 170:Source\asw/statemachine.c ****                 }
+ 171:Source\asw/statemachine.c **** 
+ 172:Source\asw/statemachine.c ****                 //Lets call the transition action
+ 173:Source\asw/statemachine.c ****                 if (0 != acTransition) acTransition();
+ 301              		.loc 1 173 0 is_stmt 1
+ 302 00a4 06B1     		cbz	r6, .L24
+ 303              		.loc 1 173 0 is_stmt 0 discriminator 1
+ 304 00a6 B047     		blx	r6
+ 305              	.LVL39:
+ 306              	.L24:
+ 174:Source\asw/statemachine.c ****                 
+ 175:Source\asw/statemachine.c ****                 //Now lets find the entry actions. Note: their might be more than one
+ 176:Source\asw/statemachine.c ****                 if (0 != me->m_actionTable)
+ 307              		.loc 1 176 0 is_stmt 1
+ 308 00a8 D9F80830 		ldr	r3, [r9, #8]
+ 309 00ac 93B9     		cbnz	r3, .L35
+ 310              	.LBB8:
+ 311 00ae 16E0     		b	.L26
+ 312              	.LVL40:
+ 313              	.L28:
+ 177:Source\asw/statemachine.c ****                 {
+ 178:Source\asw/statemachine.c ****                     for (uint16_t j = 0; j < me->m_actionTableSize; j++)
+ 179:Source\asw/statemachine.c ****                     {
+ 180:Source\asw/statemachine.c **** 
+ 181:Source\asw/statemachine.c ****                         if (toState == (*me->m_actionTable)[j].state)
+ 314              		.loc 1 181 0
+ 315 00b0 D9F80810 		ldr	r1, [r9, #8]
+ 316 00b4 04EB4402 		add	r2, r4, r4, lsl #1
+ 317 00b8 9300     		lsls	r3, r2, #2
+ 318 00ba CB5A     		ldrh	r3, [r1, r3]
+ 319 00bc 9D42     		cmp	r5, r3
+ 320 00be 06D1     		bne	.L27
+ 182:Source\asw/statemachine.c ****                         {
+ 183:Source\asw/statemachine.c ****                             acEntry = (*me->m_actionTable)[j].actionEntry;
+ 321              		.loc 1 183 0
+ 322 00c0 04EB4402 		add	r2, r4, r4, lsl #1
+ 323 00c4 9300     		lsls	r3, r2, #2
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccRRG0jp.s 			page 10
+
+
+ 324 00c6 1944     		add	r1, r1, r3
+ 325 00c8 4B68     		ldr	r3, [r1, #4]
+ 326              	.LVL41:
+ 184:Source\asw/statemachine.c ****                             if (0 != acEntry) acEntry();
+ 327              		.loc 1 184 0
+ 328 00ca 03B1     		cbz	r3, .L27
+ 329              		.loc 1 184 0 is_stmt 0 discriminator 1
+ 330 00cc 9847     		blx	r3
+ 331              	.LVL42:
+ 332              	.L27:
+ 178:Source\asw/statemachine.c ****                     {
+ 333              		.loc 1 178 0 is_stmt 1 discriminator 2
+ 334 00ce 0134     		adds	r4, r4, #1
+ 335              	.LVL43:
+ 336 00d0 A4B2     		uxth	r4, r4
+ 337              	.LVL44:
+ 338 00d2 00E0     		b	.L25
+ 339              	.LVL45:
+ 340              	.L35:
+ 341              	.LBE8:
+ 342 00d4 0024     		movs	r4, #0
+ 343              	.LVL46:
+ 344              	.L25:
+ 345              	.LBB9:
+ 178:Source\asw/statemachine.c ****                     {
+ 346              		.loc 1 178 0 is_stmt 0 discriminator 1
+ 347 00d6 B9F80C30 		ldrh	r3, [r9, #12]
+ 348 00da 9C42     		cmp	r4, r3
+ 349 00dc E8D3     		bcc	.L28
+ 350              	.LVL47:
+ 351              	.L26:
+ 352              	.LBE9:
+ 185:Source\asw/statemachine.c ****                         }
+ 186:Source\asw/statemachine.c ****                     }
+ 187:Source\asw/statemachine.c ****                 }
+ 188:Source\asw/statemachine.c ****                 
+ 189:Source\asw/statemachine.c ****                 me->m_state = toState;
+ 353              		.loc 1 189 0 is_stmt 1
+ 354 00de A9F80E50 		strh	r5, [r9, #14]	@ movhi
+ 355              	.LBE5:
+ 190:Source\asw/statemachine.c ****                 
+ 191:Source\asw/statemachine.c ****                 //Only one transition will be fired
+ 192:Source\asw/statemachine.c ****                 break;
+ 193:Source\asw/statemachine.c ****             }
+ 194:Source\asw/statemachine.c ****         }
+ 195:Source\asw/statemachine.c ****     }
+ 196:Source\asw/statemachine.c **** 
+ 197:Source\asw/statemachine.c ****     return RC_SUCCESS;
+ 356              		.loc 1 197 0
+ 357 00e2 0020     		movs	r0, #0
+ 358              	.LBB10:
+ 192:Source\asw/statemachine.c ****             }
+ 359              		.loc 1 192 0
+ 360 00e4 BDE8F087 		pop	{r4, r5, r6, r7, r8, r9, r10, pc}
+ 361              	.LVL48:
+ 362              	.L18:
+ 147:Source\asw/statemachine.c ****     {
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccRRG0jp.s 			page 11
+
+
+ 363              		.loc 1 147 0 discriminator 2
+ 364 00e8 0134     		adds	r4, r4, #1
+ 365              	.LVL49:
+ 366 00ea A4B2     		uxth	r4, r4
+ 367              	.LVL50:
+ 368              	.L17:
+ 147:Source\asw/statemachine.c ****     {
+ 369              		.loc 1 147 0 is_stmt 0 discriminator 1
+ 370 00ec A642     		cmp	r6, r4
+ 371 00ee A6D8     		bhi	.L29
+ 372              	.LBE10:
+ 373              		.loc 1 197 0 is_stmt 1
+ 374 00f0 0020     		movs	r0, #0
+ 375              	.LBB11:
+ 376 00f2 BDE8F087 		pop	{r4, r5, r6, r7, r8, r9, r10, pc}
+ 377              	.LVL51:
+ 378              	.L30:
+ 379              	.LBE11:
+ 129:Source\asw/statemachine.c ****     }
+ 380              		.loc 1 129 0
+ 381 00f6 6FF01300 		mvn	r0, #19
+ 382              	.LVL52:
+ 383 00fa BDE8F087 		pop	{r4, r5, r6, r7, r8, r9, r10, pc}
+ 384              	.LVL53:
+ 385              	.L32:
+ 143:Source\asw/statemachine.c ****     }
+ 386              		.loc 1 143 0
+ 387 00fe 6FF01600 		mvn	r0, #22
+ 388              	.LVL54:
+ 389 0102 BDE8F087 		pop	{r4, r5, r6, r7, r8, r9, r10, pc}
+ 390              	.LVL55:
+ 391              	.L33:
+ 392 0106 6FF01600 		mvn	r0, #22
+ 393              	.LVL56:
+ 198:Source\asw/statemachine.c **** }
+ 394              		.loc 1 198 0
+ 395 010a BDE8F087 		pop	{r4, r5, r6, r7, r8, r9, r10, pc}
+ 396              		.cfi_endproc
+ 397              	.LFE119:
+ 398              		.size	STATE_processEvent, .-STATE_processEvent
+ 399 010e 00BF     		.section	.text.STATE_getCurrentState,"ax",%progbits
+ 400              		.align	2
+ 401              		.global	STATE_getCurrentState
+ 402              		.thumb
+ 403              		.thumb_func
+ 404              		.type	STATE_getCurrentState, %function
+ 405              	STATE_getCurrentState:
+ 406              	.LFB120:
+ 199:Source\asw/statemachine.c **** 
+ 200:Source\asw/statemachine.c **** 
+ 201:Source\asw/statemachine.c **** /**
+ 202:Source\asw/statemachine.c ****  * This function will return the current state in case it is required for additional application lo
+ 203:Source\asw/statemachine.c ****  * \param STATE_t * const me            : IN - Pointer to the state machine object
+ 204:Source\asw/statemachine.c ****  * \return Current State of the State machine
+ 205:Source\asw/statemachine.c ****  */
+ 206:Source\asw/statemachine.c **** uint16_t STATE_getCurrentState(STATE_t * const me)
+ 207:Source\asw/statemachine.c **** {
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccRRG0jp.s 			page 12
+
+
+ 407              		.loc 1 207 0
+ 408              		.cfi_startproc
+ 409              		@ args = 0, pretend = 0, frame = 0
+ 410              		@ frame_needed = 0, uses_anonymous_args = 0
+ 411              		@ link register save eliminated.
+ 412              	.LVL57:
+ 208:Source\asw/statemachine.c ****     return me->m_state;
+ 209:Source\asw/statemachine.c **** }
+ 413              		.loc 1 209 0
+ 414 0000 C089     		ldrh	r0, [r0, #14]
+ 415              	.LVL58:
+ 416 0002 7047     		bx	lr
+ 417              		.cfi_endproc
+ 418              	.LFE120:
+ 419              		.size	STATE_getCurrentState, .-STATE_getCurrentState
+ 420              		.text
+ 421              	.Letext0:
+ 422              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 423              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 424              		.file 4 "Generated_Source\\PSoC5/ErikaOS_1_common_ee_types.inc"
+ 425              		.file 5 "Generated_Source\\PSoC5/ErikaOS_1_cortex_mx_ee_cpu.inc"
+ 426              		.file 6 ".\\Source\\bsw/global.h"
+ 427              		.file 7 "Source\\asw\\statemachine.h"
+ 428              		.file 8 "Generated_Source\\PSoC5/ErikaOS_1_ee_oo_intfunc.inc"
+ 429              		.file 9 "Generated_Source\\PSoC5/ErikaOS_1_cortex_mx_ee_context.inc"
+ 430              		.file 10 "Generated_Source\\PSoC5/ErikaOS_1_common_ee_primitives.inc"
+ 431              		.file 11 "Generated_Source\\PSoC5/core_cm3.h"
+ 432              		.section	.debug_info,"",%progbits
+ 433              	.Ldebug_info0:
+ 434 0000 47050000 		.4byte	0x547
+ 435 0004 0400     		.2byte	0x4
+ 436 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 437 000a 04       		.byte	0x4
+ 438 000b 01       		.uleb128 0x1
+ 439 000c E1030000 		.4byte	.LASF90
+ 440 0010 0C       		.byte	0xc
+ 441 0011 24010000 		.4byte	.LASF91
+ 442 0015 62010000 		.4byte	.LASF92
+ 443 0019 68000000 		.4byte	.Ldebug_ranges0+0x68
+ 444 001d 00000000 		.4byte	0
+ 445 0021 00000000 		.4byte	.Ldebug_line0
+ 446 0025 02       		.uleb128 0x2
+ 447 0026 01       		.byte	0x1
+ 448 0027 06       		.byte	0x6
+ 449 0028 4C030000 		.4byte	.LASF0
+ 450 002c 02       		.uleb128 0x2
+ 451 002d 01       		.byte	0x1
+ 452 002e 08       		.byte	0x8
+ 453 002f 15030000 		.4byte	.LASF1
+ 454 0033 02       		.uleb128 0x2
+ 455 0034 02       		.byte	0x2
+ 456 0035 05       		.byte	0x5
+ 457 0036 7C000000 		.4byte	.LASF2
+ 458 003a 03       		.uleb128 0x3
+ 459 003b 03010000 		.4byte	.LASF4
+ 460 003f 02       		.byte	0x2
+ 461 0040 2B       		.byte	0x2b
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccRRG0jp.s 			page 13
+
+
+ 462 0041 45000000 		.4byte	0x45
+ 463 0045 02       		.uleb128 0x2
+ 464 0046 02       		.byte	0x2
+ 465 0047 07       		.byte	0x7
+ 466 0048 CE030000 		.4byte	.LASF3
+ 467 004c 03       		.uleb128 0x3
+ 468 004d 47050000 		.4byte	.LASF5
+ 469 0051 02       		.byte	0x2
+ 470 0052 3F       		.byte	0x3f
+ 471 0053 57000000 		.4byte	0x57
+ 472 0057 02       		.uleb128 0x2
+ 473 0058 04       		.byte	0x4
+ 474 0059 05       		.byte	0x5
+ 475 005a 91040000 		.4byte	.LASF6
+ 476 005e 02       		.uleb128 0x2
+ 477 005f 04       		.byte	0x4
+ 478 0060 07       		.byte	0x7
+ 479 0061 FB040000 		.4byte	.LASF7
+ 480 0065 02       		.uleb128 0x2
+ 481 0066 08       		.byte	0x8
+ 482 0067 05       		.byte	0x5
+ 483 0068 1D020000 		.4byte	.LASF8
+ 484 006c 02       		.uleb128 0x2
+ 485 006d 08       		.byte	0x8
+ 486 006e 07       		.byte	0x7
+ 487 006f 58030000 		.4byte	.LASF9
+ 488 0073 04       		.uleb128 0x4
+ 489 0074 04       		.byte	0x4
+ 490 0075 05       		.byte	0x5
+ 491 0076 696E7400 		.ascii	"int\000"
+ 492 007a 02       		.uleb128 0x2
+ 493 007b 04       		.byte	0x4
+ 494 007c 07       		.byte	0x7
+ 495 007d 6F030000 		.4byte	.LASF10
+ 496 0081 03       		.uleb128 0x3
+ 497 0082 8A030000 		.4byte	.LASF11
+ 498 0086 03       		.byte	0x3
+ 499 0087 24       		.byte	0x24
+ 500 0088 3A000000 		.4byte	0x3a
+ 501 008c 03       		.uleb128 0x3
+ 502 008d AF040000 		.4byte	.LASF12
+ 503 0091 03       		.byte	0x3
+ 504 0092 2C       		.byte	0x2c
+ 505 0093 4C000000 		.4byte	0x4c
+ 506 0097 02       		.uleb128 0x2
+ 507 0098 04       		.byte	0x4
+ 508 0099 04       		.byte	0x4
+ 509 009a 05020000 		.4byte	.LASF13
+ 510 009e 02       		.uleb128 0x2
+ 511 009f 08       		.byte	0x8
+ 512 00a0 04       		.byte	0x4
+ 513 00a1 0D050000 		.4byte	.LASF14
+ 514 00a5 02       		.uleb128 0x2
+ 515 00a6 01       		.byte	0x1
+ 516 00a7 08       		.byte	0x8
+ 517 00a8 8C040000 		.4byte	.LASF15
+ 518 00ac 02       		.uleb128 0x2
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccRRG0jp.s 			page 14
+
+
+ 519 00ad 08       		.byte	0x8
+ 520 00ae 04       		.byte	0x4
+ 521 00af 09030000 		.4byte	.LASF16
+ 522 00b3 03       		.uleb128 0x3
+ 523 00b4 B4030000 		.4byte	.LASF17
+ 524 00b8 04       		.byte	0x4
+ 525 00b9 53       		.byte	0x53
+ 526 00ba 73000000 		.4byte	0x73
+ 527 00be 03       		.uleb128 0x3
+ 528 00bf 42030000 		.4byte	.LASF18
+ 529 00c3 04       		.byte	0x4
+ 530 00c4 54       		.byte	0x54
+ 531 00c5 7A000000 		.4byte	0x7a
+ 532 00c9 03       		.uleb128 0x3
+ 533 00ca 26050000 		.4byte	.LASF19
+ 534 00ce 05       		.byte	0x5
+ 535 00cf 4D       		.byte	0x4d
+ 536 00d0 BE000000 		.4byte	0xbe
+ 537 00d4 03       		.uleb128 0x3
+ 538 00d5 D9000000 		.4byte	.LASF20
+ 539 00d9 05       		.byte	0x5
+ 540 00da 4F       		.byte	0x4f
+ 541 00db BE000000 		.4byte	0xbe
+ 542 00df 03       		.uleb128 0x3
+ 543 00e0 3E010000 		.4byte	.LASF21
+ 544 00e4 05       		.byte	0x5
+ 545 00e5 78       		.byte	0x78
+ 546 00e6 B3000000 		.4byte	0xb3
+ 547 00ea 02       		.uleb128 0x2
+ 548 00eb 04       		.byte	0x4
+ 549 00ec 07       		.byte	0x7
+ 550 00ed AC000000 		.4byte	.LASF22
+ 551 00f1 03       		.uleb128 0x3
+ 552 00f2 68020000 		.4byte	.LASF23
+ 553 00f6 06       		.byte	0x6
+ 554 00f7 78       		.byte	0x78
+ 555 00f8 33000000 		.4byte	0x33
+ 556 00fc 03       		.uleb128 0x3
+ 557 00fd F9020000 		.4byte	.LASF24
+ 558 0101 06       		.byte	0x6
+ 559 0102 82       		.byte	0x82
+ 560 0103 2C000000 		.4byte	0x2c
+ 561 0107 05       		.uleb128 0x5
+ 562 0108 65524300 		.ascii	"eRC\000"
+ 563 010c 01       		.byte	0x1
+ 564 010d 25000000 		.4byte	0x25
+ 565 0111 06       		.byte	0x6
+ 566 0112 AC       		.byte	0xac
+ 567 0113 AE010000 		.4byte	0x1ae
+ 568 0117 06       		.uleb128 0x6
+ 569 0118 2C000000 		.4byte	.LASF25
+ 570 011c 00       		.byte	0
+ 571 011d 07       		.uleb128 0x7
+ 572 011e A2050000 		.4byte	.LASF26
+ 573 0122 7F       		.sleb128 -1
+ 574 0123 07       		.uleb128 0x7
+ 575 0124 93030000 		.4byte	.LASF27
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccRRG0jp.s 			page 15
+
+
+ 576 0128 7E       		.sleb128 -2
+ 577 0129 07       		.uleb128 0x7
+ 578 012a CB000000 		.4byte	.LASF28
+ 579 012e 7D       		.sleb128 -3
+ 580 012f 07       		.uleb128 0x7
+ 581 0130 AB050000 		.4byte	.LASF29
+ 582 0134 7C       		.sleb128 -4
+ 583 0135 07       		.uleb128 0x7
+ 584 0136 E4010000 		.4byte	.LASF30
+ 585 013a 7B       		.sleb128 -5
+ 586 013b 07       		.uleb128 0x7
+ 587 013c 86000000 		.4byte	.LASF31
+ 588 0140 7A       		.sleb128 -6
+ 589 0141 07       		.uleb128 0x7
+ 590 0142 79020000 		.4byte	.LASF32
+ 591 0146 79       		.sleb128 -7
+ 592 0147 07       		.uleb128 0x7
+ 593 0148 9A040000 		.4byte	.LASF33
+ 594 014c 78       		.sleb128 -8
+ 595 014d 07       		.uleb128 0x7
+ 596 014e E7050000 		.4byte	.LASF34
+ 597 0152 77       		.sleb128 -9
+ 598 0153 07       		.uleb128 0x7
+ 599 0154 BD020000 		.4byte	.LASF35
+ 600 0158 76       		.sleb128 -10
+ 601 0159 07       		.uleb128 0x7
+ 602 015a 02060000 		.4byte	.LASF36
+ 603 015e 75       		.sleb128 -11
+ 604 015f 07       		.uleb128 0x7
+ 605 0160 7C030000 		.4byte	.LASF37
+ 606 0164 74       		.sleb128 -12
+ 607 0165 07       		.uleb128 0x7
+ 608 0166 14050000 		.4byte	.LASF38
+ 609 016a 73       		.sleb128 -13
+ 610 016b 07       		.uleb128 0x7
+ 611 016c 19000000 		.4byte	.LASF39
+ 612 0170 72       		.sleb128 -14
+ 613 0171 07       		.uleb128 0x7
+ 614 0172 62000000 		.4byte	.LASF40
+ 615 0176 71       		.sleb128 -15
+ 616 0177 07       		.uleb128 0x7
+ 617 0178 D6020000 		.4byte	.LASF41
+ 618 017c 70       		.sleb128 -16
+ 619 017d 07       		.uleb128 0x7
+ 620 017e E1000000 		.4byte	.LASF42
+ 621 0182 6F       		.sleb128 -17
+ 622 0183 07       		.uleb128 0x7
+ 623 0184 97000000 		.4byte	.LASF43
+ 624 0188 6E       		.sleb128 -18
+ 625 0189 07       		.uleb128 0x7
+ 626 018a 44020000 		.4byte	.LASF44
+ 627 018e 6D       		.sleb128 -19
+ 628 018f 07       		.uleb128 0x7
+ 629 0190 C4040000 		.4byte	.LASF45
+ 630 0194 6C       		.sleb128 -20
+ 631 0195 07       		.uleb128 0x7
+ 632 0196 E7020000 		.4byte	.LASF46
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccRRG0jp.s 			page 16
+
+
+ 633 019a 6B       		.sleb128 -21
+ 634 019b 07       		.uleb128 0x7
+ 635 019c 6A050000 		.4byte	.LASF47
+ 636 01a0 6A       		.sleb128 -22
+ 637 01a1 07       		.uleb128 0x7
+ 638 01a2 4B010000 		.4byte	.LASF48
+ 639 01a6 69       		.sleb128 -23
+ 640 01a7 07       		.uleb128 0x7
+ 641 01a8 57020000 		.4byte	.LASF49
+ 642 01ac 68       		.sleb128 -24
+ 643 01ad 00       		.byte	0
+ 644 01ae 03       		.uleb128 0x3
+ 645 01af FD050000 		.4byte	.LASF50
+ 646 01b3 06       		.byte	0x6
+ 647 01b4 C8       		.byte	0xc8
+ 648 01b5 07010000 		.4byte	0x107
+ 649 01b9 03       		.uleb128 0x3
+ 650 01ba F3010000 		.4byte	.LASF51
+ 651 01be 07       		.byte	0x7
+ 652 01bf 32       		.byte	0x32
+ 653 01c0 C4010000 		.4byte	0x1c4
+ 654 01c4 08       		.uleb128 0x8
+ 655 01c5 04       		.byte	0x4
+ 656 01c6 CA010000 		.4byte	0x1ca
+ 657 01ca 09       		.uleb128 0x9
+ 658 01cb D1010000 		.4byte	0x1d1
+ 659 01cf 0A       		.uleb128 0xa
+ 660 01d0 00       		.byte	0
+ 661 01d1 03       		.uleb128 0x3
+ 662 01d2 BD030000 		.4byte	.LASF52
+ 663 01d6 07       		.byte	0x7
+ 664 01d7 37       		.byte	0x37
+ 665 01d8 DC010000 		.4byte	0x1dc
+ 666 01dc 08       		.uleb128 0x8
+ 667 01dd 04       		.byte	0x4
+ 668 01de E2010000 		.4byte	0x1e2
+ 669 01e2 0B       		.uleb128 0xb
+ 670 01e3 FC000000 		.4byte	0xfc
+ 671 01e7 ED010000 		.4byte	0x1ed
+ 672 01eb 0A       		.uleb128 0xa
+ 673 01ec 00       		.byte	0
+ 674 01ed 0C       		.uleb128 0xc
+ 675 01ee 0C       		.byte	0xc
+ 676 01ef 07       		.byte	0x7
+ 677 01f0 3E       		.byte	0x3e
+ 678 01f1 26020000 		.4byte	0x226
+ 679 01f5 0D       		.uleb128 0xd
+ 680 01f6 FD000000 		.4byte	.LASF53
+ 681 01fa 07       		.byte	0x7
+ 682 01fb 40       		.byte	0x40
+ 683 01fc 81000000 		.4byte	0x81
+ 684 0200 00       		.byte	0
+ 685 0201 0D       		.uleb128 0xd
+ 686 0202 DF050000 		.4byte	.LASF54
+ 687 0206 07       		.byte	0x7
+ 688 0207 41       		.byte	0x41
+ 689 0208 81000000 		.4byte	0x81
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccRRG0jp.s 			page 17
+
+
+ 690 020c 02       		.byte	0x2
+ 691 020d 0D       		.uleb128 0xd
+ 692 020e 76000000 		.4byte	.LASF55
+ 693 0212 07       		.byte	0x7
+ 694 0213 42       		.byte	0x42
+ 695 0214 D1010000 		.4byte	0x1d1
+ 696 0218 04       		.byte	0x4
+ 697 0219 0D       		.uleb128 0xd
+ 698 021a D7040000 		.4byte	.LASF56
+ 699 021e 07       		.byte	0x7
+ 700 021f 43       		.byte	0x43
+ 701 0220 B9010000 		.4byte	0x1b9
+ 702 0224 08       		.byte	0x8
+ 703 0225 00       		.byte	0
+ 704 0226 03       		.uleb128 0x3
+ 705 0227 6F040000 		.4byte	.LASF57
+ 706 022b 07       		.byte	0x7
+ 707 022c 45       		.byte	0x45
+ 708 022d ED010000 		.4byte	0x1ed
+ 709 0231 0E       		.uleb128 0xe
+ 710 0232 26020000 		.4byte	0x226
+ 711 0236 3C020000 		.4byte	0x23c
+ 712 023a 0F       		.uleb128 0xf
+ 713 023b 00       		.byte	0
+ 714 023c 0C       		.uleb128 0xc
+ 715 023d 0C       		.byte	0xc
+ 716 023e 07       		.byte	0x7
+ 717 023f 4C       		.byte	0x4c
+ 718 0240 69020000 		.4byte	0x269
+ 719 0244 0D       		.uleb128 0xd
+ 720 0245 07000000 		.4byte	.LASF58
+ 721 0249 07       		.byte	0x7
+ 722 024a 4E       		.byte	0x4e
+ 723 024b 81000000 		.4byte	0x81
+ 724 024f 00       		.byte	0
+ 725 0250 0D       		.uleb128 0xd
+ 726 0251 8B020000 		.4byte	.LASF59
+ 727 0255 07       		.byte	0x7
+ 728 0256 4F       		.byte	0x4f
+ 729 0257 6F020000 		.4byte	0x26f
+ 730 025b 04       		.byte	0x4
+ 731 025c 0D       		.uleb128 0xd
+ 732 025d 2E050000 		.4byte	.LASF60
+ 733 0261 07       		.byte	0x7
+ 734 0262 50       		.byte	0x50
+ 735 0263 74020000 		.4byte	0x274
+ 736 0267 08       		.byte	0x8
+ 737 0268 00       		.byte	0
+ 738 0269 08       		.uleb128 0x8
+ 739 026a 04       		.byte	0x4
+ 740 026b 31020000 		.4byte	0x231
+ 741 026f 10       		.uleb128 0x10
+ 742 0270 69020000 		.4byte	0x269
+ 743 0274 10       		.uleb128 0x10
+ 744 0275 81000000 		.4byte	0x81
+ 745 0279 03       		.uleb128 0x3
+ 746 027a 37000000 		.4byte	.LASF61
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccRRG0jp.s 			page 18
+
+
+ 747 027e 07       		.byte	0x7
+ 748 027f 51       		.byte	0x51
+ 749 0280 3C020000 		.4byte	0x23c
+ 750 0284 0E       		.uleb128 0xe
+ 751 0285 79020000 		.4byte	0x279
+ 752 0289 8F020000 		.4byte	0x28f
+ 753 028d 0F       		.uleb128 0xf
+ 754 028e 00       		.byte	0
+ 755 028f 0C       		.uleb128 0xc
+ 756 0290 0C       		.byte	0xc
+ 757 0291 07       		.byte	0x7
+ 758 0292 5A       		.byte	0x5a
+ 759 0293 BC020000 		.4byte	0x2bc
+ 760 0297 0D       		.uleb128 0xd
+ 761 0298 03030000 		.4byte	.LASF62
+ 762 029c 07       		.byte	0x7
+ 763 029d 5C       		.byte	0x5c
+ 764 029e 81000000 		.4byte	0x81
+ 765 02a2 00       		.byte	0
+ 766 02a3 0D       		.uleb128 0xd
+ 767 02a4 D3050000 		.4byte	.LASF63
+ 768 02a8 07       		.byte	0x7
+ 769 02a9 5D       		.byte	0x5d
+ 770 02aa B9010000 		.4byte	0x1b9
+ 771 02ae 04       		.byte	0x4
+ 772 02af 0D       		.uleb128 0xd
+ 773 02b0 CB020000 		.4byte	.LASF64
+ 774 02b4 07       		.byte	0x7
+ 775 02b5 5E       		.byte	0x5e
+ 776 02b6 B9010000 		.4byte	0x1b9
+ 777 02ba 08       		.byte	0x8
+ 778 02bb 00       		.byte	0
+ 779 02bc 03       		.uleb128 0x3
+ 780 02bd 33050000 		.4byte	.LASF65
+ 781 02c1 07       		.byte	0x7
+ 782 02c2 5F       		.byte	0x5f
+ 783 02c3 8F020000 		.4byte	0x28f
+ 784 02c7 0E       		.uleb128 0xe
+ 785 02c8 BC020000 		.4byte	0x2bc
+ 786 02cc D2020000 		.4byte	0x2d2
+ 787 02d0 0F       		.uleb128 0xf
+ 788 02d1 00       		.byte	0
+ 789 02d2 0C       		.uleb128 0xc
+ 790 02d3 10       		.byte	0x10
+ 791 02d4 07       		.byte	0x7
+ 792 02d5 66       		.byte	0x66
+ 793 02d6 17030000 		.4byte	0x317
+ 794 02da 0D       		.uleb128 0xd
+ 795 02db 58050000 		.4byte	.LASF66
+ 796 02df 07       		.byte	0x7
+ 797 02e0 68       		.byte	0x68
+ 798 02e1 17030000 		.4byte	0x317
+ 799 02e5 00       		.byte	0
+ 800 02e6 0D       		.uleb128 0xd
+ 801 02e7 0E010000 		.4byte	.LASF67
+ 802 02eb 07       		.byte	0x7
+ 803 02ec 69       		.byte	0x69
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccRRG0jp.s 			page 19
+
+
+ 804 02ed 74020000 		.4byte	0x274
+ 805 02f1 04       		.byte	0x4
+ 806 02f2 0D       		.uleb128 0xd
+ 807 02f3 54000000 		.4byte	.LASF68
+ 808 02f7 07       		.byte	0x7
+ 809 02f8 6B       		.byte	0x6b
+ 810 02f9 1D030000 		.4byte	0x31d
+ 811 02fd 08       		.byte	0x8
+ 812 02fe 0D       		.uleb128 0xd
+ 813 02ff 0B020000 		.4byte	.LASF69
+ 814 0303 07       		.byte	0x7
+ 815 0304 6C       		.byte	0x6c
+ 816 0305 74020000 		.4byte	0x274
+ 817 0309 0C       		.byte	0xc
+ 818 030a 0D       		.uleb128 0xd
+ 819 030b 11000000 		.4byte	.LASF70
+ 820 030f 07       		.byte	0x7
+ 821 0310 6E       		.byte	0x6e
+ 822 0311 81000000 		.4byte	0x81
+ 823 0315 0E       		.byte	0xe
+ 824 0316 00       		.byte	0
+ 825 0317 08       		.uleb128 0x8
+ 826 0318 04       		.byte	0x4
+ 827 0319 84020000 		.4byte	0x284
+ 828 031d 08       		.uleb128 0x8
+ 829 031e 04       		.byte	0x4
+ 830 031f C7020000 		.4byte	0x2c7
+ 831 0323 03       		.uleb128 0x3
+ 832 0324 71020000 		.4byte	.LASF71
+ 833 0328 07       		.byte	0x7
+ 834 0329 6F       		.byte	0x6f
+ 835 032a D2020000 		.4byte	0x2d2
+ 836 032e 11       		.uleb128 0x11
+ 837 032f A1020000 		.4byte	.LASF73
+ 838 0333 01       		.byte	0x1
+ 839 0334 39       		.byte	0x39
+ 840 0335 F1000000 		.4byte	0xf1
+ 841 0339 00000000 		.4byte	.LFB117
+ 842 033d 2C000000 		.4byte	.LFE117-.LFB117
+ 843 0341 01       		.uleb128 0x1
+ 844 0342 9C       		.byte	0x9c
+ 845 0343 79030000 		.4byte	0x379
+ 846 0347 12       		.uleb128 0x12
+ 847 0348 6D6500   		.ascii	"me\000"
+ 848 034b 01       		.byte	0x1
+ 849 034c 39       		.byte	0x39
+ 850 034d 7F030000 		.4byte	0x37f
+ 851 0351 00000000 		.4byte	.LLST0
+ 852 0355 13       		.uleb128 0x13
+ 853 0356 00000000 		.4byte	.LASF72
+ 854 035a 01       		.byte	0x1
+ 855 035b 3C       		.byte	0x3c
+ 856 035c F1000000 		.4byte	0xf1
+ 857 0360 7F       		.sleb128 -1
+ 858 0361 14       		.uleb128 0x14
+ 859 0362 02000000 		.4byte	.LBB2
+ 860 0366 22000000 		.4byte	.LBE2-.LBB2
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccRRG0jp.s 			page 20
+
+
+ 861 036a 15       		.uleb128 0x15
+ 862 036b 6900     		.ascii	"i\000"
+ 863 036d 01       		.byte	0x1
+ 864 036e 3E       		.byte	0x3e
+ 865 036f 81000000 		.4byte	0x81
+ 866 0373 3A000000 		.4byte	.LLST1
+ 867 0377 00       		.byte	0
+ 868 0378 00       		.byte	0
+ 869 0379 08       		.uleb128 0x8
+ 870 037a 04       		.byte	0x4
+ 871 037b 23030000 		.4byte	0x323
+ 872 037f 10       		.uleb128 0x10
+ 873 0380 79030000 		.4byte	0x379
+ 874 0384 16       		.uleb128 0x16
+ 875 0385 23030000 		.4byte	.LASF74
+ 876 0389 01       		.byte	0x1
+ 877 038a 4F       		.byte	0x4f
+ 878 038b AE010000 		.4byte	0x1ae
+ 879 038f 00000000 		.4byte	.LFB118
+ 880 0393 38000000 		.4byte	.LFE118-.LFB118
+ 881 0397 01       		.uleb128 0x1
+ 882 0398 9C       		.byte	0x9c
+ 883 0399 CE030000 		.4byte	0x3ce
+ 884 039d 12       		.uleb128 0x12
+ 885 039e 6D6500   		.ascii	"me\000"
+ 886 03a1 01       		.byte	0x1
+ 887 03a2 4F       		.byte	0x4f
+ 888 03a3 7F030000 		.4byte	0x37f
+ 889 03a7 64000000 		.4byte	.LLST2
+ 890 03ab 17       		.uleb128 0x17
+ 891 03ac F5000000 		.4byte	.LASF75
+ 892 03b0 01       		.byte	0x1
+ 893 03b1 52       		.byte	0x52
+ 894 03b2 B9010000 		.4byte	0x1b9
+ 895 03b6 98000000 		.4byte	.LLST3
+ 896 03ba 18       		.uleb128 0x18
+ 897 03bb 00000000 		.4byte	.Ldebug_ranges0+0
+ 898 03bf 15       		.uleb128 0x15
+ 899 03c0 6A00     		.ascii	"j\000"
+ 900 03c2 01       		.byte	0x1
+ 901 03c3 59       		.byte	0x59
+ 902 03c4 81000000 		.4byte	0x81
+ 903 03c8 C3000000 		.4byte	.LLST4
+ 904 03cc 00       		.byte	0
+ 905 03cd 00       		.byte	0
+ 906 03ce 16       		.uleb128 0x16
+ 907 03cf A1030000 		.4byte	.LASF76
+ 908 03d3 01       		.byte	0x1
+ 909 03d4 6D       		.byte	0x6d
+ 910 03d5 AE010000 		.4byte	0x1ae
+ 911 03d9 00000000 		.4byte	.LFB119
+ 912 03dd 0E010000 		.4byte	.LFE119-.LFB119
+ 913 03e1 01       		.uleb128 0x1
+ 914 03e2 9C       		.byte	0x9c
+ 915 03e3 DA040000 		.4byte	0x4da
+ 916 03e7 12       		.uleb128 0x12
+ 917 03e8 6D6500   		.ascii	"me\000"
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccRRG0jp.s 			page 21
+
+
+ 918 03eb 01       		.byte	0x1
+ 919 03ec 6D       		.byte	0x6d
+ 920 03ed 7F030000 		.4byte	0x37f
+ 921 03f1 EC000000 		.4byte	.LLST5
+ 922 03f5 12       		.uleb128 0x12
+ 923 03f6 657600   		.ascii	"ev\000"
+ 924 03f9 01       		.byte	0x1
+ 925 03fa 6E       		.byte	0x6e
+ 926 03fb 81000000 		.4byte	0x81
+ 927 03ff 0A010000 		.4byte	.LLST6
+ 928 0403 17       		.uleb128 0x17
+ 929 0404 76000000 		.4byte	.LASF55
+ 930 0408 01       		.byte	0x1
+ 931 0409 70       		.byte	0x70
+ 932 040a D1010000 		.4byte	0x1d1
+ 933 040e 2B010000 		.4byte	.LLST7
+ 934 0412 17       		.uleb128 0x17
+ 935 0413 7C050000 		.4byte	.LASF77
+ 936 0417 01       		.byte	0x1
+ 937 0418 71       		.byte	0x71
+ 938 0419 B9010000 		.4byte	0x1b9
+ 939 041d 56010000 		.4byte	.LLST8
+ 940 0421 17       		.uleb128 0x17
+ 941 0422 F5000000 		.4byte	.LASF75
+ 942 0426 01       		.byte	0x1
+ 943 0427 72       		.byte	0x72
+ 944 0428 B9010000 		.4byte	0x1b9
+ 945 042c 81010000 		.4byte	.LLST9
+ 946 0430 17       		.uleb128 0x17
+ 947 0431 51050000 		.4byte	.LASF78
+ 948 0435 01       		.byte	0x1
+ 949 0436 73       		.byte	0x73
+ 950 0437 B9010000 		.4byte	0x1b9
+ 951 043b B8010000 		.4byte	.LLST10
+ 952 043f 19       		.uleb128 0x19
+ 953 0440 B7040000 		.4byte	.LASF79
+ 954 0444 01       		.byte	0x1
+ 955 0445 77       		.byte	0x77
+ 956 0446 81000000 		.4byte	0x81
+ 957 044a 01       		.uleb128 0x1
+ 958 044b 5A       		.byte	0x5a
+ 959 044c 17       		.uleb128 0x17
+ 960 044d DF050000 		.4byte	.LASF54
+ 961 0451 01       		.byte	0x1
+ 962 0452 78       		.byte	0x78
+ 963 0453 81000000 		.4byte	0x81
+ 964 0457 EF010000 		.4byte	.LLST11
+ 965 045b 17       		.uleb128 0x17
+ 966 045c 45010000 		.4byte	.LASF80
+ 967 0460 01       		.byte	0x1
+ 968 0461 7C       		.byte	0x7c
+ 969 0462 F1000000 		.4byte	0xf1
+ 970 0466 18020000 		.4byte	.LLST12
+ 971 046a 17       		.uleb128 0x17
+ 972 046b 89050000 		.4byte	.LASF81
+ 973 046f 01       		.byte	0x1
+ 974 0470 84       		.byte	0x84
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccRRG0jp.s 			page 22
+
+
+ 975 0471 6F020000 		.4byte	0x26f
+ 976 0475 4C020000 		.4byte	.LLST13
+ 977 0479 17       		.uleb128 0x17
+ 978 047a 33030000 		.4byte	.LASF82
+ 979 047e 01       		.byte	0x1
+ 980 047f 86       		.byte	0x86
+ 981 0480 81000000 		.4byte	0x81
+ 982 0484 75020000 		.4byte	.LLST14
+ 983 0488 1A       		.uleb128 0x1a
+ 984 0489 18000000 		.4byte	.Ldebug_ranges0+0x18
+ 985 048d C9040000 		.4byte	0x4c9
+ 986 0491 15       		.uleb128 0x15
+ 987 0492 6900     		.ascii	"i\000"
+ 988 0494 01       		.byte	0x1
+ 989 0495 93       		.byte	0x93
+ 990 0496 81000000 		.4byte	0x81
+ 991 049a C1020000 		.4byte	.LLST15
+ 992 049e 1A       		.uleb128 0x1a
+ 993 049f 38000000 		.4byte	.Ldebug_ranges0+0x38
+ 994 04a3 B5040000 		.4byte	0x4b5
+ 995 04a7 15       		.uleb128 0x15
+ 996 04a8 6A00     		.ascii	"j\000"
+ 997 04aa 01       		.byte	0x1
+ 998 04ab A2       		.byte	0xa2
+ 999 04ac 81000000 		.4byte	0x81
+ 1000 04b0 F5020000 		.4byte	.LLST16
+ 1001 04b4 00       		.byte	0
+ 1002 04b5 18       		.uleb128 0x18
+ 1003 04b6 50000000 		.4byte	.Ldebug_ranges0+0x50
+ 1004 04ba 15       		.uleb128 0x15
+ 1005 04bb 6A00     		.ascii	"j\000"
+ 1006 04bd 01       		.byte	0x1
+ 1007 04be B2       		.byte	0xb2
+ 1008 04bf 81000000 		.4byte	0x81
+ 1009 04c3 1E030000 		.4byte	.LLST17
+ 1010 04c7 00       		.byte	0
+ 1011 04c8 00       		.byte	0
+ 1012 04c9 1B       		.uleb128 0x1b
+ 1013 04ca 10000000 		.4byte	.LVL20
+ 1014 04ce 2E030000 		.4byte	0x32e
+ 1015 04d2 1C       		.uleb128 0x1c
+ 1016 04d3 01       		.uleb128 0x1
+ 1017 04d4 50       		.byte	0x50
+ 1018 04d5 02       		.uleb128 0x2
+ 1019 04d6 79       		.byte	0x79
+ 1020 04d7 00       		.sleb128 0
+ 1021 04d8 00       		.byte	0
+ 1022 04d9 00       		.byte	0
+ 1023 04da 11       		.uleb128 0x11
+ 1024 04db B5000000 		.4byte	.LASF83
+ 1025 04df 01       		.byte	0x1
+ 1026 04e0 CE       		.byte	0xce
+ 1027 04e1 81000000 		.4byte	0x81
+ 1028 04e5 00000000 		.4byte	.LFB120
+ 1029 04e9 04000000 		.4byte	.LFE120-.LFB120
+ 1030 04ed 01       		.uleb128 0x1
+ 1031 04ee 9C       		.byte	0x9c
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccRRG0jp.s 			page 23
+
+
+ 1032 04ef 02050000 		.4byte	0x502
+ 1033 04f3 12       		.uleb128 0x12
+ 1034 04f4 6D6500   		.ascii	"me\000"
+ 1035 04f7 01       		.byte	0x1
+ 1036 04f8 CE       		.byte	0xce
+ 1037 04f9 7F030000 		.4byte	0x37f
+ 1038 04fd 47030000 		.4byte	.LLST18
+ 1039 0501 00       		.byte	0
+ 1040 0502 1D       		.uleb128 0x1d
+ 1041 0503 BB050000 		.4byte	.LASF84
+ 1042 0507 08       		.byte	0x8
+ 1043 0508 40       		.byte	0x40
+ 1044 0509 C9000000 		.4byte	0xc9
+ 1045 050d 1D       		.uleb128 0x1d
+ 1046 050e 2B020000 		.4byte	.LASF85
+ 1047 0512 08       		.byte	0x8
+ 1048 0513 47       		.byte	0x47
+ 1049 0514 D4000000 		.4byte	0xd4
+ 1050 0518 1D       		.uleb128 0x1d
+ 1051 0519 E8040000 		.4byte	.LASF86
+ 1052 051d 08       		.byte	0x8
+ 1053 051e 4A       		.byte	0x4a
+ 1054 051f C9000000 		.4byte	0xc9
+ 1055 0523 1D       		.uleb128 0x1d
+ 1056 0524 CB010000 		.4byte	.LASF87
+ 1057 0528 09       		.byte	0x9
+ 1058 0529 48       		.byte	0x48
+ 1059 052a DF000000 		.4byte	0xdf
+ 1060 052e 1D       		.uleb128 0x1d
+ 1061 052f B6010000 		.4byte	.LASF88
+ 1062 0533 0A       		.byte	0xa
+ 1063 0534 44       		.byte	0x44
+ 1064 0535 C9000000 		.4byte	0xc9
+ 1065 0539 1E       		.uleb128 0x1e
+ 1066 053a 95050000 		.4byte	.LASF89
+ 1067 053e 0B       		.byte	0xb
+ 1068 053f 1207     		.2byte	0x712
+ 1069 0541 45050000 		.4byte	0x545
+ 1070 0545 1F       		.uleb128 0x1f
+ 1071 0546 8C000000 		.4byte	0x8c
+ 1072 054a 00       		.byte	0
+ 1073              		.section	.debug_abbrev,"",%progbits
+ 1074              	.Ldebug_abbrev0:
+ 1075 0000 01       		.uleb128 0x1
+ 1076 0001 11       		.uleb128 0x11
+ 1077 0002 01       		.byte	0x1
+ 1078 0003 25       		.uleb128 0x25
+ 1079 0004 0E       		.uleb128 0xe
+ 1080 0005 13       		.uleb128 0x13
+ 1081 0006 0B       		.uleb128 0xb
+ 1082 0007 03       		.uleb128 0x3
+ 1083 0008 0E       		.uleb128 0xe
+ 1084 0009 1B       		.uleb128 0x1b
+ 1085 000a 0E       		.uleb128 0xe
+ 1086 000b 55       		.uleb128 0x55
+ 1087 000c 17       		.uleb128 0x17
+ 1088 000d 11       		.uleb128 0x11
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccRRG0jp.s 			page 24
+
+
+ 1089 000e 01       		.uleb128 0x1
+ 1090 000f 10       		.uleb128 0x10
+ 1091 0010 17       		.uleb128 0x17
+ 1092 0011 00       		.byte	0
+ 1093 0012 00       		.byte	0
+ 1094 0013 02       		.uleb128 0x2
+ 1095 0014 24       		.uleb128 0x24
+ 1096 0015 00       		.byte	0
+ 1097 0016 0B       		.uleb128 0xb
+ 1098 0017 0B       		.uleb128 0xb
+ 1099 0018 3E       		.uleb128 0x3e
+ 1100 0019 0B       		.uleb128 0xb
+ 1101 001a 03       		.uleb128 0x3
+ 1102 001b 0E       		.uleb128 0xe
+ 1103 001c 00       		.byte	0
+ 1104 001d 00       		.byte	0
+ 1105 001e 03       		.uleb128 0x3
+ 1106 001f 16       		.uleb128 0x16
+ 1107 0020 00       		.byte	0
+ 1108 0021 03       		.uleb128 0x3
+ 1109 0022 0E       		.uleb128 0xe
+ 1110 0023 3A       		.uleb128 0x3a
+ 1111 0024 0B       		.uleb128 0xb
+ 1112 0025 3B       		.uleb128 0x3b
+ 1113 0026 0B       		.uleb128 0xb
+ 1114 0027 49       		.uleb128 0x49
+ 1115 0028 13       		.uleb128 0x13
+ 1116 0029 00       		.byte	0
+ 1117 002a 00       		.byte	0
+ 1118 002b 04       		.uleb128 0x4
+ 1119 002c 24       		.uleb128 0x24
+ 1120 002d 00       		.byte	0
+ 1121 002e 0B       		.uleb128 0xb
+ 1122 002f 0B       		.uleb128 0xb
+ 1123 0030 3E       		.uleb128 0x3e
+ 1124 0031 0B       		.uleb128 0xb
+ 1125 0032 03       		.uleb128 0x3
+ 1126 0033 08       		.uleb128 0x8
+ 1127 0034 00       		.byte	0
+ 1128 0035 00       		.byte	0
+ 1129 0036 05       		.uleb128 0x5
+ 1130 0037 04       		.uleb128 0x4
+ 1131 0038 01       		.byte	0x1
+ 1132 0039 03       		.uleb128 0x3
+ 1133 003a 08       		.uleb128 0x8
+ 1134 003b 0B       		.uleb128 0xb
+ 1135 003c 0B       		.uleb128 0xb
+ 1136 003d 49       		.uleb128 0x49
+ 1137 003e 13       		.uleb128 0x13
+ 1138 003f 3A       		.uleb128 0x3a
+ 1139 0040 0B       		.uleb128 0xb
+ 1140 0041 3B       		.uleb128 0x3b
+ 1141 0042 0B       		.uleb128 0xb
+ 1142 0043 01       		.uleb128 0x1
+ 1143 0044 13       		.uleb128 0x13
+ 1144 0045 00       		.byte	0
+ 1145 0046 00       		.byte	0
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccRRG0jp.s 			page 25
+
+
+ 1146 0047 06       		.uleb128 0x6
+ 1147 0048 28       		.uleb128 0x28
+ 1148 0049 00       		.byte	0
+ 1149 004a 03       		.uleb128 0x3
+ 1150 004b 0E       		.uleb128 0xe
+ 1151 004c 1C       		.uleb128 0x1c
+ 1152 004d 0B       		.uleb128 0xb
+ 1153 004e 00       		.byte	0
+ 1154 004f 00       		.byte	0
+ 1155 0050 07       		.uleb128 0x7
+ 1156 0051 28       		.uleb128 0x28
+ 1157 0052 00       		.byte	0
+ 1158 0053 03       		.uleb128 0x3
+ 1159 0054 0E       		.uleb128 0xe
+ 1160 0055 1C       		.uleb128 0x1c
+ 1161 0056 0D       		.uleb128 0xd
+ 1162 0057 00       		.byte	0
+ 1163 0058 00       		.byte	0
+ 1164 0059 08       		.uleb128 0x8
+ 1165 005a 0F       		.uleb128 0xf
+ 1166 005b 00       		.byte	0
+ 1167 005c 0B       		.uleb128 0xb
+ 1168 005d 0B       		.uleb128 0xb
+ 1169 005e 49       		.uleb128 0x49
+ 1170 005f 13       		.uleb128 0x13
+ 1171 0060 00       		.byte	0
+ 1172 0061 00       		.byte	0
+ 1173 0062 09       		.uleb128 0x9
+ 1174 0063 15       		.uleb128 0x15
+ 1175 0064 01       		.byte	0x1
+ 1176 0065 01       		.uleb128 0x1
+ 1177 0066 13       		.uleb128 0x13
+ 1178 0067 00       		.byte	0
+ 1179 0068 00       		.byte	0
+ 1180 0069 0A       		.uleb128 0xa
+ 1181 006a 18       		.uleb128 0x18
+ 1182 006b 00       		.byte	0
+ 1183 006c 00       		.byte	0
+ 1184 006d 00       		.byte	0
+ 1185 006e 0B       		.uleb128 0xb
+ 1186 006f 15       		.uleb128 0x15
+ 1187 0070 01       		.byte	0x1
+ 1188 0071 49       		.uleb128 0x49
+ 1189 0072 13       		.uleb128 0x13
+ 1190 0073 01       		.uleb128 0x1
+ 1191 0074 13       		.uleb128 0x13
+ 1192 0075 00       		.byte	0
+ 1193 0076 00       		.byte	0
+ 1194 0077 0C       		.uleb128 0xc
+ 1195 0078 13       		.uleb128 0x13
+ 1196 0079 01       		.byte	0x1
+ 1197 007a 0B       		.uleb128 0xb
+ 1198 007b 0B       		.uleb128 0xb
+ 1199 007c 3A       		.uleb128 0x3a
+ 1200 007d 0B       		.uleb128 0xb
+ 1201 007e 3B       		.uleb128 0x3b
+ 1202 007f 0B       		.uleb128 0xb
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccRRG0jp.s 			page 26
+
+
+ 1203 0080 01       		.uleb128 0x1
+ 1204 0081 13       		.uleb128 0x13
+ 1205 0082 00       		.byte	0
+ 1206 0083 00       		.byte	0
+ 1207 0084 0D       		.uleb128 0xd
+ 1208 0085 0D       		.uleb128 0xd
+ 1209 0086 00       		.byte	0
+ 1210 0087 03       		.uleb128 0x3
+ 1211 0088 0E       		.uleb128 0xe
+ 1212 0089 3A       		.uleb128 0x3a
+ 1213 008a 0B       		.uleb128 0xb
+ 1214 008b 3B       		.uleb128 0x3b
+ 1215 008c 0B       		.uleb128 0xb
+ 1216 008d 49       		.uleb128 0x49
+ 1217 008e 13       		.uleb128 0x13
+ 1218 008f 38       		.uleb128 0x38
+ 1219 0090 0B       		.uleb128 0xb
+ 1220 0091 00       		.byte	0
+ 1221 0092 00       		.byte	0
+ 1222 0093 0E       		.uleb128 0xe
+ 1223 0094 01       		.uleb128 0x1
+ 1224 0095 01       		.byte	0x1
+ 1225 0096 49       		.uleb128 0x49
+ 1226 0097 13       		.uleb128 0x13
+ 1227 0098 01       		.uleb128 0x1
+ 1228 0099 13       		.uleb128 0x13
+ 1229 009a 00       		.byte	0
+ 1230 009b 00       		.byte	0
+ 1231 009c 0F       		.uleb128 0xf
+ 1232 009d 21       		.uleb128 0x21
+ 1233 009e 00       		.byte	0
+ 1234 009f 00       		.byte	0
+ 1235 00a0 00       		.byte	0
+ 1236 00a1 10       		.uleb128 0x10
+ 1237 00a2 26       		.uleb128 0x26
+ 1238 00a3 00       		.byte	0
+ 1239 00a4 49       		.uleb128 0x49
+ 1240 00a5 13       		.uleb128 0x13
+ 1241 00a6 00       		.byte	0
+ 1242 00a7 00       		.byte	0
+ 1243 00a8 11       		.uleb128 0x11
+ 1244 00a9 2E       		.uleb128 0x2e
+ 1245 00aa 01       		.byte	0x1
+ 1246 00ab 3F       		.uleb128 0x3f
+ 1247 00ac 19       		.uleb128 0x19
+ 1248 00ad 03       		.uleb128 0x3
+ 1249 00ae 0E       		.uleb128 0xe
+ 1250 00af 3A       		.uleb128 0x3a
+ 1251 00b0 0B       		.uleb128 0xb
+ 1252 00b1 3B       		.uleb128 0x3b
+ 1253 00b2 0B       		.uleb128 0xb
+ 1254 00b3 27       		.uleb128 0x27
+ 1255 00b4 19       		.uleb128 0x19
+ 1256 00b5 49       		.uleb128 0x49
+ 1257 00b6 13       		.uleb128 0x13
+ 1258 00b7 11       		.uleb128 0x11
+ 1259 00b8 01       		.uleb128 0x1
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccRRG0jp.s 			page 27
+
+
+ 1260 00b9 12       		.uleb128 0x12
+ 1261 00ba 06       		.uleb128 0x6
+ 1262 00bb 40       		.uleb128 0x40
+ 1263 00bc 18       		.uleb128 0x18
+ 1264 00bd 9742     		.uleb128 0x2117
+ 1265 00bf 19       		.uleb128 0x19
+ 1266 00c0 01       		.uleb128 0x1
+ 1267 00c1 13       		.uleb128 0x13
+ 1268 00c2 00       		.byte	0
+ 1269 00c3 00       		.byte	0
+ 1270 00c4 12       		.uleb128 0x12
+ 1271 00c5 05       		.uleb128 0x5
+ 1272 00c6 00       		.byte	0
+ 1273 00c7 03       		.uleb128 0x3
+ 1274 00c8 08       		.uleb128 0x8
+ 1275 00c9 3A       		.uleb128 0x3a
+ 1276 00ca 0B       		.uleb128 0xb
+ 1277 00cb 3B       		.uleb128 0x3b
+ 1278 00cc 0B       		.uleb128 0xb
+ 1279 00cd 49       		.uleb128 0x49
+ 1280 00ce 13       		.uleb128 0x13
+ 1281 00cf 02       		.uleb128 0x2
+ 1282 00d0 17       		.uleb128 0x17
+ 1283 00d1 00       		.byte	0
+ 1284 00d2 00       		.byte	0
+ 1285 00d3 13       		.uleb128 0x13
+ 1286 00d4 34       		.uleb128 0x34
+ 1287 00d5 00       		.byte	0
+ 1288 00d6 03       		.uleb128 0x3
+ 1289 00d7 0E       		.uleb128 0xe
+ 1290 00d8 3A       		.uleb128 0x3a
+ 1291 00d9 0B       		.uleb128 0xb
+ 1292 00da 3B       		.uleb128 0x3b
+ 1293 00db 0B       		.uleb128 0xb
+ 1294 00dc 49       		.uleb128 0x49
+ 1295 00dd 13       		.uleb128 0x13
+ 1296 00de 1C       		.uleb128 0x1c
+ 1297 00df 0D       		.uleb128 0xd
+ 1298 00e0 00       		.byte	0
+ 1299 00e1 00       		.byte	0
+ 1300 00e2 14       		.uleb128 0x14
+ 1301 00e3 0B       		.uleb128 0xb
+ 1302 00e4 01       		.byte	0x1
+ 1303 00e5 11       		.uleb128 0x11
+ 1304 00e6 01       		.uleb128 0x1
+ 1305 00e7 12       		.uleb128 0x12
+ 1306 00e8 06       		.uleb128 0x6
+ 1307 00e9 00       		.byte	0
+ 1308 00ea 00       		.byte	0
+ 1309 00eb 15       		.uleb128 0x15
+ 1310 00ec 34       		.uleb128 0x34
+ 1311 00ed 00       		.byte	0
+ 1312 00ee 03       		.uleb128 0x3
+ 1313 00ef 08       		.uleb128 0x8
+ 1314 00f0 3A       		.uleb128 0x3a
+ 1315 00f1 0B       		.uleb128 0xb
+ 1316 00f2 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccRRG0jp.s 			page 28
+
+
+ 1317 00f3 0B       		.uleb128 0xb
+ 1318 00f4 49       		.uleb128 0x49
+ 1319 00f5 13       		.uleb128 0x13
+ 1320 00f6 02       		.uleb128 0x2
+ 1321 00f7 17       		.uleb128 0x17
+ 1322 00f8 00       		.byte	0
+ 1323 00f9 00       		.byte	0
+ 1324 00fa 16       		.uleb128 0x16
+ 1325 00fb 2E       		.uleb128 0x2e
+ 1326 00fc 01       		.byte	0x1
+ 1327 00fd 3F       		.uleb128 0x3f
+ 1328 00fe 19       		.uleb128 0x19
+ 1329 00ff 03       		.uleb128 0x3
+ 1330 0100 0E       		.uleb128 0xe
+ 1331 0101 3A       		.uleb128 0x3a
+ 1332 0102 0B       		.uleb128 0xb
+ 1333 0103 3B       		.uleb128 0x3b
+ 1334 0104 0B       		.uleb128 0xb
+ 1335 0105 27       		.uleb128 0x27
+ 1336 0106 19       		.uleb128 0x19
+ 1337 0107 49       		.uleb128 0x49
+ 1338 0108 13       		.uleb128 0x13
+ 1339 0109 11       		.uleb128 0x11
+ 1340 010a 01       		.uleb128 0x1
+ 1341 010b 12       		.uleb128 0x12
+ 1342 010c 06       		.uleb128 0x6
+ 1343 010d 40       		.uleb128 0x40
+ 1344 010e 18       		.uleb128 0x18
+ 1345 010f 9642     		.uleb128 0x2116
+ 1346 0111 19       		.uleb128 0x19
+ 1347 0112 01       		.uleb128 0x1
+ 1348 0113 13       		.uleb128 0x13
+ 1349 0114 00       		.byte	0
+ 1350 0115 00       		.byte	0
+ 1351 0116 17       		.uleb128 0x17
+ 1352 0117 34       		.uleb128 0x34
+ 1353 0118 00       		.byte	0
+ 1354 0119 03       		.uleb128 0x3
+ 1355 011a 0E       		.uleb128 0xe
+ 1356 011b 3A       		.uleb128 0x3a
+ 1357 011c 0B       		.uleb128 0xb
+ 1358 011d 3B       		.uleb128 0x3b
+ 1359 011e 0B       		.uleb128 0xb
+ 1360 011f 49       		.uleb128 0x49
+ 1361 0120 13       		.uleb128 0x13
+ 1362 0121 02       		.uleb128 0x2
+ 1363 0122 17       		.uleb128 0x17
+ 1364 0123 00       		.byte	0
+ 1365 0124 00       		.byte	0
+ 1366 0125 18       		.uleb128 0x18
+ 1367 0126 0B       		.uleb128 0xb
+ 1368 0127 01       		.byte	0x1
+ 1369 0128 55       		.uleb128 0x55
+ 1370 0129 17       		.uleb128 0x17
+ 1371 012a 00       		.byte	0
+ 1372 012b 00       		.byte	0
+ 1373 012c 19       		.uleb128 0x19
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccRRG0jp.s 			page 29
+
+
+ 1374 012d 34       		.uleb128 0x34
+ 1375 012e 00       		.byte	0
+ 1376 012f 03       		.uleb128 0x3
+ 1377 0130 0E       		.uleb128 0xe
+ 1378 0131 3A       		.uleb128 0x3a
+ 1379 0132 0B       		.uleb128 0xb
+ 1380 0133 3B       		.uleb128 0x3b
+ 1381 0134 0B       		.uleb128 0xb
+ 1382 0135 49       		.uleb128 0x49
+ 1383 0136 13       		.uleb128 0x13
+ 1384 0137 02       		.uleb128 0x2
+ 1385 0138 18       		.uleb128 0x18
+ 1386 0139 00       		.byte	0
+ 1387 013a 00       		.byte	0
+ 1388 013b 1A       		.uleb128 0x1a
+ 1389 013c 0B       		.uleb128 0xb
+ 1390 013d 01       		.byte	0x1
+ 1391 013e 55       		.uleb128 0x55
+ 1392 013f 17       		.uleb128 0x17
+ 1393 0140 01       		.uleb128 0x1
+ 1394 0141 13       		.uleb128 0x13
+ 1395 0142 00       		.byte	0
+ 1396 0143 00       		.byte	0
+ 1397 0144 1B       		.uleb128 0x1b
+ 1398 0145 898201   		.uleb128 0x4109
+ 1399 0148 01       		.byte	0x1
+ 1400 0149 11       		.uleb128 0x11
+ 1401 014a 01       		.uleb128 0x1
+ 1402 014b 31       		.uleb128 0x31
+ 1403 014c 13       		.uleb128 0x13
+ 1404 014d 00       		.byte	0
+ 1405 014e 00       		.byte	0
+ 1406 014f 1C       		.uleb128 0x1c
+ 1407 0150 8A8201   		.uleb128 0x410a
+ 1408 0153 00       		.byte	0
+ 1409 0154 02       		.uleb128 0x2
+ 1410 0155 18       		.uleb128 0x18
+ 1411 0156 9142     		.uleb128 0x2111
+ 1412 0158 18       		.uleb128 0x18
+ 1413 0159 00       		.byte	0
+ 1414 015a 00       		.byte	0
+ 1415 015b 1D       		.uleb128 0x1d
+ 1416 015c 34       		.uleb128 0x34
+ 1417 015d 00       		.byte	0
+ 1418 015e 03       		.uleb128 0x3
+ 1419 015f 0E       		.uleb128 0xe
+ 1420 0160 3A       		.uleb128 0x3a
+ 1421 0161 0B       		.uleb128 0xb
+ 1422 0162 3B       		.uleb128 0x3b
+ 1423 0163 0B       		.uleb128 0xb
+ 1424 0164 49       		.uleb128 0x49
+ 1425 0165 13       		.uleb128 0x13
+ 1426 0166 3F       		.uleb128 0x3f
+ 1427 0167 19       		.uleb128 0x19
+ 1428 0168 3C       		.uleb128 0x3c
+ 1429 0169 19       		.uleb128 0x19
+ 1430 016a 00       		.byte	0
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccRRG0jp.s 			page 30
+
+
+ 1431 016b 00       		.byte	0
+ 1432 016c 1E       		.uleb128 0x1e
+ 1433 016d 34       		.uleb128 0x34
+ 1434 016e 00       		.byte	0
+ 1435 016f 03       		.uleb128 0x3
+ 1436 0170 0E       		.uleb128 0xe
+ 1437 0171 3A       		.uleb128 0x3a
+ 1438 0172 0B       		.uleb128 0xb
+ 1439 0173 3B       		.uleb128 0x3b
+ 1440 0174 05       		.uleb128 0x5
+ 1441 0175 49       		.uleb128 0x49
+ 1442 0176 13       		.uleb128 0x13
+ 1443 0177 3F       		.uleb128 0x3f
+ 1444 0178 19       		.uleb128 0x19
+ 1445 0179 3C       		.uleb128 0x3c
+ 1446 017a 19       		.uleb128 0x19
+ 1447 017b 00       		.byte	0
+ 1448 017c 00       		.byte	0
+ 1449 017d 1F       		.uleb128 0x1f
+ 1450 017e 35       		.uleb128 0x35
+ 1451 017f 00       		.byte	0
+ 1452 0180 49       		.uleb128 0x49
+ 1453 0181 13       		.uleb128 0x13
+ 1454 0182 00       		.byte	0
+ 1455 0183 00       		.byte	0
+ 1456 0184 00       		.byte	0
+ 1457              		.section	.debug_loc,"",%progbits
+ 1458              	.Ldebug_loc0:
+ 1459              	.LLST0:
+ 1460 0000 00000000 		.4byte	.LVL0
+ 1461 0004 18000000 		.4byte	.LVL3
+ 1462 0008 0100     		.2byte	0x1
+ 1463 000a 50       		.byte	0x50
+ 1464 000b 18000000 		.4byte	.LVL3
+ 1465 000f 1A000000 		.4byte	.LVL4
+ 1466 0013 0400     		.2byte	0x4
+ 1467 0015 F3       		.byte	0xf3
+ 1468 0016 01       		.uleb128 0x1
+ 1469 0017 50       		.byte	0x50
+ 1470 0018 9F       		.byte	0x9f
+ 1471 0019 1A000000 		.4byte	.LVL4
+ 1472 001d 28000000 		.4byte	.LVL7
+ 1473 0021 0100     		.2byte	0x1
+ 1474 0023 50       		.byte	0x50
+ 1475 0024 28000000 		.4byte	.LVL7
+ 1476 0028 2C000000 		.4byte	.LFE117
+ 1477 002c 0400     		.2byte	0x4
+ 1478 002e F3       		.byte	0xf3
+ 1479 002f 01       		.uleb128 0x1
+ 1480 0030 50       		.byte	0x50
+ 1481 0031 9F       		.byte	0x9f
+ 1482 0032 00000000 		.4byte	0
+ 1483 0036 00000000 		.4byte	0
+ 1484              	.LLST1:
+ 1485 003a 02000000 		.4byte	.LVL1
+ 1486 003e 06000000 		.4byte	.LVL2
+ 1487 0042 0200     		.2byte	0x2
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccRRG0jp.s 			page 31
+
+
+ 1488 0044 30       		.byte	0x30
+ 1489 0045 9F       		.byte	0x9f
+ 1490 0046 06000000 		.4byte	.LVL2
+ 1491 004a 1C000000 		.4byte	.LVL5
+ 1492 004e 0100     		.2byte	0x1
+ 1493 0050 53       		.byte	0x53
+ 1494 0051 1E000000 		.4byte	.LVL6
+ 1495 0055 2C000000 		.4byte	.LFE117
+ 1496 0059 0100     		.2byte	0x1
+ 1497 005b 53       		.byte	0x53
+ 1498 005c 00000000 		.4byte	0
+ 1499 0060 00000000 		.4byte	0
+ 1500              	.LLST2:
+ 1501 0064 00000000 		.4byte	.LVL8
+ 1502 0068 0C000000 		.4byte	.LVL10
+ 1503 006c 0100     		.2byte	0x1
+ 1504 006e 50       		.byte	0x50
+ 1505 006f 0C000000 		.4byte	.LVL10
+ 1506 0073 2C000000 		.4byte	.LVL15
+ 1507 0077 0100     		.2byte	0x1
+ 1508 0079 55       		.byte	0x55
+ 1509 007a 2C000000 		.4byte	.LVL15
+ 1510 007e 30000000 		.4byte	.LVL16
+ 1511 0082 0100     		.2byte	0x1
+ 1512 0084 50       		.byte	0x50
+ 1513 0085 30000000 		.4byte	.LVL16
+ 1514 0089 38000000 		.4byte	.LFE118
+ 1515 008d 0100     		.2byte	0x1
+ 1516 008f 55       		.byte	0x55
+ 1517 0090 00000000 		.4byte	0
+ 1518 0094 00000000 		.4byte	0
+ 1519              	.LLST3:
+ 1520 0098 02000000 		.4byte	.LVL9
+ 1521 009c 0C000000 		.4byte	.LVL10
+ 1522 00a0 0200     		.2byte	0x2
+ 1523 00a2 30       		.byte	0x30
+ 1524 00a3 9F       		.byte	0x9f
+ 1525 00a4 22000000 		.4byte	.LVL11
+ 1526 00a8 25000000 		.4byte	.LVL12-1
+ 1527 00ac 0100     		.2byte	0x1
+ 1528 00ae 53       		.byte	0x53
+ 1529 00af 2C000000 		.4byte	.LVL15
+ 1530 00b3 30000000 		.4byte	.LVL16
+ 1531 00b7 0200     		.2byte	0x2
+ 1532 00b9 30       		.byte	0x30
+ 1533 00ba 9F       		.byte	0x9f
+ 1534 00bb 00000000 		.4byte	0
+ 1535 00bf 00000000 		.4byte	0
+ 1536              	.LLST4:
+ 1537 00c3 0C000000 		.4byte	.LVL10
+ 1538 00c7 28000000 		.4byte	.LVL13
+ 1539 00cb 0100     		.2byte	0x1
+ 1540 00cd 54       		.byte	0x54
+ 1541 00ce 2A000000 		.4byte	.LVL14
+ 1542 00d2 2C000000 		.4byte	.LVL15
+ 1543 00d6 0100     		.2byte	0x1
+ 1544 00d8 54       		.byte	0x54
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccRRG0jp.s 			page 32
+
+
+ 1545 00d9 30000000 		.4byte	.LVL16
+ 1546 00dd 38000000 		.4byte	.LFE118
+ 1547 00e1 0100     		.2byte	0x1
+ 1548 00e3 54       		.byte	0x54
+ 1549 00e4 00000000 		.4byte	0
+ 1550 00e8 00000000 		.4byte	0
+ 1551              	.LLST5:
+ 1552 00ec 00000000 		.4byte	.LVL17
+ 1553 00f0 0F000000 		.4byte	.LVL20-1
+ 1554 00f4 0100     		.2byte	0x1
+ 1555 00f6 50       		.byte	0x50
+ 1556 00f7 0F000000 		.4byte	.LVL20-1
+ 1557 00fb 0E010000 		.4byte	.LFE119
+ 1558 00ff 0100     		.2byte	0x1
+ 1559 0101 59       		.byte	0x59
+ 1560 0102 00000000 		.4byte	0
+ 1561 0106 00000000 		.4byte	0
+ 1562              	.LLST6:
+ 1563 010a 00000000 		.4byte	.LVL17
+ 1564 010e 0F000000 		.4byte	.LVL20-1
+ 1565 0112 0100     		.2byte	0x1
+ 1566 0114 51       		.byte	0x51
+ 1567 0115 0F000000 		.4byte	.LVL20-1
+ 1568 0119 0E010000 		.4byte	.LFE119
+ 1569 011d 0400     		.2byte	0x4
+ 1570 011f F3       		.byte	0xf3
+ 1571 0120 01       		.uleb128 0x1
+ 1572 0121 51       		.byte	0x51
+ 1573 0122 9F       		.byte	0x9f
+ 1574 0123 00000000 		.4byte	0
+ 1575 0127 00000000 		.4byte	0
+ 1576              	.LLST7:
+ 1577 012b 08000000 		.4byte	.LVL18
+ 1578 012f 3E000000 		.4byte	.LVL25
+ 1579 0133 0200     		.2byte	0x2
+ 1580 0135 30       		.byte	0x30
+ 1581 0136 9F       		.byte	0x9f
+ 1582 0137 56000000 		.4byte	.LVL26
+ 1583 013b 59000000 		.4byte	.LVL27-1
+ 1584 013f 0100     		.2byte	0x1
+ 1585 0141 53       		.byte	0x53
+ 1586 0142 F6000000 		.4byte	.LVL51
+ 1587 0146 0E010000 		.4byte	.LFE119
+ 1588 014a 0200     		.2byte	0x2
+ 1589 014c 30       		.byte	0x30
+ 1590 014d 9F       		.byte	0x9f
+ 1591 014e 00000000 		.4byte	0
+ 1592 0152 00000000 		.4byte	0
+ 1593              	.LLST8:
+ 1594 0156 08000000 		.4byte	.LVL18
+ 1595 015a 6A000000 		.4byte	.LVL28
+ 1596 015e 0200     		.2byte	0x2
+ 1597 0160 30       		.byte	0x30
+ 1598 0161 9F       		.byte	0x9f
+ 1599 0162 6A000000 		.4byte	.LVL28
+ 1600 0166 E8000000 		.4byte	.LVL48
+ 1601 016a 0100     		.2byte	0x1
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccRRG0jp.s 			page 33
+
+
+ 1602 016c 56       		.byte	0x56
+ 1603 016d E8000000 		.4byte	.LVL48
+ 1604 0171 0E010000 		.4byte	.LFE119
+ 1605 0175 0200     		.2byte	0x2
+ 1606 0177 30       		.byte	0x30
+ 1607 0178 9F       		.byte	0x9f
+ 1608 0179 00000000 		.4byte	0
+ 1609 017d 00000000 		.4byte	0
+ 1610              	.LLST9:
+ 1611 0181 08000000 		.4byte	.LVL18
+ 1612 0185 B0000000 		.4byte	.LVL40
+ 1613 0189 0200     		.2byte	0x2
+ 1614 018b 30       		.byte	0x30
+ 1615 018c 9F       		.byte	0x9f
+ 1616 018d CA000000 		.4byte	.LVL41
+ 1617 0191 CD000000 		.4byte	.LVL42-1
+ 1618 0195 0100     		.2byte	0x1
+ 1619 0197 53       		.byte	0x53
+ 1620 0198 D4000000 		.4byte	.LVL45
+ 1621 019c D6000000 		.4byte	.LVL46
+ 1622 01a0 0200     		.2byte	0x2
+ 1623 01a2 30       		.byte	0x30
+ 1624 01a3 9F       		.byte	0x9f
+ 1625 01a4 E8000000 		.4byte	.LVL48
+ 1626 01a8 0E010000 		.4byte	.LFE119
+ 1627 01ac 0200     		.2byte	0x2
+ 1628 01ae 30       		.byte	0x30
+ 1629 01af 9F       		.byte	0x9f
+ 1630 01b0 00000000 		.4byte	0
+ 1631 01b4 00000000 		.4byte	0
+ 1632              	.LLST10:
+ 1633 01b8 08000000 		.4byte	.LVL18
+ 1634 01bc 76000000 		.4byte	.LVL31
+ 1635 01c0 0200     		.2byte	0x2
+ 1636 01c2 30       		.byte	0x30
+ 1637 01c3 9F       		.byte	0x9f
+ 1638 01c4 90000000 		.4byte	.LVL32
+ 1639 01c8 93000000 		.4byte	.LVL33-1
+ 1640 01cc 0100     		.2byte	0x1
+ 1641 01ce 53       		.byte	0x53
+ 1642 01cf 9A000000 		.4byte	.LVL36
+ 1643 01d3 9C000000 		.4byte	.LVL37
+ 1644 01d7 0200     		.2byte	0x2
+ 1645 01d9 30       		.byte	0x30
+ 1646 01da 9F       		.byte	0x9f
+ 1647 01db E8000000 		.4byte	.LVL48
+ 1648 01df 0E010000 		.4byte	.LFE119
+ 1649 01e3 0200     		.2byte	0x2
+ 1650 01e5 30       		.byte	0x30
+ 1651 01e6 9F       		.byte	0x9f
+ 1652 01e7 00000000 		.4byte	0
+ 1653 01eb 00000000 		.4byte	0
+ 1654              	.LLST11:
+ 1655 01ef 0C000000 		.4byte	.LVL19
+ 1656 01f3 6E000000 		.4byte	.LVL30
+ 1657 01f7 0100     		.2byte	0x1
+ 1658 01f9 5A       		.byte	0x5a
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccRRG0jp.s 			page 34
+
+
+ 1659 01fa 6E000000 		.4byte	.LVL30
+ 1660 01fe E8000000 		.4byte	.LVL48
+ 1661 0202 0100     		.2byte	0x1
+ 1662 0204 55       		.byte	0x55
+ 1663 0205 E8000000 		.4byte	.LVL48
+ 1664 0209 0E010000 		.4byte	.LFE119
+ 1665 020d 0100     		.2byte	0x1
+ 1666 020f 5A       		.byte	0x5a
+ 1667 0210 00000000 		.4byte	0
+ 1668 0214 00000000 		.4byte	0
+ 1669              	.LLST12:
+ 1670 0218 10000000 		.4byte	.LVL20
+ 1671 021c 3E000000 		.4byte	.LVL25
+ 1672 0220 0100     		.2byte	0x1
+ 1673 0222 50       		.byte	0x50
+ 1674 0223 F6000000 		.4byte	.LVL51
+ 1675 0227 FA000000 		.4byte	.LVL52
+ 1676 022b 0100     		.2byte	0x1
+ 1677 022d 50       		.byte	0x50
+ 1678 022e FE000000 		.4byte	.LVL53
+ 1679 0232 02010000 		.4byte	.LVL54
+ 1680 0236 0100     		.2byte	0x1
+ 1681 0238 50       		.byte	0x50
+ 1682 0239 06010000 		.4byte	.LVL55
+ 1683 023d 0A010000 		.4byte	.LVL56
+ 1684 0241 0100     		.2byte	0x1
+ 1685 0243 50       		.byte	0x50
+ 1686 0244 00000000 		.4byte	0
+ 1687 0248 00000000 		.4byte	0
+ 1688              	.LLST13:
+ 1689 024c 26000000 		.4byte	.LVL21
+ 1690 0250 6C000000 		.4byte	.LVL29
+ 1691 0254 0100     		.2byte	0x1
+ 1692 0256 55       		.byte	0x55
+ 1693 0257 E8000000 		.4byte	.LVL48
+ 1694 025b F6000000 		.4byte	.LVL51
+ 1695 025f 0100     		.2byte	0x1
+ 1696 0261 55       		.byte	0x55
+ 1697 0262 FE000000 		.4byte	.LVL53
+ 1698 0266 0E010000 		.4byte	.LFE119
+ 1699 026a 0100     		.2byte	0x1
+ 1700 026c 55       		.byte	0x55
+ 1701 026d 00000000 		.4byte	0
+ 1702 0271 00000000 		.4byte	0
+ 1703              	.LLST14:
+ 1704 0275 26000000 		.4byte	.LVL21
+ 1705 0279 2E000000 		.4byte	.LVL22
+ 1706 027d 0200     		.2byte	0x2
+ 1707 027f 30       		.byte	0x30
+ 1708 0280 9F       		.byte	0x9f
+ 1709 0281 2E000000 		.4byte	.LVL22
+ 1710 0285 30000000 		.4byte	.LVL23
+ 1711 0289 0100     		.2byte	0x1
+ 1712 028b 56       		.byte	0x56
+ 1713 028c 30000000 		.4byte	.LVL23
+ 1714 0290 32000000 		.4byte	.LVL24
+ 1715 0294 0200     		.2byte	0x2
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccRRG0jp.s 			page 35
+
+
+ 1716 0296 30       		.byte	0x30
+ 1717 0297 9F       		.byte	0x9f
+ 1718 0298 32000000 		.4byte	.LVL24
+ 1719 029c 6A000000 		.4byte	.LVL28
+ 1720 02a0 0100     		.2byte	0x1
+ 1721 02a2 56       		.byte	0x56
+ 1722 02a3 E8000000 		.4byte	.LVL48
+ 1723 02a7 F6000000 		.4byte	.LVL51
+ 1724 02ab 0100     		.2byte	0x1
+ 1725 02ad 56       		.byte	0x56
+ 1726 02ae FE000000 		.4byte	.LVL53
+ 1727 02b2 0E010000 		.4byte	.LFE119
+ 1728 02b6 0100     		.2byte	0x1
+ 1729 02b8 56       		.byte	0x56
+ 1730 02b9 00000000 		.4byte	0
+ 1731 02bd 00000000 		.4byte	0
+ 1732              	.LLST15:
+ 1733 02c1 3E000000 		.4byte	.LVL25
+ 1734 02c5 76000000 		.4byte	.LVL31
+ 1735 02c9 0100     		.2byte	0x1
+ 1736 02cb 54       		.byte	0x54
+ 1737 02cc 9A000000 		.4byte	.LVL36
+ 1738 02d0 9C000000 		.4byte	.LVL37
+ 1739 02d4 0100     		.2byte	0x1
+ 1740 02d6 54       		.byte	0x54
+ 1741 02d7 E8000000 		.4byte	.LVL48
+ 1742 02db EA000000 		.4byte	.LVL49
+ 1743 02df 0100     		.2byte	0x1
+ 1744 02e1 54       		.byte	0x54
+ 1745 02e2 EC000000 		.4byte	.LVL50
+ 1746 02e6 F6000000 		.4byte	.LVL51
+ 1747 02ea 0100     		.2byte	0x1
+ 1748 02ec 54       		.byte	0x54
+ 1749 02ed 00000000 		.4byte	0
+ 1750 02f1 00000000 		.4byte	0
+ 1751              	.LLST16:
+ 1752 02f5 76000000 		.4byte	.LVL31
+ 1753 02f9 96000000 		.4byte	.LVL34
+ 1754 02fd 0100     		.2byte	0x1
+ 1755 02ff 54       		.byte	0x54
+ 1756 0300 98000000 		.4byte	.LVL35
+ 1757 0304 9A000000 		.4byte	.LVL36
+ 1758 0308 0100     		.2byte	0x1
+ 1759 030a 54       		.byte	0x54
+ 1760 030b 9C000000 		.4byte	.LVL37
+ 1761 030f A4000000 		.4byte	.LVL38
+ 1762 0313 0100     		.2byte	0x1
+ 1763 0315 54       		.byte	0x54
+ 1764 0316 00000000 		.4byte	0
+ 1765 031a 00000000 		.4byte	0
+ 1766              	.LLST17:
+ 1767 031e B0000000 		.4byte	.LVL40
+ 1768 0322 D0000000 		.4byte	.LVL43
+ 1769 0326 0100     		.2byte	0x1
+ 1770 0328 54       		.byte	0x54
+ 1771 0329 D2000000 		.4byte	.LVL44
+ 1772 032d D4000000 		.4byte	.LVL45
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccRRG0jp.s 			page 36
+
+
+ 1773 0331 0100     		.2byte	0x1
+ 1774 0333 54       		.byte	0x54
+ 1775 0334 D6000000 		.4byte	.LVL46
+ 1776 0338 DE000000 		.4byte	.LVL47
+ 1777 033c 0100     		.2byte	0x1
+ 1778 033e 54       		.byte	0x54
+ 1779 033f 00000000 		.4byte	0
+ 1780 0343 00000000 		.4byte	0
+ 1781              	.LLST18:
+ 1782 0347 00000000 		.4byte	.LVL57
+ 1783 034b 02000000 		.4byte	.LVL58
+ 1784 034f 0100     		.2byte	0x1
+ 1785 0351 50       		.byte	0x50
+ 1786 0352 02000000 		.4byte	.LVL58
+ 1787 0356 04000000 		.4byte	.LFE120
+ 1788 035a 0400     		.2byte	0x4
+ 1789 035c F3       		.byte	0xf3
+ 1790 035d 01       		.uleb128 0x1
+ 1791 035e 50       		.byte	0x50
+ 1792 035f 9F       		.byte	0x9f
+ 1793 0360 00000000 		.4byte	0
+ 1794 0364 00000000 		.4byte	0
+ 1795              		.section	.debug_aranges,"",%progbits
+ 1796 0000 34000000 		.4byte	0x34
+ 1797 0004 0200     		.2byte	0x2
+ 1798 0006 00000000 		.4byte	.Ldebug_info0
+ 1799 000a 04       		.byte	0x4
+ 1800 000b 00       		.byte	0
+ 1801 000c 0000     		.2byte	0
+ 1802 000e 0000     		.2byte	0
+ 1803 0010 00000000 		.4byte	.LFB117
+ 1804 0014 2C000000 		.4byte	.LFE117-.LFB117
+ 1805 0018 00000000 		.4byte	.LFB118
+ 1806 001c 38000000 		.4byte	.LFE118-.LFB118
+ 1807 0020 00000000 		.4byte	.LFB119
+ 1808 0024 0E010000 		.4byte	.LFE119-.LFB119
+ 1809 0028 00000000 		.4byte	.LFB120
+ 1810 002c 04000000 		.4byte	.LFE120-.LFB120
+ 1811 0030 00000000 		.4byte	0
+ 1812 0034 00000000 		.4byte	0
+ 1813              		.section	.debug_ranges,"",%progbits
+ 1814              	.Ldebug_ranges0:
+ 1815 0000 0A000000 		.4byte	.LBB3
+ 1816 0004 2E000000 		.4byte	.LBE3
+ 1817 0008 30000000 		.4byte	.LBB4
+ 1818 000c 36000000 		.4byte	.LBE4
+ 1819 0010 00000000 		.4byte	0
+ 1820 0014 00000000 		.4byte	0
+ 1821 0018 3E000000 		.4byte	.LBB5
+ 1822 001c E2000000 		.4byte	.LBE5
+ 1823 0020 E4000000 		.4byte	.LBB10
+ 1824 0024 F0000000 		.4byte	.LBE10
+ 1825 0028 F2000000 		.4byte	.LBB11
+ 1826 002c F6000000 		.4byte	.LBE11
+ 1827 0030 00000000 		.4byte	0
+ 1828 0034 00000000 		.4byte	0
+ 1829 0038 74000000 		.4byte	.LBB6
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccRRG0jp.s 			page 37
+
+
+ 1830 003c 9A000000 		.4byte	.LBE6
+ 1831 0040 9C000000 		.4byte	.LBB7
+ 1832 0044 A4000000 		.4byte	.LBE7
+ 1833 0048 00000000 		.4byte	0
+ 1834 004c 00000000 		.4byte	0
+ 1835 0050 AE000000 		.4byte	.LBB8
+ 1836 0054 D4000000 		.4byte	.LBE8
+ 1837 0058 D6000000 		.4byte	.LBB9
+ 1838 005c DE000000 		.4byte	.LBE9
+ 1839 0060 00000000 		.4byte	0
+ 1840 0064 00000000 		.4byte	0
+ 1841 0068 00000000 		.4byte	.LFB117
+ 1842 006c 2C000000 		.4byte	.LFE117
+ 1843 0070 00000000 		.4byte	.LFB118
+ 1844 0074 38000000 		.4byte	.LFE118
+ 1845 0078 00000000 		.4byte	.LFB119
+ 1846 007c 0E010000 		.4byte	.LFE119
+ 1847 0080 00000000 		.4byte	.LFB120
+ 1848 0084 04000000 		.4byte	.LFE120
+ 1849 0088 00000000 		.4byte	0
+ 1850 008c 00000000 		.4byte	0
+ 1851              		.section	.debug_line,"",%progbits
+ 1852              	.Ldebug_line0:
+ 1853 0000 16030000 		.section	.debug_str,"MS",%progbits,1
+ 1853      02002B02 
+ 1853      00000201 
+ 1853      FB0E0D00 
+ 1853      01010101 
+ 1854              	.LASF72:
+ 1855 0000 72657375 		.ascii	"result\000"
+ 1855      6C7400
+ 1856              	.LASF58:
+ 1857 0007 66726F6D 		.ascii	"fromState\000"
+ 1857      53746174 
+ 1857      6500
+ 1858              	.LASF70:
+ 1859 0011 6D5F7374 		.ascii	"m_state\000"
+ 1859      61746500 
+ 1860              	.LASF39:
+ 1861 0019 52435F45 		.ascii	"RC_ERROR_READ_ONLY\000"
+ 1861      52524F52 
+ 1861      5F524541 
+ 1861      445F4F4E 
+ 1861      4C5900
+ 1862              	.LASF25:
+ 1863 002c 52435F53 		.ascii	"RC_SUCCESS\000"
+ 1863      55434345 
+ 1863      535300
+ 1864              	.LASF61:
+ 1865 0037 53544154 		.ascii	"STATE_stateOuterTransition_t\000"
+ 1865      455F7374 
+ 1865      6174654F 
+ 1865      75746572 
+ 1865      5472616E 
+ 1866              	.LASF68:
+ 1867 0054 6D5F6163 		.ascii	"m_actionTable\000"
+ 1867      74696F6E 
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccRRG0jp.s 			page 38
+
+
+ 1867      5461626C 
+ 1867      6500
+ 1868              	.LASF40:
+ 1869 0062 52435F45 		.ascii	"RC_ERROR_WRITE_ONLY\000"
+ 1869      52524F52 
+ 1869      5F575249 
+ 1869      54455F4F 
+ 1869      4E4C5900 
+ 1870              	.LASF55:
+ 1871 0076 67756172 		.ascii	"guard\000"
+ 1871      6400
+ 1872              	.LASF2:
+ 1873 007c 73686F72 		.ascii	"short int\000"
+ 1873      7420696E 
+ 1873      7400
+ 1874              	.LASF31:
+ 1875 0086 52435F45 		.ascii	"RC_ERROR_OVERRUN\000"
+ 1875      52524F52 
+ 1875      5F4F5645 
+ 1875      5252554E 
+ 1875      00
+ 1876              	.LASF43:
+ 1877 0097 52435F45 		.ascii	"RC_ERROR_WRITE_FAILS\000"
+ 1877      52524F52 
+ 1877      5F575249 
+ 1877      54455F46 
+ 1877      41494C53 
+ 1878              	.LASF22:
+ 1879 00ac 73697A65 		.ascii	"sizetype\000"
+ 1879      74797065 
+ 1879      00
+ 1880              	.LASF83:
+ 1881 00b5 53544154 		.ascii	"STATE_getCurrentState\000"
+ 1881      455F6765 
+ 1881      74437572 
+ 1881      72656E74 
+ 1881      53746174 
+ 1882              	.LASF28:
+ 1883 00cb 52435F45 		.ascii	"RC_ERROR_ZERO\000"
+ 1883      52524F52 
+ 1883      5F5A4552 
+ 1883      4F00
+ 1884              	.LASF20:
+ 1885 00d9 45455F46 		.ascii	"EE_FREG\000"
+ 1885      52454700 
+ 1886              	.LASF42:
+ 1887 00e1 52435F45 		.ascii	"RC_ERROR_READ_FAILS\000"
+ 1887      52524F52 
+ 1887      5F524541 
+ 1887      445F4641 
+ 1887      494C5300 
+ 1888              	.LASF75:
+ 1889 00f5 6163456E 		.ascii	"acEntry\000"
+ 1889      74727900 
+ 1890              	.LASF53:
+ 1891 00fd 6576656E 		.ascii	"event\000"
+ 1891      7400
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccRRG0jp.s 			page 39
+
+
+ 1892              	.LASF4:
+ 1893 0103 5F5F7569 		.ascii	"__uint16_t\000"
+ 1893      6E743136 
+ 1893      5F7400
+ 1894              	.LASF67:
+ 1895 010e 6D5F7472 		.ascii	"m_transitionTableSize\000"
+ 1895      616E7369 
+ 1895      74696F6E 
+ 1895      5461626C 
+ 1895      6553697A 
+ 1896              	.LASF91:
+ 1897 0124 536F7572 		.ascii	"Source\\asw\\statemachine.c\000"
+ 1897      63655C61 
+ 1897      73775C73 
+ 1897      74617465 
+ 1897      6D616368 
+ 1898              	.LASF21:
+ 1899 013e 45455F54 		.ascii	"EE_TID\000"
+ 1899      494400
+ 1900              	.LASF80:
+ 1901 0145 696E6465 		.ascii	"index\000"
+ 1901      7800
+ 1902              	.LASF48:
+ 1903 014b 52435F45 		.ascii	"RC_ERROR_INVALID_STATE\000"
+ 1903      52524F52 
+ 1903      5F494E56 
+ 1903      414C4944 
+ 1903      5F535441 
+ 1904              	.LASF92:
+ 1905 0162 433A5C55 		.ascii	"C:\\Users\\mau_g\\Desktop\\Master\\2_SEMESTER\\EAA_"
+ 1905      73657273 
+ 1905      5C6D6175 
+ 1905      5F675C44 
+ 1905      65736B74 
+ 1906 018f 4C61625C 		.ascii	"Lab\\Lab2\\Workspace_Lab2\\EAA_Lab2.cydsn\000"
+ 1906      4C616232 
+ 1906      5C576F72 
+ 1906      6B737061 
+ 1906      63655F4C 
+ 1907              	.LASF88:
+ 1908 01b6 45455F49 		.ascii	"EE_IRQ_nesting_level\000"
+ 1908      52515F6E 
+ 1908      65737469 
+ 1908      6E675F6C 
+ 1908      6576656C 
+ 1909              	.LASF87:
+ 1910 01cb 45455F73 		.ascii	"EE_std_endcycle_next_tid\000"
+ 1910      74645F65 
+ 1910      6E646379 
+ 1910      636C655F 
+ 1910      6E657874 
+ 1911              	.LASF30:
+ 1912 01e4 52435F45 		.ascii	"RC_ERROR_RANGE\000"
+ 1912      52524F52 
+ 1912      5F52414E 
+ 1912      474500
+ 1913              	.LASF51:
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccRRG0jp.s 			page 40
+
+
+ 1914 01f3 53544154 		.ascii	"STATE_ActionPtr_t\000"
+ 1914      455F4163 
+ 1914      74696F6E 
+ 1914      5074725F 
+ 1914      7400
+ 1915              	.LASF13:
+ 1916 0205 666C6F61 		.ascii	"float\000"
+ 1916      7400
+ 1917              	.LASF69:
+ 1918 020b 6D5F6163 		.ascii	"m_actionTableSize\000"
+ 1918      74696F6E 
+ 1918      5461626C 
+ 1918      6553697A 
+ 1918      6500
+ 1919              	.LASF8:
+ 1920 021d 6C6F6E67 		.ascii	"long long int\000"
+ 1920      206C6F6E 
+ 1920      6720696E 
+ 1920      7400
+ 1921              	.LASF85:
+ 1922 022b 45455F6F 		.ascii	"EE_oo_IRQ_suspend_status\000"
+ 1922      6F5F4952 
+ 1922      515F7375 
+ 1922      7370656E 
+ 1922      645F7374 
+ 1923              	.LASF44:
+ 1924 0244 52435F45 		.ascii	"RC_ERROR_NOT_MATCH\000"
+ 1924      52524F52 
+ 1924      5F4E4F54 
+ 1924      5F4D4154 
+ 1924      434800
+ 1925              	.LASF49:
+ 1926 0257 52435F45 		.ascii	"RC_ERROR_UNKNOWN\000"
+ 1926      52524F52 
+ 1926      5F554E4B 
+ 1926      4E4F574E 
+ 1926      00
+ 1927              	.LASF23:
+ 1928 0268 73696E74 		.ascii	"sint16_t\000"
+ 1928      31365F74 
+ 1928      00
+ 1929              	.LASF71:
+ 1930 0271 53544154 		.ascii	"STATE_t\000"
+ 1930      455F7400 
+ 1931              	.LASF32:
+ 1932 0279 52435F45 		.ascii	"RC_ERROR_UNDERRUN\000"
+ 1932      52524F52 
+ 1932      5F554E44 
+ 1932      45525255 
+ 1932      4E00
+ 1933              	.LASF59:
+ 1934 028b 70496E6E 		.ascii	"pInnerTransitionTable\000"
+ 1934      65725472 
+ 1934      616E7369 
+ 1934      74696F6E 
+ 1934      5461626C 
+ 1935              	.LASF73:
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccRRG0jp.s 			page 41
+
+
+ 1936 02a1 53544154 		.ascii	"STATE__getIndexCurrentState\000"
+ 1936      455F5F67 
+ 1936      6574496E 
+ 1936      64657843 
+ 1936      75727265 
+ 1937              	.LASF35:
+ 1938 02bd 52435F45 		.ascii	"RC_ERROR_BUSY\000"
+ 1938      52524F52 
+ 1938      5F425553 
+ 1938      5900
+ 1939              	.LASF64:
+ 1940 02cb 61637469 		.ascii	"actionExit\000"
+ 1940      6F6E4578 
+ 1940      697400
+ 1941              	.LASF41:
+ 1942 02d6 52435F45 		.ascii	"RC_ERROR_INVALID\000"
+ 1942      52524F52 
+ 1942      5F494E56 
+ 1942      414C4944 
+ 1942      00
+ 1943              	.LASF46:
+ 1944 02e7 52435F45 		.ascii	"RC_ERROR_BAD_DATA\000"
+ 1944      52524F52 
+ 1944      5F424144 
+ 1944      5F444154 
+ 1944      4100
+ 1945              	.LASF24:
+ 1946 02f9 626F6F6C 		.ascii	"boolean_t\000"
+ 1946      65616E5F 
+ 1946      7400
+ 1947              	.LASF62:
+ 1948 0303 73746174 		.ascii	"state\000"
+ 1948      6500
+ 1949              	.LASF16:
+ 1950 0309 6C6F6E67 		.ascii	"long double\000"
+ 1950      20646F75 
+ 1950      626C6500 
+ 1951              	.LASF1:
+ 1952 0315 756E7369 		.ascii	"unsigned char\000"
+ 1952      676E6564 
+ 1952      20636861 
+ 1952      7200
+ 1953              	.LASF74:
+ 1954 0323 53544154 		.ascii	"STATE_initState\000"
+ 1954      455F696E 
+ 1954      69745374 
+ 1954      61746500 
+ 1955              	.LASF82:
+ 1956 0333 696E6E65 		.ascii	"innerTableSize\000"
+ 1956      72546162 
+ 1956      6C655369 
+ 1956      7A6500
+ 1957              	.LASF18:
+ 1958 0342 45455F55 		.ascii	"EE_UINT32\000"
+ 1958      494E5433 
+ 1958      3200
+ 1959              	.LASF0:
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccRRG0jp.s 			page 42
+
+
+ 1960 034c 7369676E 		.ascii	"signed char\000"
+ 1960      65642063 
+ 1960      68617200 
+ 1961              	.LASF9:
+ 1962 0358 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1962      206C6F6E 
+ 1962      6720756E 
+ 1962      7369676E 
+ 1962      65642069 
+ 1963              	.LASF10:
+ 1964 036f 756E7369 		.ascii	"unsigned int\000"
+ 1964      676E6564 
+ 1964      20696E74 
+ 1964      00
+ 1965              	.LASF37:
+ 1966 037c 52435F45 		.ascii	"RC_ERROR_OPEN\000"
+ 1966      52524F52 
+ 1966      5F4F5045 
+ 1966      4E00
+ 1967              	.LASF11:
+ 1968 038a 75696E74 		.ascii	"uint16_t\000"
+ 1968      31365F74 
+ 1968      00
+ 1969              	.LASF27:
+ 1970 0393 52435F45 		.ascii	"RC_ERROR_NULL\000"
+ 1970      52524F52 
+ 1970      5F4E554C 
+ 1970      4C00
+ 1971              	.LASF76:
+ 1972 03a1 53544154 		.ascii	"STATE_processEvent\000"
+ 1972      455F7072 
+ 1972      6F636573 
+ 1972      73457665 
+ 1972      6E7400
+ 1973              	.LASF17:
+ 1974 03b4 45455F49 		.ascii	"EE_INT32\000"
+ 1974      4E543332 
+ 1974      00
+ 1975              	.LASF52:
+ 1976 03bd 53544154 		.ascii	"STATE_GuardPtr_t\000"
+ 1976      455F4775 
+ 1976      61726450 
+ 1976      74725F74 
+ 1976      00
+ 1977              	.LASF3:
+ 1978 03ce 73686F72 		.ascii	"short unsigned int\000"
+ 1978      7420756E 
+ 1978      7369676E 
+ 1978      65642069 
+ 1978      6E7400
+ 1979              	.LASF90:
+ 1980 03e1 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1980      43313120 
+ 1980      352E342E 
+ 1980      31203230 
+ 1980      31363036 
+ 1981 0414 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccRRG0jp.s 			page 43
+
+
+ 1981      20726576 
+ 1981      6973696F 
+ 1981      6E203233 
+ 1981      37373135 
+ 1982 0447 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1982      66756E63 
+ 1982      74696F6E 
+ 1982      2D736563 
+ 1982      74696F6E 
+ 1983              	.LASF57:
+ 1984 046f 53544154 		.ascii	"STATE_stateInnerTransition_t\000"
+ 1984      455F7374 
+ 1984      61746549 
+ 1984      6E6E6572 
+ 1984      5472616E 
+ 1985              	.LASF15:
+ 1986 048c 63686172 		.ascii	"char\000"
+ 1986      00
+ 1987              	.LASF6:
+ 1988 0491 6C6F6E67 		.ascii	"long int\000"
+ 1988      20696E74 
+ 1988      00
+ 1989              	.LASF33:
+ 1990 049a 52435F45 		.ascii	"RC_ERROR_BUFFER_FULL\000"
+ 1990      52524F52 
+ 1990      5F425546 
+ 1990      4645525F 
+ 1990      46554C4C 
+ 1991              	.LASF12:
+ 1992 04af 696E7433 		.ascii	"int32_t\000"
+ 1992      325F7400 
+ 1993              	.LASF79:
+ 1994 04b7 63757272 		.ascii	"currentState\000"
+ 1994      656E7453 
+ 1994      74617465 
+ 1994      00
+ 1995              	.LASF45:
+ 1996 04c4 52435F45 		.ascii	"RC_ERROR_BAD_PARAM\000"
+ 1996      52524F52 
+ 1996      5F424144 
+ 1996      5F504152 
+ 1996      414D00
+ 1997              	.LASF56:
+ 1998 04d7 61637469 		.ascii	"actionTransition\000"
+ 1998      6F6E5472 
+ 1998      616E7369 
+ 1998      74696F6E 
+ 1998      00
+ 1999              	.LASF86:
+ 2000 04e8 45455F41 		.ascii	"EE_ApplicationMode\000"
+ 2000      70706C69 
+ 2000      63617469 
+ 2000      6F6E4D6F 
+ 2000      646500
+ 2001              	.LASF7:
+ 2002 04fb 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2002      20756E73 
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccRRG0jp.s 			page 44
+
+
+ 2002      69676E65 
+ 2002      6420696E 
+ 2002      7400
+ 2003              	.LASF14:
+ 2004 050d 646F7562 		.ascii	"double\000"
+ 2004      6C6500
+ 2005              	.LASF38:
+ 2006 0514 52435F45 		.ascii	"RC_ERROR_CHECKSUM\000"
+ 2006      52524F52 
+ 2006      5F434845 
+ 2006      434B5355 
+ 2006      4D00
+ 2007              	.LASF19:
+ 2008 0526 45455F55 		.ascii	"EE_UREG\000"
+ 2008      52454700 
+ 2009              	.LASF60:
+ 2010 052e 73697A65 		.ascii	"size\000"
+ 2010      00
+ 2011              	.LASF65:
+ 2012 0533 53544154 		.ascii	"STATE_stateAction_t\000"
+ 2012      455F7374 
+ 2012      61746541 
+ 2012      6374696F 
+ 2012      6E5F7400 
+ 2013              	.LASF5:
+ 2014 0547 5F5F696E 		.ascii	"__int32_t\000"
+ 2014      7433325F 
+ 2014      7400
+ 2015              	.LASF78:
+ 2016 0551 61634578 		.ascii	"acExit\000"
+ 2016      697400
+ 2017              	.LASF66:
+ 2018 0558 6D5F7472 		.ascii	"m_transitionTable\000"
+ 2018      616E7369 
+ 2018      74696F6E 
+ 2018      5461626C 
+ 2018      6500
+ 2019              	.LASF47:
+ 2020 056a 52435F45 		.ascii	"RC_ERROR_CANCELED\000"
+ 2020      52524F52 
+ 2020      5F43414E 
+ 2020      43454C45 
+ 2020      4400
+ 2021              	.LASF77:
+ 2022 057c 61635472 		.ascii	"acTransition\000"
+ 2022      616E7369 
+ 2022      74696F6E 
+ 2022      00
+ 2023              	.LASF81:
+ 2024 0589 70496E6E 		.ascii	"pInnerTable\000"
+ 2024      65725461 
+ 2024      626C6500 
+ 2025              	.LASF89:
+ 2026 0595 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 2026      52784275 
+ 2026      66666572 
+ 2026      00
+ARM GAS  C:\Users\mau_g\AppData\Local\Temp\ccRRG0jp.s 			page 45
+
+
+ 2027              	.LASF26:
+ 2028 05a2 52435F45 		.ascii	"RC_ERROR\000"
+ 2028      52524F52 
+ 2028      00
+ 2029              	.LASF29:
+ 2030 05ab 52435F45 		.ascii	"RC_ERROR_MEMORY\000"
+ 2030      52524F52 
+ 2030      5F4D454D 
+ 2030      4F525900 
+ 2031              	.LASF84:
+ 2032 05bb 45455F6F 		.ascii	"EE_oo_IRQ_disable_count\000"
+ 2032      6F5F4952 
+ 2032      515F6469 
+ 2032      7361626C 
+ 2032      655F636F 
+ 2033              	.LASF63:
+ 2034 05d3 61637469 		.ascii	"actionEntry\000"
+ 2034      6F6E456E 
+ 2034      74727900 
+ 2035              	.LASF54:
+ 2036 05df 746F5374 		.ascii	"toState\000"
+ 2036      61746500 
+ 2037              	.LASF34:
+ 2038 05e7 52435F45 		.ascii	"RC_ERROR_BUFFER_EMTPY\000"
+ 2038      52524F52 
+ 2038      5F425546 
+ 2038      4645525F 
+ 2038      454D5450 
+ 2039              	.LASF50:
+ 2040 05fd 52435F74 		.ascii	"RC_t\000"
+ 2040      00
+ 2041              	.LASF36:
+ 2042 0602 52435F45 		.ascii	"RC_ERROR_TIME_OUT\000"
+ 2042      52524F52 
+ 2042      5F54494D 
+ 2042      455F4F55 
+ 2042      5400
+ 2043              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
