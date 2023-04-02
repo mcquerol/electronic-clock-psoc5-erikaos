@@ -1,0 +1,279 @@
+--------------- Build Started: 04/02/2023 19:22:15 Project: ElectronicClock, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
+cydsfit.exe -.appdatapath "C:\Users\robom\AppData\Local\Cypress Semiconductor\PSoC Creator\4.4" -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p "C:\Users\robom\OneDrive\University\Darmstadt\Embedded Architecture and Applications\Labs\Lab 2 - Electronic Clock\ElectronicClock.cydsn\ElectronicClock.cyprj" -d CY8C5888LTI-LP097 -s "C:\Users\robom\OneDrive\University\Darmstadt\Embedded Architecture and Applications\Labs\Lab 2 - Electronic Clock\ElectronicClock.cydsn\Generated_Source\PSoC5" -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
+Elaborating Design...
+ADD: sdb.M0065: information: Analog terminal "vdac_ref" on ADC_SAR_SEQ_v2_10 is unconnected.
+ * C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\ADC_SAR_SEQ_v2_10\PSoC5\ADC_SAR_SEQ_v2_10.cysch (Signal: vdac_ref)
+ * C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\ADC_SAR_SEQ_v2_10\PSoC5\ADC_SAR_SEQ_v2_10.cysch (Shape_798)
+ * C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\ADC_SAR_SEQ_v2_10\PSoC5\ADC_SAR_SEQ_v2_10.cysch (Shape_885)
+ADD: fit.M0032: warning: Clock Warning: (TFT_SPI_IntClock's accuracy range '72 MHz +/- 0.25%, (71.82 MHz - 72.18 MHz)' is not within the specified tolerance range '66 MHz +/- 5%, (62.7 MHz - 69.3 MHz)'.).
+ * C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\SPI_Master_v2_50\SPI_Master_v2_50.cysch (Instance:IntClock)
+ * C:\Users\robom\OneDrive\University\Darmstadt\Embedded Architecture and Applications\Labs\Lab 2 - Electronic Clock\ElectronicClock.cydsn\ElectronicClock.cydwr (TFT_SPI_IntClock)
+HDL Generation...
+Synthesis...
+Tech Mapping...
+Analog Placement...
+Info: apr.M0002: Analog signal "Net_2134" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2153" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2183" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2162" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2163" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2186" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2166" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2167" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2202" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2170" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2171" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2203" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2112" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2113" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2173" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2116" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2117" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2174" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2120" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2121" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2175" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2124" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2125" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2176" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2128" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2129" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2177" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2133" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2135" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2178" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2138" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2139" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2179" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2142" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2143" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2180" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2146" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2147" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2181" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2150" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2151" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2182" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2155" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2157" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2184" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2160" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2185" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2187" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2188" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2189" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2190" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2191" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2192" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2193" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2194" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2195" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2196" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2197" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2198" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2199" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2200" is connected to one terminal only. (App=cydsfit)
+Info: apr.M0002: Analog signal "Net_2201" is connected to one terminal only. (App=cydsfit)
+Log: apr.M0058: The analog placement iterative improvement is 35% done. (App=cydsfit)
+Log: apr.M0058: The analog placement iterative improvement is 80% done. (App=cydsfit)
+Analog Routing...
+Analog Code Generation...
+Digital Placement...
+Digital Routing...
+Bitstream Generation...
+Bitstream Verification...
+Static timing analysis...
+Warning: sta.M0019: ElectronicClock_timing.html: Warning-1366: Setup time violation found in a path from clock ( TFT_SPI_IntClock ) to clock ( TFT_SPI_IntClock ). (File=C:\Users\robom\OneDrive\University\Darmstadt\Embedded Architecture and Applications\Labs\Lab 2 - Electronic Clock\ElectronicClock.cydsn\ElectronicClock_timing.html)
+API Generation...
+Dependency Generation...
+Cleanup...
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I.\source\asw -I.\source\rte -I.\source\bsw -I.\source\bsw\TraceRecorder -I.\source\bsw\TraceRecorder\config -I.\source\bsw\TraceRecorder\include -I.\source\bsw\TraceRecorder\streamport -I.\source\bsw\LabBoard -I.\source\bsw\Services -I.\source\bsw\tft -I.\source\bsw\tft\fonts -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/main.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c source\asw\main.c -o .\CortexM3\ARM_GCC_541\Debug\main.o
+In file included from source\asw\tsk_io.h:13:0,
+                 from source\asw\main.c:20:
+.\source\rte/rte_types.h:46:0: warning: "GetResource" redefined
+     #define GetResource(A)
+ ^
+In file included from Generated_Source\PSoC5/ErikaOS_1_ee_api.inc:73:0,
+                 from Generated_Source\PSoC5/ErikaOS_1_ee.h:129,
+                 from Generated_Source\PSoC5/project.h:22,
+                 from source\asw\main.c:13:
+Generated_Source\PSoC5/ErikaOS_1_ee_oo_api.inc:136:0: note: this is the location of the previous definition
+ #define GetResource               EE_oo_GetResource
+ ^
+In file included from source\asw\tsk_io.h:13:0,
+                 from source\asw\main.c:20:
+.\source\rte/rte_types.h:47:0: warning: "ReleaseResource" redefined
+     #define ReleaseResource(A)
+ ^
+In file included from Generated_Source\PSoC5/ErikaOS_1_ee_api.inc:73:0,
+                 from Generated_Source\PSoC5/ErikaOS_1_ee.h:129,
+                 from Generated_Source\PSoC5/project.h:22,
+                 from source\asw\main.c:13:
+Generated_Source\PSoC5/ErikaOS_1_ee_oo_api.inc:140:0: note: this is the location of the previous definition
+ #define ReleaseResource           EE_oo_ReleaseResource
+ ^
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I.\source\asw -I.\source\rte -I.\source\bsw -I.\source\bsw\TraceRecorder -I.\source\bsw\TraceRecorder\config -I.\source\bsw\TraceRecorder\include -I.\source\bsw\TraceRecorder\streamport -I.\source\bsw\LabBoard -I.\source\bsw\Services -I.\source\bsw\tft -I.\source\bsw\tft\fonts -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/tsk_control.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c source\asw\tsk_control.c -o .\CortexM3\ARM_GCC_541\Debug\tsk_control.o
+In file included from .\source\rte/rte.h:82:0,
+                 from source\asw\tsk_control.c:11:
+.\source\rte/rte_types.h:46:0: warning: "GetResource" redefined
+     #define GetResource(A)
+ ^
+In file included from Generated_Source\PSoC5/ErikaOS_1_ee_api.inc:73:0,
+                 from Generated_Source\PSoC5/ErikaOS_1_ee.h:129,
+                 from Generated_Source\PSoC5/project.h:22,
+                 from source\asw\tsk_control.c:9:
+Generated_Source\PSoC5/ErikaOS_1_ee_oo_api.inc:136:0: note: this is the location of the previous definition
+ #define GetResource               EE_oo_GetResource
+ ^
+In file included from .\source\rte/rte.h:82:0,
+                 from source\asw\tsk_control.c:11:
+.\source\rte/rte_types.h:47:0: warning: "ReleaseResource" redefined
+     #define ReleaseResource(A)
+ ^
+In file included from Generated_Source\PSoC5/ErikaOS_1_ee_api.inc:73:0,
+                 from Generated_Source\PSoC5/ErikaOS_1_ee.h:129,
+                 from Generated_Source\PSoC5/project.h:22,
+                 from source\asw\tsk_control.c:9:
+Generated_Source\PSoC5/ErikaOS_1_ee_oo_api.inc:140:0: note: this is the location of the previous definition
+ #define ReleaseResource           EE_oo_ReleaseResource
+ ^
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I.\source\asw -I.\source\rte -I.\source\bsw -I.\source\bsw\TraceRecorder -I.\source\bsw\TraceRecorder\config -I.\source\bsw\TraceRecorder\include -I.\source\bsw\TraceRecorder\streamport -I.\source\bsw\LabBoard -I.\source\bsw\Services -I.\source\bsw\tft -I.\source\bsw\tft\fonts -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/tsk_io.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c source\asw\tsk_io.c -o .\CortexM3\ARM_GCC_541\Debug\tsk_io.o
+In file included from .\source\rte/rte.h:82:0,
+                 from source\asw\tsk_io.c:11:
+.\source\rte/rte_types.h:46:0: warning: "GetResource" redefined
+     #define GetResource(A)
+ ^
+In file included from Generated_Source\PSoC5/ErikaOS_1_ee_api.inc:73:0,
+                 from Generated_Source\PSoC5/ErikaOS_1_ee.h:129,
+                 from Generated_Source\PSoC5/project.h:22,
+                 from source\asw\tsk_io.c:9:
+Generated_Source\PSoC5/ErikaOS_1_ee_oo_api.inc:136:0: note: this is the location of the previous definition
+ #define GetResource               EE_oo_GetResource
+ ^
+In file included from .\source\rte/rte.h:82:0,
+                 from source\asw\tsk_io.c:11:
+.\source\rte/rte_types.h:47:0: warning: "ReleaseResource" redefined
+     #define ReleaseResource(A)
+ ^
+In file included from Generated_Source\PSoC5/ErikaOS_1_ee_api.inc:73:0,
+                 from Generated_Source\PSoC5/ErikaOS_1_ee.h:129,
+                 from Generated_Source\PSoC5/project.h:22,
+                 from source\asw\tsk_io.c:9:
+Generated_Source\PSoC5/ErikaOS_1_ee_oo_api.inc:140:0: note: this is the location of the previous definition
+ #define ReleaseResource           EE_oo_ReleaseResource
+ ^
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I.\source\asw -I.\source\rte -I.\source\bsw -I.\source\bsw\TraceRecorder -I.\source\bsw\TraceRecorder\config -I.\source\bsw\TraceRecorder\include -I.\source\bsw\TraceRecorder\streamport -I.\source\bsw\LabBoard -I.\source\bsw\Services -I.\source\bsw\tft -I.\source\bsw\tft\fonts -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/statemachine.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c source\asw\statemachine.c -o .\CortexM3\ARM_GCC_541\Debug\statemachine.o
+In file included from Generated_Source\PSoC5/cyfitter_cfg.h:20:0,
+                 from Generated_Source\PSoC5/project.h:17,
+                 from .\source\rte/sc_events_type.h:11,
+                 from source\asw\statemachine_cfg.h:41,
+                 from source\asw\statemachine.h:39,
+                 from source\asw\statemachine.c:23:
+Generated_Source\PSoC5/cytypes.h:1372:0: warning: "LO8" redefined
+ #define LO8(x)                  ((uint8) ((x) & 0xFFu))
+ ^
+In file included from source\asw\statemachine.h:38:0,
+                 from source\asw\statemachine.c:23:
+.\source\bsw/global.h:306:0: note: this is the location of the previous definition
+  # define LO8(x)   ((uint8_t) ((x) & 0xFFu))
+ ^
+In file included from Generated_Source\PSoC5/cyfitter_cfg.h:20:0,
+                 from Generated_Source\PSoC5/project.h:17,
+                 from .\source\rte/sc_events_type.h:11,
+                 from source\asw\statemachine_cfg.h:41,
+                 from source\asw\statemachine.h:39,
+                 from source\asw\statemachine.c:23:
+Generated_Source\PSoC5/cytypes.h:1373:0: warning: "HI8" redefined
+ #define HI8(x)                  ((uint8) ((uint16)(x) >> 8))
+ ^
+In file included from source\asw\statemachine.h:38:0,
+                 from source\asw\statemachine.c:23:
+.\source\bsw/global.h:311:0: note: this is the location of the previous definition
+  # define HI8(x)   ((uint8_t) ((uint16_t)(x) >> 8))
+ ^
+In file included from Generated_Source\PSoC5/cyfitter_cfg.h:20:0,
+                 from Generated_Source\PSoC5/project.h:17,
+                 from .\source\rte/sc_events_type.h:11,
+                 from source\asw\statemachine_cfg.h:41,
+                 from source\asw\statemachine.h:39,
+                 from source\asw\statemachine.c:23:
+Generated_Source\PSoC5/cytypes.h:1376:0: warning: "LO16" redefined
+ #define LO16(x)                 ((uint16) ((x) & 0xFFFFu))
+ ^
+In file included from source\asw\statemachine.h:38:0,
+                 from source\asw\statemachine.c:23:
+.\source\bsw/global.h:316:0: note: this is the location of the previous definition
+  # define LO16(x)   ((uint16_t) ((x) & 0xFFFFu))
+ ^
+In file included from Generated_Source\PSoC5/cyfitter_cfg.h:20:0,
+                 from Generated_Source\PSoC5/project.h:17,
+                 from .\source\rte/sc_events_type.h:11,
+                 from source\asw\statemachine_cfg.h:41,
+                 from source\asw\statemachine.h:39,
+                 from source\asw\statemachine.c:23:
+Generated_Source\PSoC5/cytypes.h:1377:0: warning: "HI16" redefined
+ #define HI16(x)                 ((uint16) ((uint32)(x) >> 16))
+ ^
+In file included from source\asw\statemachine.h:38:0,
+                 from source\asw\statemachine.c:23:
+.\source\bsw/global.h:321:0: note: this is the location of the previous definition
+  # define HI16(x)   ((uint16_t) ((uint32_t)(x) >> 16))
+ ^
+In file included from .\source\rte/sc_events_type.h:13:0,
+                 from source\asw\statemachine_cfg.h:41,
+                 from source\asw\statemachine.h:39,
+                 from source\asw\statemachine.c:23:
+.\source\rte/rte_types.h:46:0: warning: "GetResource" redefined
+     #define GetResource(A)
+ ^
+In file included from Generated_Source\PSoC5/ErikaOS_1_ee_api.inc:73:0,
+                 from Generated_Source\PSoC5/ErikaOS_1_ee.h:129,
+                 from Generated_Source\PSoC5/project.h:22,
+                 from .\source\rte/sc_events_type.h:11,
+                 from source\asw\statemachine_cfg.h:41,
+                 from source\asw\statemachine.h:39,
+                 from source\asw\statemachine.c:23:
+Generated_Source\PSoC5/ErikaOS_1_ee_oo_api.inc:136:0: note: this is the location of the previous definition
+ #define GetResource               EE_oo_GetResource
+ ^
+In file included from .\source\rte/sc_events_type.h:13:0,
+                 from source\asw\statemachine_cfg.h:41,
+                 from source\asw\statemachine.h:39,
+                 from source\asw\statemachine.c:23:
+.\source\rte/rte_types.h:47:0: warning: "ReleaseResource" redefined
+     #define ReleaseResource(A)
+ ^
+In file included from Generated_Source\PSoC5/ErikaOS_1_ee_api.inc:73:0,
+                 from Generated_Source\PSoC5/ErikaOS_1_ee.h:129,
+                 from Generated_Source\PSoC5/project.h:22,
+                 from .\source\rte/sc_events_type.h:11,
+                 from source\asw\statemachine_cfg.h:41,
+                 from source\asw\statemachine.h:39,
+                 from source\asw\statemachine.c:23:
+Generated_Source\PSoC5/ErikaOS_1_ee_oo_api.inc:140:0: note: this is the location of the previous definition
+ #define ReleaseResource           EE_oo_ReleaseResource
+ ^
+source\asw\statemachine.c: In function 'STATE__getIndexCurrentState':
+source\asw\statemachine.c:65:42: error: invalid operands to binary == (have 'STATE_state_t {aka const struct <anonymous>}' and 'STATE_state_t {aka struct <anonymous>}')
+         if (transitionTable[i].fromState == state)
+                                          ^
+source\asw\statemachine.c:61:14: warning: unused variable 'result' [-Wunused-variable]
+     sint16_t result = INVALIDINDEX; //error
+              ^
+source\asw\statemachine.c: In function 'STATE_initState':
+source\asw\statemachine.c:97:36: error: invalid operands to binary == (have 'SC_STATE_data_t {aka struct <anonymous>}' and 'STATE_state_t {aka const struct <anonymous>}')
+             if (STATE_INITIALSTATE == actionTable[j].state)
+                                    ^
+source\asw\statemachine.c: In function 'STATE_processEvent':
+source\asw\statemachine.c:177:42: error: invalid operands to binary == (have 'STATE_state_t {aka struct <anonymous>}' and 'STATE_state_t {aka const struct <anonymous>}')
+                         if (currentState == actionTable[j].state)
+                                          ^
+source\asw\statemachine.c:194:37: error: invalid operands to binary == (have 'STATE_state_t {aka struct <anonymous>}' and 'STATE_state_t {aka const struct <anonymous>}')
+                         if (toState == actionTable[j].state)
+                                     ^
+source\asw\statemachine.c: In function 'STATE_initState':
+source\asw\statemachine.c:105:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+The command 'arm-none-eabi-gcc.exe' failed with exit code '1'.
+--------------- Build Failed: 04/02/2023 19:22:55 ---------------
