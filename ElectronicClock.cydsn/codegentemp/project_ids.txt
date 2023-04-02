@@ -1,0 +1,6 @@
+C:\Users\robom\OneDrive\University\Darmstadt\Embedded Architecture and Applications\Labs\Lab 2 - Electronic Clock\ElectronicClock.cydsn\ElectronicClock.cyprj|4dd91ada-3a15-4f65-989c-1a04ffc57766
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|27ea90d6-b935-407c-9396-6b69e8300f25
+C:\Users\robom\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|502a6bb4-4509-488b-a7ac-adefc5970744
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|d4845a3c-f955-4192-9973-df7519d1920f
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|af6e721e-8f5a-4b7d-8323-47406d152a99
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|35343bd9-371a-414f-a301-7a89c1137a4f
