@@ -52,8 +52,9 @@ Mkfile.old linguist-generated
 dkms.conf linguist-generated
 
 # Pawn files
-*.pwn linguist-vendored
-*.amx linguist-vendored
+*.pwn linguist-language=C
+*.amx linguist-language=C
+
 
 # OpenEdge ABL files
 *.r linguist-vendored
