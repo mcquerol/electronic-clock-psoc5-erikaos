@@ -1,0 +1,52 @@
+# Prerequisites
+*.d linguist-generated
+
+# Object files
+*.o linguist-generated
+*.ko linguist-generated
+*.obj linguist-generated
+*.elf linguist-generated
+
+# Linker output
+*.ilk linguist-generated
+*.map linguist-generated
+*.exp linguist-generated
+
+# Precompiled Headers
+*.gch linguist-generated
+*.pch linguist-generated
+
+# Libraries
+*.lib linguist-vendored
+*.a linguist-vendored
+*.la linguist-vendored
+*.lo linguist-vendored
+
+# Shared objects (inc. Windows DLLs)
+*.dll linguist-generated
+*.so linguist-generated
+*.so.* linguist-generated
+*.dylib linguist-generated
+
+# Executables
+*.exe linguist-generated
+*.out linguist-generated
+*.app linguist-generated
+*.i*86 linguist-generated
+*.x86_64 linguist-generated
+*.hex linguist-generated
+
+# Debug files
+*.dSYM/ linguist-generated
+*.su linguist-generated
+*.idb linguist-generated
+*.pdb linguist-generated
+
+# Kernel Module Compile Results
+*.mod* linguist-generated
+*.cmd linguist-generated
+.tmp_versions/ linguist-generated
+modules.order linguist-generated
+Module.symvers linguist-generated
+Mkfile.old linguist-generated
+dkms.conf linguist-generated
