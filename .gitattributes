@@ -22,7 +22,7 @@
 *.la linguist-vendored
 *.lo linguist-vendored
 
-# Shared objects (inc. Windows DLLs)
+# Shared objects (including Windows DLLs)
 *.dll linguist-generated
 *.so linguist-generated
 *.so.* linguist-generated
@@ -50,3 +50,18 @@ modules.order linguist-generated
 Module.symvers linguist-generated
 Mkfile.old linguist-generated
 dkms.conf linguist-generated
+
+# Pawn files
+*.pwn linguist-vendored
+*.amx linguist-vendored
+
+# OpenEdge ABL files
+*.r linguist-vendored
+*.p linguist-vendored
+
+# General Debug and Log files
+*.log linguist-vendored
+
+# Dependencies and Vendor files
+node_modules/* linguist-vendored
+vendor/* linguist-vendored
