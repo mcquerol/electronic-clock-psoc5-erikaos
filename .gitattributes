@@ -1,2 +1,21 @@
-# Detect only C files
-*.asm linguist-detectable=false
+# Allow C and C header files
+*.c linguist-detectable=true
+*.h linguist-detectable=true
+*.html linguist-detectable=true
+
+# Exclude common unwanted files and extensions
+*.log linguist-detectable=false
+*.cywrk linguist-detectable=false
+*.cyprj linguist-detectable=false
+*.robom linguist-detectable=false
+*.rpt linguist-detectable=false
+
+# Exclude folders containing irrelevant files (if needed)
+CortexM3/** linguist-detectable=false
+ErikaOS_v2_5_3/** linguist-detectable=false
+Generated_Source/PSoC5/** linguist-detectable=false
+TopDesign/** linguist-detectable=false
+codegentemp/** linguist-detectable=false
+
+# Catch-all: exclude everything else by default (optional)
+* linguist-detectable=false
