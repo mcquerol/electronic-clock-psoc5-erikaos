@@ -15,7 +15,7 @@ CortexM3/** linguist-detectable=false
 ErikaOS_v2_5_3/** linguist-detectable=true
 Generated_Source/PSoC5/** linguist-detectable=false
 TopDesign/** linguist-detectable=false
-codegentemp/** linguist-detectable=false
+codegentemp/** linguist-detectable=true
 
 # Catch-all: exclude everything else by default (optional)
 * linguist-detectable=false
