@@ -12,7 +12,7 @@
 
 # Exclude folders containing irrelevant files (if needed)
 CortexM3/** linguist-detectable=false
-ErikaOS_v2_5_3/** linguist-detectable=false
+ErikaOS_v2_5_3/** linguist-detectable=true
 Generated_Source/PSoC5/** linguist-detectable=false
 TopDesign/** linguist-detectable=false
 codegentemp/** linguist-detectable=false
