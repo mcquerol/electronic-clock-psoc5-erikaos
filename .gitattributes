@@ -1,11 +1,2 @@
 # Detect only C files
-*.c linguist-detectable=true
-*.h linguist-detectable=true
-
-# Allow other files needed for C projects (optional)
-*.o linguist-detectable=false
-*.a linguist-detectable=false
-*.out linguist-detectable=false
-
-# Exclude everything else
-* linguist-detectable=false
+*.asm linguist-detectable=false
