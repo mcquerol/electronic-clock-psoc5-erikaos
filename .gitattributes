@@ -25,3 +25,5 @@
 *.json linguist-vendored
 *.md linguist-documentation
 *.svg linguist-vendored
+
+Generated_Source/** linguist-generated
