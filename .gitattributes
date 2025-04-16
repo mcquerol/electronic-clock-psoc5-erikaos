@@ -1,0 +1,27 @@
+# Hide assembly files (unless you specifically wrote them)
+*.s linguist-vendored
+*.asm linguist-vendored
+
+# Hide C++
+*.cpp linguist-vendored
+*.hpp linguist-vendored
+*.cc linguist-vendored
+
+# Hide C#
+*.cs linguist-vendored
+
+# Hide Pawn (if you're not writing it by hand)
+*.pwn linguist-vendored
+*.amx linguist-vendored
+
+# Hide HTML and web stuff
+*.html linguist-vendored
+*.htm linguist-vendored
+*.css linguist-vendored
+*.js linguist-vendored
+
+# Hide others you don't want counted
+*.xml linguist-vendored
+*.json linguist-vendored
+*.md linguist-documentation
+*.svg linguist-vendored
