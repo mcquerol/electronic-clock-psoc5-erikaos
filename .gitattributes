@@ -1,48 +1,28 @@
-# Hide assembly files (unless you specifically wrote them)
-*.s linguist-vendored
-*.asm linguist-vendored
+# Ignore all auto-generated folders
+**/Generated_Source/** linguist-generated
+**/codegentemp/** linguist-generated
+**/CortexM3/** linguist-generated
+**/TopDesign/** linguist-generated
+**/ErikaOS_v2_5_3/** linguist-generated
 
-# Hide C++
-*.cpp linguist-vendored
-*.hpp linguist-vendored
-*.cc linguist-vendored
+# Ignore build and binary outputs
+*.o linguist-generated
+*.a linguist-generated
+*.elf linguist-generated
+*.hex linguist-generated
+*.map linguist-generated
+*.lst linguist-generated
+*.log linguist-generated
+*.rpt linguist-generated
 
-# Hide C#
-*.cs linguist-vendored
+# Ignore documentation
+*.txt linguist-documentation
+*.pdf linguist-documentation
 
-# Hide Pawn (if you're not writing it by hand)
-*.pwn linguist-vendored
-*.amx linguist-vendored
-
-# Hide HTML and web stuff
-*.html linguist-vendored
-*.htm linguist-vendored
-*.css linguist-vendored
-*.js linguist-vendored
-
-# Hide others you don't want counted
-*.xml linguist-vendored
-*.json linguist-vendored
-*.md linguist-documentation
-*.svg linguist-vendored
-
-# Auto-generated folders
-Generated_Source/** linguist-generated
-codegentemp/** linguist-generated
-TopDesign/** linguist-generated
-CortexM3/** linguist-generated
-ErikaOS_v2_5_3/** linguist-generated
-
-# Hide other noisy files
-*.cpp linguist-vendored
-*.hpp linguist-vendored
-*.s linguist-vendored
-*.asm linguist-vendored
-*.cs linguist-vendored
-*.html linguist-vendored
-*.css linguist-vendored
-*.xml linguist-generated
-*.json linguist-generated
-*.md linguist-documentation
-*.ml linguist-generated
-
+# Ignore UI/config formats
+*.cywrk linguist-generated
+*.cyfit linguist-generated
+*.cycdx linguist-generated
+*.cydwr linguist-generated
+*.cysch linguist-generated
+*.cyprj linguist-generated
